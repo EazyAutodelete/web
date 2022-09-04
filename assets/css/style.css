@@ -1,0 +1,161 @@
+.footer-text {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.45s;
+}
+.footer-text:hover {
+  color: rgb(0, 204, 255);
+  text-decoration: none;
+  transition: 0.45s;
+}
+
+.shape-animation {
+  animation: updown 7.5s ease infinite;
+  position: absolute;
+  top: 90%;
+  z-index: 0;
+}
+
+.navtext {
+  transition: 0.4s;
+  color: #fff;
+}
+
+.navtext:hover {
+  transition: 0.4s;
+  color: #5865F2;
+}
+
+@keyframes updown {
+  0% {
+    transform: translateY(-15%);
+  }
+
+  50% {
+    transform: translateY(15%);
+  }
+
+  100% {
+    transform: translateY(-15%);
+  }
+}
+
+#cookieConsent {
+	background-color: rgba(20, 20, 20, 0.8);
+	min-height: 26px;
+	font-size: 14px;
+	text-align: center;
+	color: #ccc;
+	line-height: 26px;
+	padding: 30px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: none;
+	z-index: 9999;
+}
+
+#cookieConsent a {
+	color: #4B8EE7;
+	text-decoration: none;
+}
+
+#closeCookieConsent {
+	display: inline-block;
+	cursor: pointer;
+	height: 50px;
+	width: 20px;
+	font-weight: bold;
+}
+
+#closeCookieConsent:hover {
+	color: #FFF;
+}
+
+#cookieConsent a.cookieConsentOK {
+	background-color: rgb(0, 208, 245);
+	color: #000;
+	display: inline-block;
+	border-radius: 5px;
+	padding: 0 20px;
+	cursor: pointer;
+	margin: 0 60px 0 10px;
+  transition: 0.4s;
+}
+
+#cookieConsent a.cookieConsentOK:hover {
+	background-color: #5865F2;
+  transition: 0.4s;
+}
+
+::-webkit-scrollbar {
+	width: .45rem;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #5865F2;
+	border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.animated-105 {
+  transition: 0.7s;
+}
+
+.animated-105:hover {
+  transition: 0.7s;
+  transform: scale(1.05);
+}
+
+.underline {
+  text-decoration: underline;
+  text-decoration-color: #5865F2;
+  text-decoration-thickness: 15%;
+  text-underline-position: below;
+}
+
+.underline:hover {
+  text-decoration: underline;
+  text-decoration-color: #5865F2;
+  text-decoration-thickness: 15%;
+  text-underline-position: below;
+}
+
+#sponsorship {
+  background-color: #5865F2;
+  size: 100px;
+  cursor: pointer;
+  padding: 0 10px;
+  border-radius: 5px;
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.stats {
+  border-radius: 10px;
+  background-color: #1B1C1C;
+  padding-top: 10px;
+}
+
+#sponsor-area {
+  position: absolute;
+  right: 0.7%;
+  top: 65%;
+  left: 25%;
+}
+
+.nolink {
+  text-decoration: wavy;
+  text-decoration-color: #4B8EE7;
+  color: #fff;
+}
+
+.feature-card {
+  background-color: #26262B;
+  color: #fff;
+}
