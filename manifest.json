@@ -1,0 +1,27 @@
+{
+  "short_name": "EazyAutodelete",
+  "name": "EazyAutodelete: Discord Bot",
+  "icons": [
+    {
+      "src": "/assets/img/logo-512.png",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/assets/img/logo-256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "/assets/img/logo-1024.png",
+      "type": "image/png",
+      "sizes": "1024x1024"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#26262B",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#5865F2",
+  "description": "A Discord Bot to organise and clean up your channels!"
+}
