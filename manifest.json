@@ -3,17 +3,17 @@
   "name": "EazyAutodelete: Discord Bot",
   "icons": [
     {
-      "src": "/assets/img/logo-512.png",
+      "src": "https://cdn.eazyautodelete.xyz/assets/d75731c0-cc4e-47e7-87c6-30287e26d964",
       "type": "image/svg+xml",
       "sizes": "512x512"
     },
     {
-      "src": "/assets/img/logo-256.png",
+      "src": "https://cdn.eazyautodelete.xyz/assets/e6ca8d24-2104-4eb6-b5df-f141237e9eb1",
       "type": "image/png",
       "sizes": "256x256"
     },
     {
-      "src": "/assets/img/logo-1024.png",
+      "src": "https://cdn.eazyautodelete.xyz/assets/1e8d7ec6-59f0-4f4c-a18a-090c4432319d",
       "type": "image/png",
       "sizes": "1024x1024"
     }
