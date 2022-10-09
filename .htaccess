@@ -12,7 +12,7 @@ Redirect 301 /imprint /impressum/
 
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*[^/])$ /$1/ [L,R]
+RewriteRule ^(.*[^/])$ /$1/ [L,R=301]
 
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-f
