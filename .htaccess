@@ -1,0 +1,18 @@
+RewriteEngine On
+
+Redirect 301 /invite/ https://discord.com/oauth2/authorize?client_id=746453621821931634&permissions=391232&scope=bot%20applications.commands&redirect_uri=https%3A%2F%2Feazyautodelete.xyz%2Freturn&response_type=code
+Redirect 301 /invite https://discord.com/oauth2/authorize?client_id=746453621821931634&permissions=391232&scope=bot%20applications.commands&redirect_uri=https%3A%2F%2Feazyautodelete.xyz%2Freturn&response_type=code
+
+Redirect 301 /discord/ https://discord.gg/9AKqaza
+Redirect 301 /discord https://discord.gg/9AKqaza
+
+Redirect 301 /imprint/ /impressum/
+Redirect 301 /imprint /impressum/
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^/]+)/$ $1.html
+RewriteRule ^([^/]+)/([^/]+)/$ /$1/$2.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/)$
+RewriteRule (.\*)$ /$1/ [R=301,L]
