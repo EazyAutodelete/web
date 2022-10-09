@@ -1,14 +1,20 @@
-RewriteEngine On
+ErrorDocument 404 /err/404.html
+ErrorDocument 403 /err/403.html
+ErrorDocument 401 /err/401.html
 
+RewriteEngine On
 Redirect 301 /invite/ https://discord.com/oauth2/authorize?client_id=746453621821931634&permissions=391232&scope=bot%20applications.commands&redirect_uri=https%3A%2F%2Feazyautodelete.xyz%2Freturn&response_type=code
 Redirect 301 /invite https://discord.com/oauth2/authorize?client_id=746453621821931634&permissions=391232&scope=bot%20applications.commands&redirect_uri=https%3A%2F%2Feazyautodelete.xyz%2Freturn&response_type=code
-
 Redirect 301 /discord/ https://discord.gg/9AKqaza
 Redirect 301 /discord https://discord.gg/9AKqaza
-
 Redirect 301 /imprint/ /impressum/
 Redirect 301 /imprint /impressum/
 
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*[^/])$ /$1/ [L,R]
+
+RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^/]+)/$ $1.html
 RewriteRule ^([^/]+)/([^/]+)/$ /$1/$2.html
