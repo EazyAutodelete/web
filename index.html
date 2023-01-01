@@ -8,10 +8,10 @@
     <title>EazyAutodelete - Discord Bot</title>
 
     <!-- CSS -->
-    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="/assets/vendor/aos/aos.css" rel="stylesheet" />
-    <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
-    <link href="/assets/css/style.css" rel="stylesheet" />
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
 
     <!--
         YOU KNOW WHAT YOU ARE DOING?
@@ -35,10 +35,7 @@
       content="Hey, I'm EazyAutodelete! A Discord Bot to organise and clean up your channels!"
       property="og:description"
     />
-    <meta
-      content="Hey, I'm EazyAutodelete! A Discord Bot to organise and clean up your channels!"
-      itemprop="description"
-    />
+    <meta content="Hey, I'm EazyAutodelete! A Discord Bot to organise and clean up your channels!" name="description" />
     <meta
       content="Hey, I'm EazyAutodelete! A Discord Bot to organise and clean up your channels!"
       name="twitter:description"
@@ -48,20 +45,16 @@
   </head>
 
   <body>
-    <div id="cookieConsent">
-      &#128204; This website uses cookies. <a href="https://eazyautodelete.xyz/privacy" target="_blank">More Infos</a>.
-      <a class="cookieConsentOK">I accept</a>
-    </div>
-
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark shadow" style="font-family: 'M PLUS Rounded 1c'">
       <div class="container-fluid pe-lg-5 me-lg-5 ps-lg-5 ms-lg-5">
-        <a class="navbar-brand fs-2" href="https://eazyautodelete.xyz" style="font-weight: 1000; color: #5865f2">
+        <a class="navbar-brand fs-2 accent" href="https://eazyautodelete.xyz" style="font-weight: 1000">
           <img
             src="https://cdn.eazyautodelete.xyz/assets/e6ca8d24-2104-4eb6-b5df-f141237e9eb1"
             width="42"
             height="42"
             class="d-inline-block align-text-center me-lg-3"
             style="border-radius: 15px"
+            alt="EazyAutodelete Logo"
           />
           EazyAutodelete
         </a>
@@ -86,8 +79,8 @@
               <a class="nav-link fs-4" href="https://eazyautodelete.xyz">H<span class="underline">ome&#160;</span></a>
             </li>
             <li class="nav-item ps-3">
-              <a class="nav-link fs-4" href="https://eazyautodelete.xyz/features"
-                >F<span class="underline">eautures&#160;</span></a
+              <a class="nav-link fs-4" href="https://eazyautodelete.xyz#features"
+                >F<span class="underline">eatures&#160;</span></a
               >
             </li>
             <li class="nav-item ps-3">
@@ -117,11 +110,12 @@
                   width="128"
                   style="border-radius: 35px"
                   class="mb-4 shadow-lg animated-105"
+                  alt="EazyAutodelete Logo"
                 />
                 <h1 class="fs-1 fw-bold">
                   Hey, I'm
                   <a href="https://eazyautodelete.xyz/invite/" style="text-decoration: none"
-                    ><span style="color: #5865f2">EazyAutodelete</span></a
+                    ><span class="accent">EazyAutodelete</span></a
                   >!
                 </h1>
               </div>
@@ -188,50 +182,43 @@
           <div class="row content mb-5 justify-content-center mb-5 pb-5">
             <div class="col-10 col-lg-5 p-3" data-aos="fade-up">
               <div class="row align-items-end">
-                <div class="fs-2 col-12 col-lg-6 mb-4 fw-bold">
-                  <i class="bi bi-bar-chart" style="font-size: 150%; color: #5865f2"></i> E<a
+                <div class="fs-2 col-12 mb-4 fw-bold">
+                  <i class="bi bi-stopwatch accent" style="font-size: 150%"></i> S<span
                     style="
                       text-decoration: underline;
                       text-decoration-color: #5865f2;
                       text-decoration-thickness: 15%;
                       text-underline-position: below;
                     "
-                    >asy To Use&#160;</a
+                    >et WHEN to delete the messages&#160;</span
                   >
                 </div>
               </div>
               <div class="row">
                 <div class="col-12">
-                  EazyAutodelete can be set up quickly and easily with a handful of commands. The commands are
-                  self-explanatory and eazy to use as well as good structured.
+                  Choose from 4 different
+                  <a href="https://docs.eazyautodelete.xyz/config/mode" target="_blank">modes</a> that delete the
+                  messages.<br />You can delete the messages after a certain number of messages, a certain duration or
+                  many other criteria.
                 </div>
               </div>
             </div>
             <div class="col-10 col-lg-5 mb-5 mb-lg-0 row ps-3 mt-5" data-aos="fade-up">
-              <div class="col-5 pb-2 col-lg-7">
+              <div class="col-6 pb-2 col-lg-9 ps-lg-5 ms-lg-5">
                 <img
-                  src="https://cdn.eazyautodelete.xyz/assets/7c99e49e-d94c-43e6-9726-b5faa66fa95b"
+                  src="https://cdn.eazyautodelete.xyz/assets/2d3cfd88-4ed5-4ca0-b554-21670e81742a"
                   class="rounded-3 animated-105 shadow"
                   width="100%"
+                  alt="Visualization of deletion algorithm"
+                  loading="lazy"
                 />
               </div>
-              <div class="col-5 pb-2 col-lg-4 mt-lg-5">
+              <div class="col-6 pb-2 col-lg-9">
                 <img
-                  src="https://cdn.eazyautodelete.xyz/assets/133b0d41-2e40-41ae-9e12-25287405ec00"
-                  class="rounded-3 animated-105 shadow"
-                  width="100%"
-                />
-              </div>
-              <div class="col-5 pb-2 col-lg-6 ms-lg-2">
-                <img
-                  src="https://cdn.eazyautodelete.xyz/assets/4558f8c3-b895-47d7-9089-018993a54212"
+                  src="https://cdn.eazyautodelete.xyz/assets/2d3cfd88-4ed5-4ca0-b554-21670e81742a"
                   class="img-fluid rounded-3 animated-105 shadow"
-                />
-              </div>
-              <div class="col-5 pb-2 col-lg-5">
-                <img
-                  src="https://cdn.eazyautodelete.xyz/assets/c937d9c8-5847-4aba-b0c7-25962cef49fa"
-                  class="img-fluid rounded-3 animated-105 shadow"
+                  alt="Visualization of deletion algorithm"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -241,39 +228,45 @@
 
           <div class="row content mb-5 justify-content-center mt-5 pt-5 mb-5 pb-5">
             <div class="col-10 col-lg-5 mb-5 mb-lg-0 row ps-3 mt-5" data-aos="fade-up">
-              <div class="col-5 pb-2 col-lg-7">
+              <div class="col-6 pb-2 col-lg-9">
                 <img
-                  src="https://cdn.eazyautodelete.xyz/assets/b667fbc8-8938-474d-93bb-490519aa1e9f"
+                  src="https://cdn.eazyautodelete.xyz/assets/5f9b4686-645c-4b9f-b405-27056f225cda"
                   class="rounded-3 animated-105 shadow"
                   width="100%"
+                  alt="A list of available filters"
                 />
               </div>
-              <div class="col-5 pb-2 col-lg-8 ps-lg-5 ms-lg-5">
+              <div class="col-6 pb-2 col-lg-9 ps-lg-5 ms-lg-5">
                 <img
-                  src="https://cdn.eazyautodelete.xyz/assets/8e506df9-dbd5-46f8-bb6a-8c58bda414d0"
+                  src="https://cdn.eazyautodelete.xyz/assets/3d839672-6829-4850-9d17-82667bd9aa62"
                   class="img-fluid rounded-3 animated-105 shadow"
+                  alt="A list of filter filter behaviors"
                 />
               </div>
             </div>
             <div class="col-10 col-lg-5 p-3" data-aos="fade-up">
               <div class="row align-items-end">
                 <div class="fs-2 col-12 mb-4 fw-bold">
-                  <i class="bi bi-megaphone" style="font-size: 150%; color: #5865f2"></i> M<a
+                  <i class="bi bi-megaphone accent" style="font-size: 150%"></i> S<span
                     style="
                       text-decoration: underline;
                       text-decoration-color: #5865f2;
                       text-decoration-thickness: 15%;
                       text-underline-position: below;
                     "
-                    >ultilingual usable&#160;</a
+                    >et WHICH messages to delete&#160;</span
                   >
                 </div>
               </div>
               <div class="row">
                 <div class="col-12">
-                  EazyAutodelete is continuously translated into several languages by our skilled translators.
-                  Currently, English, French and German are available almost everywhere in the bot. Feel free to inform
-                  us if you find any translation issues.
+                  You can choose from a large number of
+                  <a href="https://docs.eazyautodelete.xyz/config/filters" target="_blank">filters</a> that the messages
+                  must meet in order to be deleted.<br />Set whether
+                  <a href="https://docs.eazyautodelete.xyz/config/filter-behavior" target="_blank"
+                    >only one filter or all filters</a
+                  >
+                  must be met for a message to be deleted.
                 </div>
               </div>
             </div>
@@ -285,36 +278,40 @@
             <div class="col-10 col-lg-5 p-3" data-aos="fade-up">
               <div class="row align-items-end">
                 <div class="fs-2 col-12 mb-4 fw-bold">
-                  <i class="bi bi-heart" style="font-size: 150%; color: #5865f2"></i> M<a
+                  <i class="bi bi-person-check accent" style="font-size: 150%"></i> S<span
                     style="
                       text-decoration: underline;
                       text-decoration-color: #5865f2;
                       text-decoration-thickness: 15%;
                       text-underline-position: below;
                     "
-                    >ade with &#60;3&#160;</a
+                    >et WHOSE messages to delete&#160;</span
                   >
                 </div>
               </div>
               <div class="row">
                 <div class="col-12">
-                  EazyAutodelete is a passion project with a focus on the little details. Small gimmicks can be found
-                  all over the bot and the website to make the user experience a little bit more fun.
+                  <a href="https://docs.eazyautodelete.xyz/config/ignore-roles" target="_blank">Ignore messages</a> from
+                  members with certain roles or delete messages from
+                  <a href="https://docs.eazyautodelete.xyz/config/filters" target="_blank">bots only</a>.<br />The many
+                  settings allow you to customize everything exactly to your needs.
                 </div>
               </div>
             </div>
             <div class="col-10 col-lg-5 mb-5 mb-lg-0 row ps-3 mt-5" data-aos="fade-up">
               <div class="col-5 pb-2 col-lg-7">
                 <img
-                  src="https://cdn.eazyautodelete.xyz/assets/ad1adc49-4caa-4ba5-a9bf-5578b6da82f1"
+                  src="https://cdn.eazyautodelete.xyz/assets/3b166cf9-bc3a-4128-a7ef-53ca09335f55"
                   class="rounded-3 animated-105 shadow"
                   width="100%"
+                  alt="Role selection"
                 />
               </div>
               <div class="col-5 pb-2 col-lg-8 ps-lg-5 ms-lg-5">
                 <img
-                  src="https://cdn.eazyautodelete.xyz/assets/bc97e66e-1350-4485-a064-02246a39824c"
+                  src="https://cdn.eazyautodelete.xyz/assets/17c4a3ad-1588-45f0-911f-a11ffda5282e"
                   class="img-fluid rounded-3 animated-105 shadow"
+                  alt="Toggle author is bot or author isnt bot"
                 />
               </div>
             </div>
@@ -325,9 +322,9 @@
               class="col-7 col-md-5 col-lg-4 col-xl-3 fs-3 pt-2 pb-2 animated-105 shadow"
               style="background-color: #242424; border-radius: 20px"
             >
-              <a href="https://eazyautodelete.xyz/#features" style="color: #fff; text-decoration: none"
-                ><i class="bi bi-arrow-right-circle-fill"></i> M<a
-                  href="https://eazyautodelete.xyz/#features"
+              <a href="https://eazyautodelete.xyz/invite" style="color: #fff; text-decoration: none"
+                ><i class="bi bi-arrow-right-circle-fill"></i> G<a
+                  href="https://eazyautodelete.xyz/invite"
                   style="
                     color: #fff;
                     text-decoration: underline;
@@ -335,7 +332,7 @@
                     text-decoration-thickness: 15%;
                     text-underline-position: below;
                   "
-                  >ore features...&#160;</a
+                  >et started...&#160;</a
                 ></a
               >
             </div>
@@ -372,7 +369,7 @@
       <div class="container-fluid">
         <div class="container text-center pb-5 mb-5">
           <div class="pb-2">
-            <h3 class="fs-1 fw-bold">Trusted by large & <span style="color: #5865f2">partnered</span> Servers</h3>
+            <h3 class="fs-1 fw-bold">Trusted by large & <span class="accent">partnered</span> Servers</h3>
           </div>
           <div class="row justify-content-center pt-3 pt-lg-0">
             <div class="сol-10 col-md-5 col-lg-3 mt-2">
@@ -685,6 +682,7 @@
                 height="48"
                 class="d-inline-block align-text-center me-lg-3 shadow animated-105"
                 style="border-radius: 15px"
+                alt="EazyAutodelete Logo"
               />
               EazyAutodelete
             </a>
@@ -712,12 +710,7 @@
                 >
               </p>
               <p>
-                <a href="https://eazyautodelete.xyz/partners" target="_blank" class="footer-text"
-                  ><i class="bx bx-chevron-right"></i>Partners</a
-                >
-              </p>
-              <p>
-                <a href="https://eazyautodelete.xyz/features" target="_blank" class="footer-text"
+                <a href="https://eazyautodelete.xyz#features" target="_blank" class="footer-text"
                   ><i class="bx bx-chevron-right"></i>Features</a
                 >
               </p>
@@ -776,6 +769,11 @@
                   ><i class="bx bx-chevron-right"></i>Impressum</a
                 >
               </p>
+              <p>
+                <a href="https://eazyautodelete.xyz/licenses/" target="_blank" class="footer-text"
+                  ><i class="bx bx-chevron-right"></i>Licenses</a
+                >
+              </p>
             </ul>
           </div>
         </div>
@@ -788,20 +786,20 @@
       </div>
     </footer>
 
-    <script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/assets/vendor/jquery/jquery.min.js"></script>
-    <script src="/assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
     <script>
       AOS.init();
     </script>
 
-    <script src="/assets/js/main.js"></script>
+    <script src="assets/js/main.js"></script>
 
     <script async defer src="https://r1.delivery.services.eazyautodelete.xyz/latest.js"></script>
     <noscript
       ><img
         src="https://r1.delivery.services.eazyautodelete.xyz/verycool.gif"
-        alt=""
+        alt="img"
         referrerpolicy="no-referrer-when-downgrade"
     /></noscript>
   </body>
