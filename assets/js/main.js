@@ -42,4 +42,7 @@ $(document).ready(function () {
   }, 2e3);
 
   $('[data-toggle="tooltip"]').tooltip();
+
+  $("#mode-1").prop("src", "https://cdn.eazyautodelete.xyz/assets/02568459-37c5-436a-a82b-b6e4c92c6c59");
+  $("#mode-2").prop("src", "https://cdn.eazyautodelete.xyz/assets/02568459-37c5-436a-a82b-b6e4c92c6c59");
 });
