@@ -1,48 +1,76 @@
-$("#inviteButton").on("click", function (t) {
+$("#inviteButton").on("click", function () {
   window.location.href = "https://eazyautodelete.xyz/invite/";
 });
 
-$("#supportButton").on("click", function (t) {
+$("#supportButton").on("click", function () {
   window.location.href = "https://eazyautodelete.xyz/discord/";
 });
 
 $(document).ready(function () {
-  let t = " Discord Bot to automatically delete messages.",
-    e = 0;
+  const animationDuration = 1750;
 
-  !(function o() {
-    !(e >= t.length) &&
-      ((document.getElementById("intro-writer").innerHTML =
-        document.getElementById("intro-writer").innerHTML + t.charAt(e)),
-      e++,
-      setTimeout(() => o(), 25));
-  })();
+  ((text, write_duration) => {
+    var i = 0;
+    var interval = setInterval(function () {
+      document.getElementById("intro-writer").innerHTML += text.charAt(i);
+      i++;
+      if (i == text.length) {
+        clearInterval(interval);
+      }
+    }, write_duration / text.length);
+  })("Discord Bot to automatically delete messages.", animationDuration);
 
-  let o = 0;
-  function n() {
-    o >= 41e4 ||
-      ((document.getElementById("member-count").innerHTML = Math.round(o).toLocaleString() + "+"),
-      (o += 820),
-      setTimeout(() => n(), 1));
-  }
-  setTimeout(() => n(), 1);
+  ((start, end, duration) => {
+    let obj = document.getElementById("member-count");
+    let range = end - start;
+    let minTimer = 50;
+    let stepTime = Math.abs(Math.floor(duration / range));
+    stepTime = Math.max(stepTime, minTimer);
+    let startTime = new Date().getTime();
+    let endTime = startTime + duration;
+    let timer;
+    function run() {
+      let now = new Date().getTime();
+      let remaining = Math.max((endTime - now) / duration, 0);
+      let value = Math.round(end - remaining * range);
+      obj.innerHTML = value.toLocaleString() + "+";
+      if (value == end) {
+        clearInterval(timer);
+      }
+    }
+    timer = setInterval(run, stepTime);
+    run();
+  })(0, 600000, animationDuration);
 
-  let i = 0;
-  function r() {
-    i >= 1583 ||
-      ((document.getElementById("server-count").innerHTML = Math.round(i).toLocaleString() + "+"),
-      (i += 1583 / 501),
-      setTimeout(() => r(), 1));
-  }
-  setTimeout(() => r(), 1);
-
-  setInterval(() => {
-    console.log("You know what you are doing? Contact qreepex#0001 on Discord to get hired!"),
-      console.log("Work for us: Add qreepex#0001 on discord and send a message to him.");
-  }, 2e3);
-
-  $('[data-toggle="tooltip"]').tooltip();
+  ((start, end, duration) => {
+    let obj = document.getElementById("server-count");
+    let range = end - start;
+    let minTimer = 50;
+    let stepTime = Math.abs(Math.floor(duration / range));
+    stepTime = Math.max(stepTime, minTimer);
+    let startTime = new Date().getTime();
+    let endTime = startTime + duration;
+    let timer;
+    function run() {
+      let now = new Date().getTime();
+      let remaining = Math.max((endTime - now) / duration, 0);
+      let value = Math.round(end - remaining * range);
+      obj.innerHTML = value.toLocaleString() + "+";
+      if (value == end) {
+        clearInterval(timer);
+      }
+    }
+    timer = setInterval(run, stepTime);
+    run();
+  })(0, 1750, animationDuration);
 
   $("#mode-1").prop("src", "https://cdn.eazyautodelete.xyz/assets/02568459-37c5-436a-a82b-b6e4c92c6c59");
   $("#mode-2").prop("src", "https://cdn.eazyautodelete.xyz/assets/02568459-37c5-436a-a82b-b6e4c92c6c59");
+
+  setInterval(() => {
+    console.log("You know what you are doing? Contact qreepex#0001 on Discord to get hired!"),
+      console.log("Work for us: Add qreepex#0001 on discord and say hi.");
+  }, 2e3);
+
+  $('[data-toggle="tooltip"]').tooltip();
 });
