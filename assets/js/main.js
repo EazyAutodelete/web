@@ -7,10 +7,10 @@ $("#supportButton").on("click", function () {
 });
 
 const statOptions = {
-  day: "Today",
-  week: "7 Days",
-  month: "30 Days",
-  year: "Year",
+  day: "today",
+  week: "last 7 days",
+  month: "last 30 days",
+  year: "last year",
 };
 
 const statsCache = {
@@ -51,7 +51,7 @@ $("#stats").on("click", function () {
     Object.keys(statOptions)[(Object.keys(statOptions).indexOf(currentStat) + 1) % Object.keys(statOptions).length];
 
   statsElem.attr("data-stat", nextStat);
-  statsElem.html('<i class="bi bi-arrow-clockwise"></i>' + statOptions[nextStat]);
+  statsElem.html(statOptions[nextStat]);
 
   if (statsCache[nextStat] != 0) {
     animateDeletedMessages(0, statsCache[nextStat], animationDuration / 3);
@@ -65,24 +65,28 @@ $("#stats").on("click", function () {
         statsCache[nextStat] = stats;
       }
     };
-    request.open("GET", "https://api.eazyautodelete.xyz/public/stats/deleted-messages/" + nextStat, false);
+    request.open("GET", "https://apii.eazyautodelete.xyz/public/stats/deleted-messages/" + nextStat, false);
     request.setRequestHeader("Content-Type", "application/json");
     request.send();
   }
 });
 
-let initStatsRequest = new XMLHttpRequest();
-initStatsRequest.onreadystatechange = function () {
-  if (this.readyState == 4 && this.status == 200) {
-    stats = Math.round(JSON.parse(this.responseText).count / 1e3) * 1e3;
-    animateDeletedMessages(0, stats, animationDuration);
+try {
+  let initStatsRequest = new XMLHttpRequest();
+  initStatsRequest.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      stats = Math.round(JSON.parse(this.responseText).count / 1e3) * 1e3;
+      animateDeletedMessages(0, stats, animationDuration);
 
-    statsCache["week"] = stats;
-  }
-};
-initStatsRequest.open("GET", "https://api.eazyautodelete.xyz/public/stats/deleted-messages/week", false);
-initStatsRequest.setRequestHeader("Content-Type", "application/json");
-initStatsRequest.send();
+      statsCache["week"] = stats;
+    }
+  };
+  initStatsRequest.open("GET", "https://apii.eazyautodelete.xyz/public/stats/deleted-messages/week", false);
+  initStatsRequest.setRequestHeader("Content-Type", "application/json");
+  initStatsRequest.send();
+} catch (e) {
+  console.log(e);
+}
 
 $(document).ready(function () {
   ((text, write_duration) => {
