@@ -51,6 +51,12 @@ a[href^="https://docs.eazyautodelete.xyz/"]:hover {
   text-decoration:none;
   transition:.2s
 }
+#stats {
+  color:#999999;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration-line: underline;
+}
 .accent {
   color:#5865f2
 }
