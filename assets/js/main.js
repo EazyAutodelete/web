@@ -59,7 +59,7 @@ $("#stats").on("click", function () {
     let request = new XMLHttpRequest();
     request.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
-        stats = JSON.parse(this.responseText).count;
+        stats = Math.round(JSON.parse(this.responseText).count / 1e3) * 1e3;
         animateDeletedMessages(0, stats, animationDuration / 3);
 
         statsCache[nextStat] = stats;
@@ -74,7 +74,7 @@ $("#stats").on("click", function () {
 let initStatsRequest = new XMLHttpRequest();
 initStatsRequest.onreadystatechange = function () {
   if (this.readyState == 4 && this.status == 200) {
-    stats = JSON.parse(this.responseText).count;
+    stats = Math.round(JSON.parse(this.responseText).count / 1e3) * 1e3;
     animateDeletedMessages(0, stats, animationDuration);
 
     statsCache["week"] = stats;
