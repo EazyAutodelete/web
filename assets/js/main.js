@@ -65,7 +65,7 @@ $("#stats").on("click", function () {
         statsCache[nextStat] = stats;
       }
     };
-    request.open("GET", "https://apii.eazyautodelete.xyz/public/stats/deleted-messages/" + nextStat, false);
+    request.open("GET", "https://api.eazyautodelete.xyz/public/stats/deleted-messages/" + nextStat, false);
     request.setRequestHeader("Content-Type", "application/json");
     request.send();
   }
@@ -81,7 +81,7 @@ try {
       statsCache["week"] = stats;
     }
   };
-  initStatsRequest.open("GET", "https://apii.eazyautodelete.xyz/public/stats/deleted-messages/week", false);
+  initStatsRequest.open("GET", "https://api.eazyautodelete.xyz/public/stats/deleted-messages/week", false);
   initStatsRequest.setRequestHeader("Content-Type", "application/json");
   initStatsRequest.send();
 } catch (e) {
