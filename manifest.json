@@ -23,5 +23,5 @@
   "display": "standalone",
   "scope": "/",
   "theme_color": "#5865F2",
-  "description": "A Discord Bot to organise and clean up your channels!"
+  "description": "A Discord Bot to automatically delete messages!"
 }
