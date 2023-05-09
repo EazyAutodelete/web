@@ -1,2 +1,2 @@
-# eazyautodelete-web
+# EazyAutodelete Website
 🌐 Website of EazyAutodelete available at https://eazyautodelete.xyz
