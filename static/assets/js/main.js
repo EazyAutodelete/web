@@ -43,7 +43,7 @@ $(document).ready(function () {
   })("Discord Bot to automatically delete messages.", animationDuration);
 
   (() => {
-    let guilds = 2e3;
+    let guilds = 3e3;
     const request = new XMLHttpRequest();
     request.timeout = 500;
     request.onreadystatechange = function () {
