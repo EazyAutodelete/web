@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/EazyAutodelete/web/compare/v0.2.0...v0.2.1) (2023-07-24)
+
+
+### Bug Fixes
+
+* readme ([e1c1a07](https://github.com/EazyAutodelete/web/commit/e1c1a07bbff819a313be2ea7cfe748fc7227df85))
+
 ## 0.2.0 (2023-07-24)
 
 
