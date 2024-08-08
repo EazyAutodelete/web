@@ -1,72 +1,59 @@
 <script lang="ts">
-  import Footer from "$lib/components/Footer.svelte";
-  import Navbar from "$lib/components/Navbar.svelte";
-  import "../app.postcss";
+	import Footer from "$lib/components/Footer.svelte";
+	import Navbar from "$lib/components/Navbar.svelte";
+	import "../app.postcss";
 </script>
 
 <svelte:head>
-  <!-- Copyright 2020-2023 Ben Schiemann - qreepex - dev@qreepex.xyz -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- Copyright 2020-2024 Ben Schiemann - qreepex - dev@qreepex.xyz -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>EazyAutodelete - Discord Bot</title>
+	<title>EazyAutodelete - Discord Bot</title>
 
-  <!-- CSS -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
-  <link href="assets/css/style.css" rel="stylesheet" />
+	<!-- CSS -->
+	<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
-  <!--
+	<!--
         YOU KNOW WHAT YOU ARE DOING?
         GET HIRED => qreepex#0001 on Discord
         -->
 
-  <!-- META -->
-  <meta name="theme-color" content="#545fed;" />
-  <meta name="twitter:card" content="summary_large_image" />
+	<!-- META -->
+	<meta name="theme-color" content="#545fed;" />
+	<meta name="twitter:card" content="summary_large_image" />
 
-  <meta itemprop="name" content="EazyAutodelete" />
-  <meta content="EazyAutodelete" property="og:title" />
-  <meta content="EazyAutodelete" property="og:site_name" />
-  <meta content="EazyAutodelete" name="twitter:title" />
+	<meta itemprop="name" content="EazyAutodelete" />
+	<meta content="EazyAutodelete" property="og:title" />
+	<meta content="EazyAutodelete" property="og:site_name" />
+	<meta content="EazyAutodelete" name="twitter:title" />
 
-  <meta property="og:type" content="website" />
-  <meta content="https://eazyautodelete.xyz" property="og:url" />
-  <meta content="https://eazyautodelete.xyz" name="twitter:url" />
+	<meta property="og:type" content="website" />
+	<meta content="https://eazyautodelete.xyz" property="og:url" />
+	<meta content="https://eazyautodelete.xyz" name="twitter:url" />
 
-  <meta content="Hey, I'm EazyAutodelete! A Discord Bot to automatically delete messages." property="og:description" />
-  <meta content="Hey, I'm EazyAutodelete! A Discord Bot to automatically delete messages." name="description" />
-  <meta content="Hey, I'm EazyAutodelete! A Discord Bot to automatically delete messages." name="twitter:description" />
+	<meta content="Hey, I'm EazyAutodelete! A Discord Bot to automatically delete messages." property="og:description" />
+	<meta content="Hey, I'm EazyAutodelete! A Discord Bot to automatically delete messages." name="description" />
+	<meta content="Hey, I'm EazyAutodelete! A Discord Bot to automatically delete messages." name="twitter:description" />
 
-  <meta data-react-helmet="true" charset="utf-8" />
+	<meta data-react-helmet="true" charset="utf-8" />
 </svelte:head>
 
 <div class="app">
-  <Navbar />
+	<Navbar />
 
-  <main>
-    <slot />
-  </main>
+	<main>
+		<slot />
+	</main>
 
-  <Footer />
+	<Footer />
 
-  <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/stats.js"></script>
-
-  <script async defer src="https://r1.delivery.services.eazyautodelete.xyz/latest.js"></script>
-  <noscript
-    ><img
-      src="https://r1.delivery.services.eazyautodelete.xyz/verycool.gif"
-      alt="img"
-      referrerpolicy="no-referrer-when-downgrade"
-    /></noscript
-  >
+	<script async defer src="https://r1.delivery.services.eazyautodelete.xyz/latest.js"></script>
+	<noscript
+		><img
+			src="https://r1.delivery.services.eazyautodelete.xyz/verycool.gif"
+			alt="img"
+			referrerpolicy="no-referrer-when-downgrade"
+		/></noscript
+	>
 </div>
