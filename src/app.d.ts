@@ -10,3 +10,12 @@ declare global {
 }
 
 export {};
+
+export type ShardData = {
+	workerId: number;
+	shardId: number;
+	rtt: number;
+	state: number;
+	queue: number;
+	data?: { guilds: string[]; unavailable: string[] };
+};
