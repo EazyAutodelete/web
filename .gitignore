@@ -12,3 +12,6 @@ vite.config.ts.timestamp-*
 .pem
 web-cert.pem
 web-key.pem
+faq
+*lock.json
+package-lock.json
