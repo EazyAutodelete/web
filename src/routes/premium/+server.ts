@@ -1,4 +1,4 @@
-import { error, redirect } from "@sveltejs/kit";
+import {  redirect } from "@sveltejs/kit";
 
 /** @type {import('./$types').RequestHandler} */
 export function GET({}) {
