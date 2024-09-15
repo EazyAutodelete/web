@@ -11,9 +11,6 @@
 
 	<title>EazyAutodelete - Discord Bot</title>
 
-	<!-- CSS -->
-	<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-
 	<!--
         YOU KNOW WHAT YOU ARE DOING?
         GET HIRED => qreepex#0001 on Discord
