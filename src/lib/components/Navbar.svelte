@@ -1,18 +1,18 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-dark shadow" style="font-family: 'M PLUS Rounded 1c'">
-	<div class="container-fluid pe-lg-5 me-lg-5 ps-lg-5 ms-lg-5">
-		<a class="navbar-brand fs-2 accent" href="https://eazyautodelete.xyz" style="font-weight: 1000">
+<nav class="relative flex flex-wrap items-center content-between py-3 px-4 sticky-top  text-white shadow" style="font-family: 'M PLUS Rounded 1c'">
+	<div class="container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 lg:pe-12 lg:me-12 lg:ps-12 lg:ms-12">
+		<a class="inline-block pt-1 pb-1 mr-4 text-lg whitespace-no-wrap fs-2 accent" href="https://eazyautodelete.xyz" style="font-weight: 1000">
 			<img
 				src="/assets/img/logo-small.webp"
 				width="42"
 				height="42"
-				class="d-inline-block align-text-center me-lg-3"
+				class="inline-block align-text-center lg:me-4"
 				style="border-radius: 15px"
 				alt="EazyAutodelete Logo"
 			/>
 			EazyAutodelete
 		</a>
 		<button
-			class="navbar-toggler btn"
+			class="py-1 px-2 text-md leading-normal bg-transparent border border-transparent rounded inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline"
 			type="button"
 			style="background-color: #2e3a4b"
 			data-bs-toggle="collapse"
@@ -39,20 +39,20 @@
 				/>
 			</svg>
 		</button>
-		<div class="collapse navbar-collapse justify-content-end align-text-center align-items-center" id="navbarToggler">
-			<div class="navbar-nav">
-				<li class="nav-item ps-3">
-					<a class="nav-link fs-4 underline" href="/#top">Home</a>
+		<div class="hidden flex-grow items-center justify-end align-text-center items-center" id="navbarToggler">
+			<div class="flex flex-wrap list-reset pl-0 mb-0">
+				<li class=" ps-3">
+					<a class="inline-block py-2 px-4 no-underline fs-4 underline" href="/#top">Home</a>
 				</li>
-				<li class="nav-item ps-3">
-					<a class="nav-link fs-4 underline" href="#features">Features</a>
+				<li class=" ps-3">
+					<a class="inline-block py-2 px-4 no-underline fs-4 underline" href="#features">Features</a>
 				</li>
 
-				<li class="nav-item ps-3">
-					<a class="nav-link fs-4 underline" href="/status">Status</a>
+				<li class=" ps-3">
+					<a class="inline-block py-2 px-4 no-underline fs-4 underline" href="/status">Status</a>
 				</li>
-				<li class="nav-item ps-3 ps-lg-5">
-					<a class="nav-link fs-4 fw-bold underline" target="_blank" href="invite" style="color: #fff">Invite</a>
+				<li class=" ps-3 lg:ps-12">
+					<a class="inline-block py-2 px-4 no-underline fs-4 fw-bold underline" target="_blank" href="invite" style="color: #fff">Invite</a>
 				</li>
 			</div>
 		</div>
