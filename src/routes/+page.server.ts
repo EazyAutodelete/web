@@ -1,5 +1,5 @@
 const cache = {
-	guilds: { count: 12000 },
+	guilds: { count: 14800 },
 	messages: {
 		all: 0,
 		year: 0,
