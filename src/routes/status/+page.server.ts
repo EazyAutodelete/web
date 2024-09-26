@@ -40,7 +40,7 @@ async function updateShards() {
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({}) {
-	if (lastUpdated + 1000 < Date.now()) await updateShards();
+	if (lastUpdated + 1000 < Date.now()) updateShards();
 
 	return { shards: cache };
 }

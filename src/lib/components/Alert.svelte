@@ -169,7 +169,7 @@
 			min-width: 35px;
 			background-color: var(--color);
 			// color: $color_1;
-			font-size: 20px;
+			font-size: x-large;
 			border-radius: 50%;
 		}
 		.message {
@@ -180,7 +180,7 @@
 	}
 	.message {
 		.text {
-			font-size: 16px;
+			font-size: large;
 			font-weight: 400;
 			// color: $color_2;
 		}
