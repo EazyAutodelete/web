@@ -1,32 +1,48 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: Exo;
+	// font-size: small;
+}
+
+:global(html) {
+	scroll-behavior: smooth;
+}
+
+:root {
+	--color-primary: #5865f2;
+	--color-secondary: #3f4f9f;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
-* {
-	--dark: #1b1c1c;
-	--light: #26262b;
-}
 
 @keyframes updown {
 	0%,
 	100% {
 		transform: translateY(-15%);
 	}
+
 	50% {
 		transform: translateY(15%);
 	}
 }
+
 ::-webkit-scrollbar {
-	width: 0.45rem;
+	width: 0.4rem;
 }
+
 ::-webkit-scrollbar-thumb {
-	background: #5865f2;
-	border-radius: 3px;
+	background: var(--color-primary);
+	/* border-radius: 3px; */
 }
+
 ::-webkit-scrollbar-track {
 	background: 0 0;
 }
+
 @font-face {
 	font-family: "M PLUS Rounded 1c";
 	font-style: normal;
@@ -53,23 +69,128 @@
 		url("/assets/fonts/exo-v20-latin-regular.ttf") format("truetype"),
 		url("/assets/fonts/exo-v20-latin-regular.svg#Exo") format("svg");
 }
+
+h1 {
+	font-size: xx-large;
+	font-weight: 700;
+	padding: 1.5rem 0 0.5rem;
+}
+
+h2 {
+	font-size: x-large;
+	font-weight: 600;
+	padding: 1.25rem 0 0.5rem;
+}
+
+h3 {
+	font-size: large;
+	font-weight: 600;
+	padding: 1rem 0 0.5rem;
+}
+
+h4 {
+	font-size: medium;
+	font-weight: 600;
+	padding: 0.8125rem 0 0.5rem;
+}
+
+h5 {
+	font-size: medium;
+	font-weight: 600;
+	padding: 0.75rem 0 0.5rem;
+}
+
+button {
+	cursor: pointer;
+	width: fit-content;
+	border-radius: 10px;
+	background-color: #1b1c1c;
+	padding: 1rem 0.5rem;
+	text-align: center;
+	display: inline-block;
+
+	transition: 0.2s ease-in-out;
+	// box-shadow: 0 0px 16px 8px rgba(0, 0, 0, 0.2);
+
+	&:hover {
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+	}
+
+	&.primary {
+		background-color: var(--color-primary);
+		transition: 0.2s ease-in-out;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+		&:hover {
+			background-color: #3f4f9f;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+		}
+	}
+}
+
+.shadow {
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.link {
+	text-decoration: underline solid #fff 2px;
+	text-underline-offset: 4px;
+	font-weight: 500;
+	transition: all 0.2s ease-in-out;
+	cursor: pointer;
+	color: #aaa;
+
+	&:hover {
+		color: #fff;
+		text-decoration-color: #fff;
+	}
+
+	&.light {
+		color: #fff;
+		text-decoration: underline solid #ddd 1px;
+
+		&:hover {
+			text-decoration-color: #aaa;
+			color: #aaa;
+		}
+	}
+
+	&.primary {
+		text-decoration-color: var(--color-primary);
+		color: #aaa;
+
+		&:hover {
+			color: #fff;
+		}
+	}
+}
+
+.accent,
+.accent:hover {
+	color: #5865f2;
+}
+
+.underline {
+	text-decoration: underline;
+	text-decoration-color: #5865f2;
+	text-decoration-thickness: 15%;
+	text-underline-position: below;
+}
+
+/* OLD */
+
 body {
 	font-family: "M PLUS Rounded 1c", sans-serif;
 	background-color: #26262b;
 	color: #fff;
-}
-nav {
-	background-color: #283444;
-	font-family: "M PLUS Rounded 1c", sans-serif;
-}
-h2 {
-	font-weight: 700;
 }
 
 .inline {
 	display: inline-block;
 	line-break: normal;
 }
+
+/*
 a[href^="https://docs.eazyautodelete.xyz/"]
 {
 	color: #a2a9ff;
@@ -87,10 +208,7 @@ a[href^="https://docs.eazyautodelete.xyz/"]:hover
 	white-space: nowrap;
 	text-decoration-line: underline;
 }
-.accent,
-.accent:hover {
-	color: #5865f2;
-}
+
 .footer-text {
 	color: #fff;
 }
@@ -126,11 +244,7 @@ a[href^="https://docs.eazyautodelete.xyz/"]:hover
 	text-underline-position: below !important;
 	text-decoration-skip-ink: none !important;
 }
-.stats {
-	border-radius: 10px;
-	background-color: #1b1c1c;
-	padding-top: 10px;
-}
+
 .nolink,
 .nolink:hover {
 	text-decoration: wavy;
@@ -140,4 +254,4 @@ a[href^="https://docs.eazyautodelete.xyz/"]:hover
 .feature-card {
 	background-color: #26262b;
 	color: #fff;
-}
+} */
