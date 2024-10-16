@@ -1,13 +1,14 @@
 <script>
 	import PageContent from "$lib/components/PageContent.svelte";
+	import { _ } from "$lib/i18n";
 </script>
 
 <svelte:head>
-	<title>Impressum | EazyAutodelete</title>
+	<title>{$_("imprint")} | EazyAutodelete</title>
 </svelte:head>
 <PageContent>
 	<div class="w-full">
-		<h1>Impressum</h1>
+		<h1>{$_("imprint")}</h1>
 		<h2>Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
 		<p>
 			Ben Schiemann<br />

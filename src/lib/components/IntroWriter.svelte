@@ -1,20 +1,18 @@
 <script lang="ts">
+	import { _, locale, u } from "$lib/i18n";
 	import { onMount } from "svelte";
 
 	export let duration = 1750;
 
-	const text1 = `The best & most customizable Autodelete Bot for Discord.`;
-	const text2 = `Completely free & in unlimited channels!`;
+	let text1 = $_("ad");
+	let text2 = $_("subad");
 
-	// let introText = "A Discord Bot to automatically delete messages.";
-	let introText1 = text1;
-	let introText2 = text2;
+	let introText1 = $_("ad");
+	let introText2 = $_("subad");
 
 	onMount(() => {
-		// const text = "A Discord Bot to automatically delete messages.";
-
-		let i = 1; // maximum total time in ms
-		const startTime = Date.now();
+		let i = 1;
+		let startTime = Date.now();
 
 		const delay = (text: string) => {
 			const elapsedTime = Date.now() - startTime;
@@ -33,6 +31,14 @@
 			}
 		};
 		write();
+
+		locale.subscribe(() => {
+			introText1 = text1 = $_("ad");
+			introText2 = text2 = $_("subad");
+			i = 1;
+			startTime = Date.now();
+			write();
+		});
 	});
 </script>
 

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { _ } from "$lib/i18n";
 	import { onMount } from "svelte";
 
 	export let data: { 3600000: 0; 86400000: 0; 604800000: 0; 2592000000: 0; 31536000000: 0 };
@@ -40,20 +41,20 @@
 	}
 
 	$: messageCount = 0;
-	$: messageText = `${Object.values(statOptions)[messageIndex]}`;
+	$: messageText = $_(statOptions[Object.entries(data)[messageIndex][0]]);
 
 	const statOptions = {
 		3600000: "hour",
 		86400000: "today",
-		604800000: "last 7 days",
-		2592000000: "last 30 days",
-		31536000000: "last year",
+		604800000: "last7days",
+		2592000000: "last30days",
+		31536000000: "lastYear",
 	};
 </script>
 
 <div class="count px-2 py-2 lg:py-4">
 	<p>
-		Deleted Messages <a class="link light" id="stats" data-stat="week" on:click={nextStat}>{messageText}</a>:
+		{$_("deletedMessages")} <a class="link light" id="stats" data-stat="week" on:click={nextStat}>{messageText}</a>:
 		<strong>{messageCount.toLocaleString()}+</strong>
 	</p>
 </div>
@@ -63,7 +64,6 @@
 		width: fit-content;
 		border-radius: 10px;
 		background-color: #1b1c1c;
-		// padding: 1rem 0.5rem;
 		text-align: center;
 		display: inline-block;
 

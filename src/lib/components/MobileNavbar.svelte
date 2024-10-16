@@ -1,16 +1,12 @@
 <script lang="ts">
-	import { onMount } from "svelte";
+	import { _, u } from "$lib/i18n";
+	import { onMount, tick } from "svelte";
 	import { writable } from "svelte/store";
 	import { slide } from "svelte/transition";
-
-	const t = (a, b) => a;
-	const getUrl = (a, b) => b;
-
+	import LangSwitcher from "./LangSwitcher.svelte";
 	export let toggle = false;
 	export let active = false;
 	export let scrolled = false;
-
-	const locale = writable("en");
 
 	onMount(() => {
 		scrolled = window.scrollY > 0;
@@ -29,6 +25,11 @@
 	let innerWidth = 0;
 
 	$: innerWidth = innerWidth;
+
+
+const skip = (e) => {
+	e.stopPropagation();
+}
 </script>
 
 <svelte:window bind:innerWidth />
@@ -37,7 +38,7 @@
 	<div class="w-11/12 xl:w-3/4 flex flex-wrap items-center justify-between mx-auto">
 		<div class="block flex">
 			<div class="text-sm navlist">
-				<a href="/" class="navheader block">
+				<a href={$u("")} class="navheader block">
 					<img src="/assets/img/logo-small.webp" class="logo shadow" alt="EazyAutodelete Logo" />
 				</a>
 			</div>
@@ -65,30 +66,33 @@
 			<div
 				class="w-full block flex-grow xl:flex xl:items-center xl:w-auto"
 				transition:slide={{ duration: innerWidth > 1279 ? 0 : 200 }}
-				on:click={() => ((toggle = !toggle), (active = !active))}
+				on:click={() => tick().then(close)}
 			>
 				<div class="text-base xl:text-lg xl:flex-grow navlist">
-					<a class="block xl:inline-block nosty" class:active class:scrolled href="/#top">
+					<a class="block xl:inline-block nosty" class:active class:scrolled href={$u("") + "#top"}>
 						<span>Home</span>
 					</a>
-					<a class="block xl:inline-block nosty" class:active class:scrolled href="/#features">
-						<span>Features</span>
+					<a class="block xl:inline-block nosty" class:active class:scrolled href={$u("") + "#features"}>
+						<span>{$_("features")}</span>
 					</a>
-					<a class="block xl:inline-block nosty" class:active class:scrolled href="/use-cases-examples">
-						<span>Use Cases</span>
+					<a class="block xl:inline-block nosty" class:active class:scrolled href={$u("/use-cases-examples")}>
+						<span>{$_("useCases")}</span>
 					</a>
-					<a class="block xl:inline-block nosty" class:active class:scrolled href="/premium">
+					<a class="block xl:inline-block nosty" class:active class:scrolled href={$u("/premium")}>
 						<span>Premium</span>
 					</a>
-					<a class="block xl:inline-block nosty" class:active class:scrolled href="/faq">
+					<a class="block xl:inline-block nosty" class:active class:scrolled href={$u("/faq")}>
 						<span>FAQ</span>
 					</a>
-					<a class="block xl:inline-block nosty" class:active class:scrolled href="/status">
+					<a class="block xl:inline-block nosty" class:active class:scrolled href={$u("/status")}>
 						<span>Status</span>
 					</a>
 					<a class="block xl:inline-block nosty" class:active class:scrolled href="/invite">
 						<span>Invite</span>
 					</a>
+
+					<div on:click={stop}>
+					<LangSwitcher /></div>
 					<!-- svelte-ignore a11y-missing-attribute -->
 				</div>
 			</div>

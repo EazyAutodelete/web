@@ -1,5 +1,5 @@
 import { GATEWAY_AUTH, GATEWAY_URL } from "$env/static/private";
-import type { ShardData } from "../../app.js";
+import type { ShardData } from "../../../app.js";
 
 let cache: ShardData[] = [];
 

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { slide } from "svelte/transition";
 	import { animate, skipFeatureCycle } from "../../routes/stores";
-	import { onDestroy, onMount } from "svelte";
+	import { onDestroy, onMount, tick } from "svelte";
 	import { page } from "$app/stores";
 
 	export let options: string[];
@@ -40,24 +40,31 @@
 			}, 5000)
 		: 0;
 
-	let select: HTMLDivElement;
-	// let outerHeight = 0;
 	let containerHeight = 0;
 	$: containerHeight;
 	let container: Element;
 	const calcHeight = () => {
-		const heights = container ? Array.from(container.children).map(div => div.scrollHeight) : [0];
+		if (!container) return;
+
+		const heights = Array.from(container.children).flatMap((_, i) => {
+			selectedSection = i;
+
+			return Array.from(container.children).map(div => div.scrollHeight);
+		});
+
+		selectedSection = 0;
+
 		containerHeight = Math.max(...heights);
 	};
 
 	let u: undefined | (() => void);
 	onMount(() => {
+		container.querySelectorAll("img").forEach(img => {
+			img.addEventListener("load", calcHeight);
+		});
+
 		calcHeight();
 		resize();
-
-		u = page.subscribe(() => {
-			calcHeight();
-		});
 	});
 
 	onDestroy(() => {
@@ -76,7 +83,6 @@
 
 <div class="flex stack flex-wrap lg:flex-nowrap" style="min-height: {containerHeight}px;">
 	<div
-		bind:this={select}
 		class="select space-y-4 lg:max-width-1/3 order-1"
 		class:lg:order-3={type === "buttonRight"}
 		class:right={type === "buttonRight"}
@@ -155,7 +161,7 @@
 		class:right={type === "buttonRight"}
 		class="section order-2"
 		bind:this={container}
-		style="min-height: {containerHeight}px;"
+		style="min-height: 100%; height: {containerHeight}px;"
 	>
 		{#key selectedSection}
 			<div hidden={selectedSection !== 0} transition:slide class="body">

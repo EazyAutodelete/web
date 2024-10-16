@@ -6,6 +6,7 @@
 	import { page } from "$app/stores";
 	import Tick from "$lib/icons/Tick.svelte";
 	import Cross from "$lib/icons/Cross.svelte";
+	import { u } from "$lib/i18n";
 	// import Spinner from '$lib/components/Spinner.svelte';
 	// import { error } from '../../../../stores';
 
@@ -121,7 +122,7 @@
 			</div>
 			<div class="grid">
 				<div>
-					Better limits (<a class="link secondary" href="/faq#what-are-the-limits">See here</a>)
+					Better limits (<a class="link secondary" href={$u("faq") + "#what-are-the-limits"}>See here</a>)
 				</div>
 				<Cross />
 
@@ -135,9 +136,7 @@
 			</div>
 			<div class="grid">
 				<div>
-					More than 10 <a class="link secondary" href="https://docs.eazyautodelete.xyz/config/roles"
-						>Target/Ignore</a
-					> Roles
+					More than 10 <a class="link secondary" href="https://docs.eazyautodelete.xyz/config/roles">Target/Ignore</a> Roles
 				</div>
 				<!-- <div> -->
 				<Cross />
@@ -147,8 +146,13 @@
 				<Tick />
 				<!-- </div> -->
 			</div>
+			<!-- <div class="grid">
+				<div>
+					RegEx Evaluations per Hour 
+				</div>
+			</div> -->
 			<div class="grid">
-				<div  />
+				<div />
 
 				<div>
 					<a href="discord://-/channels/{guildId}">
@@ -157,9 +161,7 @@
 				</div>
 				<div>
 					<a href={premium ? "/subscriptions" : "#plans"} on:click={() => scroll()}>
-						<button class="primary" class:premium
-							>{premium ? "Manage" : "Subscribe Now"}
-						</button></a
+						<button class="primary" class:premium>{premium ? "Manage" : "Subscribe Now"} </button></a
 					>
 				</div>
 			</div>

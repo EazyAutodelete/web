@@ -1,14 +1,15 @@
-<script>
+<script lang="ts">
 	import PageContent from "$lib/components/PageContent.svelte";
+	import { _ } from "$lib/i18n";
 </script>
 
 <svelte:head>
-	<title>Licenses | EazyAutodelete</title>
+	<title>{$_("licenses")} | EazyAutodelete</title>
 </svelte:head>
 
 <PageContent>
 	<div class="w-full">
-		<h1 class="text-center underline">Licenses</h1>
+		<h1 class="text-center underline">{$_("licenses")}</h1>
 		<h3>Last updated: May 14th, 2024.</h3>
 
 		<p class="text-justify">

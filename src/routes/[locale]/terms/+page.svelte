@@ -1,14 +1,15 @@
 <script>
 	import PageContent from "$lib/components/PageContent.svelte";
+	import { _, u } from "$lib/i18n";
 </script>
 
 <svelte:head>
-	<title>Terms | EazyAutodelete</title>
+	<title>{$_("terms")} | EazyAutodelete</title>
 </svelte:head>
 
 <PageContent>
 	<div class="w-full">
-		<h1 class="text-center underline">Terms of Use</h1>
+		<h1 class="text-center underline">{$_("terms")}</h1>
 
 		<p>These terms are effective as of November 24, 2021 and were last changed on August 8, 2024.</p>
 
@@ -16,7 +17,7 @@
 
 		<p>
 			Thank you for showing interest in using EazyAutodelete. Please read the Terms of Use and Privacy Policy (<a
-				href="/privacy">https://eazyautodelete.xyz/privacy</a
+				href={$u("/privacy")}>https://eazyautodelete.xyz/privacy</a
 			>) (collectively referred to as "Terms") carefully before using EazyAutodelete.
 		</p>
 
@@ -27,7 +28,7 @@
 			<li>The owner and provider of any other services associated with EazyAutodelete;</li>
 		</ul>
 		<p>
-			See our contact information and Imprint at <a href="/impressum">https://eazyautodelete.xyz/impressum</a>.
+			See our contact information and Imprint at <a href={$u("/impressum")}>https://eazyautodelete.xyz/impressum</a>.
 		</p>
 
 		<br />
