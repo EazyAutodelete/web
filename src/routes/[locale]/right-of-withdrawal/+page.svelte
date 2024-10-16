@@ -1,14 +1,15 @@
 <script>
 	import PageContent from "$lib/components/PageContent.svelte";
+	import { _, u } from "$lib/i18n";
 </script>
 
 <svelte:head>
-	<title>Right of withdrawal | EazyAutodelete</title>
+	<title>{$_("rightow")} | EazyAutodelete</title>
 </svelte:head>
 
 <PageContent>
 	<div class="w-full">
-		<h1 class="text-center underline">Right of withdrawal</h1>
+		<h1 class="text-center underline">{$_("rightow")}</h1>
 		<p class="intro">when purchasing a premium subscription.</p>
 
 		<p>
@@ -34,7 +35,7 @@
 				billing@eazyautodelete.xyz
 			</a>
 			within the withdrawal period. Alternatively, you can send a letter to our postal adress available
-			<a class="link primary" href="/impressum">here</a>.
+			<a class="link primary" href={$u("/impressum")}>here</a>.
 		</p>
 		<p>You may use the following template for withdrawal, although it is not obligatory:</p>
 
@@ -82,7 +83,7 @@
 			If you have any questions about the right of withdrawal, please contact us via email at
 			<a class="link primary" href="mailto:billing@eazyautodelete.xyz">billing@eazyautodelete.xyz</a>
 			or via our postal address available
-			<a class="link primary" href="/impressum">here</a>.
+			<a class="link primary" href={$u("/impressum")}>here</a>.
 		</p>
 
 		<p>

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import PageContent from "$lib/components/PageContent.svelte";
+	import { u } from "$lib/i18n.js";
 
 	export let data;
 
@@ -40,14 +41,14 @@
 		<p>Tags</p>
 		<ul class="tags">
 			{#each tags as tag}
-				<a href="/use-cases-examples?tag={tag.toLowerCase()}"><li>{tag}</li></a>
+				<a href={$u("/use-cases-examples") + "?tag=" + tag.toLowerCase()}><li>{tag}</li></a>
 			{/each}
 		</ul>
 		<p>Shared configs</p>
 
 		<ul class="configs">
 			{#each configs as config}
-				<a href="/share/{config}"><li>{config}</li></a>
+				<a href={$u("/share") + "/{config}"}><li>{config}</li></a>
 			{/each}
 		</ul>
 		<p class="date">{date.toString()}</p>

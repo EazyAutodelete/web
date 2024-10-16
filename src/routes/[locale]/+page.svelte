@@ -9,6 +9,7 @@
 	import FeatureStack1 from "$lib/components/FeatureStack1.svelte";
 	import FeatureStack2 from "$lib/components/FeatureStack2.svelte";
 	import FeatureStack3 from "$lib/components/FeatureStack3.svelte";
+	import { _ } from "$lib/i18n";
 
 	export let data: {
 		incident: any;
@@ -61,7 +62,7 @@
 	<div class="hero pt-9 lg:pt-16">
 		<div class="w-full text-center lg:text-start lg:w-2/3">
 			<h1 class="inline text-2xl">
-				Hey, I'm
+				{$_("hey")}
 				<a href="invite">EazyAutodelete</a>!
 			</h1>
 
@@ -69,7 +70,7 @@
 
 			<div class="stats space-x-2 space-y-2">
 				<a href="invite">
-					<button type="button" class="primary px-2 py-2 lg:py-4"> Add to Discord </button>
+					<button type="button" class="primary px-2 py-2 lg:py-4">{$_("addToDc")}</button>
 				</a>
 
 				<GuildCounter guilds={data.guilds.count} />
@@ -111,24 +112,21 @@
 <div style="background-color: #1b1c1c;">
 	<PageContent>
 		<div class="w-full">
-			<h2 class="pt-0" id="features">Features</h2>
-			<p>
-				<a href="/invite" class="link primary">EazyAutodelete</a> is an easy to use Discord Bot that deletes messages - 100%
-				automatically. With EazyAutodelete's advanced configuration options, you can automatically remove messages based
-				on user roles, mentions, a large number of filters or time intervals. Tailor each channel's settings for a clutter-free
-				and organized chat experience. Whether managing temporary conversations or specific user interactions, the configurations
-				offer full flexibility for your server.
+			<h2 class="pt-0" id="features">{$_("features")}</h2>
+			<p class="intro">
+				<a href="/invite" class="link primary">EazyAutodelete</a>
+				{@html $_("websiteIntro")}
 			</p>
 		</div>
 
 		<div class="w-full features">
-			<h3>You decide what to delete</h3>
+			<h3>{$_("youDecide")}</h3>
 			<FeatureStack1 />
 
-			<h3>Adjustable to your needs</h3>
+			<h3>{$_("adjustable")}</h3>
 			<FeatureStack2 />
 
-			<h3>No limitations & highly performant</h3>
+			<h3>{$_("noLimits")}</h3>
 			<FeatureStack3 stats={data.messages} />
 		</div>
 	</PageContent>
@@ -168,6 +166,7 @@
 </PageContent>
 
 <style lang="scss">
+
 	.shuffle {
 		text-decoration-color: inherit;
 		font-size: x-small;
@@ -183,8 +182,6 @@
 		h1 {
 			font-size: xx-large;
 			font-weight: 700;
-			// margin: 1.75rem 0rem;
-			// padding: 0;
 			padding-top: 0;
 
 			a {
@@ -231,53 +228,4 @@
 		text-align: justify;
 		line-break: normal;
 	}
-
-	.features {
-		a {
-			color: #5865f2;
-			text-decoration: underline;
-			text-decoration-color: #5865f2;
-			text-decoration-thickness: 15%;
-			text-underline-position: below;
-
-			&:hover {
-				text-decoration-color: #fff;
-			}
-		}
-	}
-
-	// ------------------
-	// .content {
-	// 	justify-content: center;
-	// 	padding-bottom: 5rem;
-
-	// 	&:not(:first-child) {
-	// 		padding-top: 5rem;
-	// 	}
-	// }
-
-	// .ft {
-	// 	display: flex;
-	// 	line-break: normal;
-	// 	text-decoration: underline;
-	// 	text-decoration-color: #5865f2;
-	// 	text-decoration-thickness: 15%;
-	// 	text-underline-position: below;
-
-	// 	flex: 1;
-
-	// 	h2 {
-	// 		display: inline-block;
-	// 		line-break: normal;
-
-	// 		flex: 1;
-
-	// 		margin-bottom: 2rem;
-	// 	}
-
-	// 	svg {
-	// 		margin-right: 1rem;
-	// 		color: #5865f2;
-	// 	}
-	// }
 </style>

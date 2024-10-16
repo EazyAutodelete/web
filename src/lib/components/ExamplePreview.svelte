@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { u } from "$lib/i18n";
+
 	export let id: string;
 	export let title: string;
 	export let description: string;
@@ -6,7 +8,7 @@
 	export let img: string;
 </script>
 
-<a href="/use-cases-examples/{id}">
+<a href="{$u('use-cases-examples')}/{id}">
 	<div class="example">
 		<img src={img} alt={title} />
 		<h3>{title}</h3>

@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { slide } from "svelte/transition";
 	import { animate, skipFeatureCycle } from "../../routes/stores";
 	import FeatureStack from "./FeatureStack.svelte";
 
@@ -37,7 +36,7 @@
 </script>
 
 <FeatureStack options={["User-defined configs", "Multiple modes", "Long durations"]}>
-	<div class="w-full" slot="card0">
+	<div slot="card0">
 		<p>
 			EazyAutodelete being the most customizable Autodelete Discord Bot allows you to create multiple fully editable
 			individual configurations for your channels.

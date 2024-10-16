@@ -1,3 +1,6 @@
+import { dictionary } from "$lib/i18n.js";
+import { get } from "svelte/store";
+
 let incident:
 	| undefined
 	| {
@@ -13,8 +16,8 @@ let incident:
 let lastUpdated = 0;
 
 export const load = async function ({ fetch }) {
-	if (lastUpdated + 1000 * 60 < Date.now()) loadIncidents(fetch);
-	return { incident };
+	// if (lastUpdated + 1000 * 60 < Date.now()) loadIncidents(fetch);
+	return { incident, dic: get(dictionary) };
 };
 
 async function loadIncidents(fetch: any) {

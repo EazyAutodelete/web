@@ -1,5 +1,6 @@
 <script>
 	import PageContent from "$lib/components/PageContent.svelte";
+	import { u } from "$lib/i18n";
 </script>
 
 <svelte:head>
@@ -86,7 +87,7 @@
 				<h2 id="how-many-configs"><li>4. How many configurations can I create?</li></h2>
 				<p>
 					You are limited to 3 configs per channel. If that doesn't fulfill your needs, you should consider subscribing
-					to <a href="/premium" class="link primary">EazyAutodelete Premium</a>.
+					to <a href={$u("/premium")} class="link primary">EazyAutodelete Premium</a>.
 				</p>
 			</ul>
 
@@ -126,7 +127,7 @@
 				</ul>
 				<p>
 					If you need more configurations or want to increase the limits, you should consider subscribing to <a
-						href="/premium"
+						href={$u("/premium")}
 						class="link primary">EazyAutodelete Premium</a
 					>.
 				</p>
@@ -145,8 +146,9 @@
 					make mistakes - even when we try our best not to.
 				</p>
 				<p>
-					You can check the status of the bot at <a href="/status" class="link primary">eazyautodelete.xyz/status</a>.
-					The status of our other services can be found on
+					You can check the status of the bot at <a href={$u("/status")} class="link primary"
+						>eazyautodelete.xyz/status</a
+					>. The status of our other services can be found on
 					<a href="https://status.eazyautodelete.xyz" class="link primary">status.eazyautodelete.xyz</a>. Additionally,
 					we post status update on our <a href="/discord" class="link primary">Support Server</a>.
 				</p>
@@ -168,7 +170,7 @@
 				<ul>
 					<li>
 						<strong>Is the Bot online?</strong><br />Does it respond to your commands? Check the
-						<a href="/status" class="link primary">Bot Status</a>,
+						<a href={$u("status")} class="link primary">Bot Status</a>,
 						<a href="https://status.eazyautodelete.xyz" class="link primary">Status Page</a>
 						and the
 						<a href="https://discord.com/channels/670695157661696002/932713921486401626" class="link primary">#status</a
@@ -229,8 +231,9 @@
 					just help spreading the word.
 				</p>
 				<p>
-					If you want to support us financially, you can consider subscribing to <a href="/premium" class="link primary"
-						>EazyAutodelete Premium</a
+					If you want to support us financially, you can consider subscribing to <a
+						href={$u("/premium")}
+						class="link primary">EazyAutodelete Premium</a
 					>.
 				</p>
 				<p>
@@ -246,8 +249,9 @@
 					Premium users have higher limits, more configurations and access to premium support.
 				</p>
 				<p>
-					You can find more information about EazyAutodelete Premium on our <a href="/premium" class="link primary"
-						>Premium Page</a
+					You can find more information about EazyAutodelete Premium on our <a
+						href={$u("/premium")}
+						class="link primary">Premium Page</a
 					>.
 				</p>
 				<p>

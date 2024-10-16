@@ -1,4 +1,5 @@
 <script>
+	import { _, u } from "$lib/i18n";
 	import PageContent from "./PageContent.svelte";
 </script>
 
@@ -32,7 +33,7 @@
 					<a href="https://eazyautodelete.xyz"> <p class="name">EazyAutodelete</p></a>
 				</div>
 
-				<p class="ad">The best & most customizable Autodelete Bot for Discord.</p>
+				<p class="ad">{$_("ad")}</p>
 
 				<p class="copy">
 					&copy; 2020-2024 -
@@ -44,22 +45,22 @@
 					<p class="title">Navigation</p>
 					<ul>
 						<li>
-							<a href="/faq" class="footer-text">FAQ</a>
+							<a href={$u("/faq")} class="footer-text">FAQ</a>
 						</li>
 						<li>
-							<a href="/use-cases-examples" class="footer-text">Use Cases</a>
+							<a href={$u("/use-cases-examples")} class="footer-text">{$_("useCases")}</a>
 						</li>
 						<li>
-							<a href="/#features" class="footer-text">Features</a>
+							<a href={$u("#features")} class="footer-text">{$_("features")}</a>
 						</li>
 						<li><a href="/discord" target="_blank" class="footer-text">Support</a></li>
 
 						<li>
-							<a href="https://docs.eazyautodelete.xyz" target="_blank" class="footer-text">Documentation</a>
+							<a href="https://docs.eazyautodelete.xyz" target="_blank" class="footer-text">{$_("docs")}</a>
 						</li>
 
 						<li>
-							<a href="/status" class="footer-text">Bot Status</a>
+							<a href={$u("status")} class="footer-text">Bot Status</a>
 						</li>
 					</ul>
 				</div>
@@ -70,7 +71,7 @@
 							<a href="/invite" target="_blank" class="footer-text">Invite</a>
 						</li>
 						<li>
-							<a href="/premium" class="footer-text">Premium</a>
+							<a href={$u("premium")} class="footer-text">Premium</a>
 						</li>
 						<li>
 							<a href="/discord" target="_blank" class="footer-text">Discord</a>
@@ -87,22 +88,22 @@
 					</ul>
 				</div>
 				<div class="section">
-					<p class="title">Legal</p>
+					<p class="title">{$_("legal")}</p>
 					<ul>
 						<li>
-							<a href="/terms" target="_blank" class="footer-text">Terms of Service</a>
+							<a href={$u("/terms")} target="_blank" class="footer-text">{$_("terms")}</a>
 						</li>
 						<li>
-							<a href="/privacy" target="_blank" class="footer-text">Privacy Policy</a>
+							<a href={$u("/privacy")} target="_blank" class="footer-text">{$_("privacy")}</a>
 						</li>
 						<li>
-							<a href="/impressum" target="_blank" class="footer-text">Impressum</a>
+							<a href={$u("imprint")} target="_blank" class="footer-text">{$_("imprint")}</a>
 						</li>
 						<li>
-							<a href="/licenses" target="_blank" class="footer-text">Licenses</a>
+							<a href={$u("/licenses")} target="_blank" class="footer-text">{$_("licenses")}</a>
 						</li>
 						<li>
-							<a href="/right-of-withdrawal" target="_blank" class="footer-text">Right of Withdrawal</a>
+							<a href={$u("/right-of-withdrawal")} target="_blank" class="footer-text">{$_("rightow")}</a>
 						</li>
 					</ul>
 				</div>
@@ -187,6 +188,8 @@
 							color: white;
 							text-decoration: underline;
 							transition: all 0.2s ease-in-out;
+							word-break: break-word;
+							overflow-wrap: break-word;
 
 							&:hover {
 								color: #00b0f0;
