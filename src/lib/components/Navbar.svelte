@@ -1,3 +1,8 @@
+<script>
+	import { _, u } from "$lib/i18n";
+	import LangSwitcher from "./LangSwitcher.svelte";
+</script>
+
 <nav>
 	<ul class="navlist w-11/12 xl:w-3/4">
 		<li class="brand">
@@ -6,30 +11,34 @@
 		</li>
 
 		<li>
-			<a href="/#top">Home</a>
+			<a href={$u("") + "#top"}>Home</a>
 		</li>
 
 		<li>
-			<a href="/#features">Features</a>
+			<a href={$u("") + "#features"}>{$_("features")}</a>
 		</li>
 
 		<li>
-			<a href="/use-cases-examples">Use Cases</a>
+			<a href={$u("use-cases-examples")}>{$_("useCases")}</a>
 		</li>
 
 		<li>
-			<a href="/premium">Premium</a>
+			<a href={$u("premium")}>Premium</a>
 		</li>
 
 		<li>
-			<a href="/faq">FAQ</a>
+			<a href={$u("faq")}>FAQ</a>
 		</li>
 
 		<li>
-			<a href="/status">Status</a>
+			<a href={$u("status")}>Status</a>
 		</li>
 
 		<a target="_blank" href="invite" class="invite"><li>Invite</li></a>
+
+		<li class="lang">
+			<LangSwitcher />
+		</li>
 	</ul>
 </nav>
 
@@ -84,6 +93,12 @@
 						color: #f0f0f0;
 						text-decoration: underline 0.1em solid #f0f0f0;
 					}
+				}
+			}
+
+			.lang {
+				&:hover {
+					cursor: pointer;
 				}
 			}
 		}

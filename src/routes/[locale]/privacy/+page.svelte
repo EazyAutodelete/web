@@ -1,14 +1,15 @@
 <script>
 	import PageContent from "$lib/components/PageContent.svelte";
+	import { _ } from "$lib/i18n";
 </script>
 
 <svelte:head>
-	<title>Privacy | EazyAutodelete</title>
+	<title>{$_("privacy")} | EazyAutodelete</title>
 </svelte:head>
 
 <PageContent>
 	<div class="w-full">
-		<h1 class="text-center underline">Privacy Policy</h1>
+		<h1 class="text-center underline">{$_("privacy")}</h1>
 
 		<h2>1. An overview of data protection</h2>
 		<h3>General information</h3>
