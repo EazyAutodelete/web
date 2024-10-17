@@ -1,4 +1,4 @@
-export const routeMap = {
+export const routeMap: { [lang: string]: { [key: string]: string } } = {
 	en: {
 		"privacy": "privacy",
 		"terms": "terms",
@@ -8,7 +8,8 @@ export const routeMap = {
 		"licenses": "licenses",
 	},
 	de: {
-		imprint: "impressum",
-		licenses: "lizensen",
+		"imprint": "impressum",
+		"licenses": "lizensen",
+		"use-cases-examples": "nutzungs-beispiele",
 	},
 };

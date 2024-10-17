@@ -16,7 +16,7 @@ let incident:
 let lastUpdated = 0;
 
 export const load = async function ({ fetch }) {
-	// if (lastUpdated + 1000 * 60 < Date.now()) loadIncidents(fetch);
+	if (lastUpdated + 1000 * 60 < Date.now()) loadIncidents(fetch);
 	return { incident, dic: get(dictionary) };
 };
 

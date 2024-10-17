@@ -1,81 +1,85 @@
 <script lang="ts">
 	import { slide } from "svelte/transition";
-	import { animate, skipFeatureCycle } from "../../routes/stores";
-	import { onDestroy, onMount, tick } from "svelte";
-	import { page } from "$app/stores";
+	import { onMount, tick } from "svelte";
 	import { locale } from "$lib/i18n";
+	import { page } from "$app/stores";
 
 	export let options: string[];
 	export let type: "buttonLeft" | "buttonRight" = "buttonLeft";
 	export let providedType = type?.toString();
+	export let ids: string[];
 
 	const sections = 3;
-
 	let selectedSection = 0;
 
-	const selectSection = async (section: number, s?: boolean) => {
-		if (!s) {
-			clearInterval(t);
-			skipFeatureCycle.set(true);
+	let container: Element;
+	let containerHeight = 0;
+	const heights: Set<number> = new Set();
 
-			setTimeout(() => {
-				clearInterval(t);
-				skipFeatureCycle.set(false);
-				if (!$animate) return;
-				t = setInterval(() => {
-					if ($skipFeatureCycle) return;
-					const nextSection = (selectedSection + 1) % sections;
-					selectSection(nextSection, true);
-				}, 5000);
-			}, 15000);
+	let calculated = false;
+	let running = false;
+	let before = 0;
+
+	let width: 0;
+
+	let t = setInterval(() => {
+		const nextSection = (selectedSection + 1) % sections;
+		selectSection(nextSection, false);
+	}, 5000);
+
+	const selectSection = async (section: number, stay = true, minus100 = false) => {
+		if (stay) {
+			clearInterval(t);
+
+			setTimeout(
+				() => {
+					clearInterval(t);
+					t = setInterval(() => selectSection((selectedSection + 1) % sections, false), 5000);
+				},
+				15000 - (minus100 ? 100 : 0)
+			);
 		}
 
 		selectedSection = section;
 	};
 
-	let t = $animate
-		? setInterval(() => {
-				if ($skipFeatureCycle) return;
-				const nextSection = (selectedSection + 1) % sections;
-				selectSection(nextSection, true);
-			}, 5000)
-		: 0;
-
-	let containerHeight = 0;
-	$: containerHeight;
-	let container: Element;
-	const calcHeight = () => {
+	const calcHeight = async () => {
 		if (!container) return;
 
-		const heights = Array.from(container.children).flatMap((_, i) => {
+		if (running) await new Promise<void>(r => setInterval(() => !running && r(), 10));
+
+		running = true;
+		before = selectedSection;
+
+		for (let i = 0; i < sections; i++) {
 			selectedSection = i;
 
-			return Array.from(container.children).map(div => div.scrollHeight);
-		});
+			await tick();
 
-		selectedSection = 0;
+			Array.from(container.children).map(div => heights.add(div.scrollHeight));
+		}
 
-		containerHeight = Math.max(...heights);
+		containerHeight = Math.max(...heights.values());
+
+		running = false;
+		calculated = true;
+		selectedSection = before;
 	};
 
-	let u: undefined | (() => void);
 	onMount(() => {
-		container.querySelectorAll("img").forEach(img => {
-			img.addEventListener("load", calcHeight);
-		});
+		container.querySelectorAll("img, video").forEach(img => img.addEventListener("load", () => calcHeight()));
 
 		calcHeight();
 		resize();
 
-		u = locale.subscribe(() => {
+		const hash = $page.url.hash;
+		if (hash)
 			tick().then(() => {
-				calcHeight();
+				const index = ids.indexOf(hash.slice(1));
+				setTimeout(() => index !== -1 && selectSection(index, true, true), 100);
 			});
-		});
-	});
 
-	onDestroy(() => {
-		u && u();
+		return locale.subscribe(() => tick().then(() => calcHeight()));
 	});
 
 	const resize = () => {
@@ -83,17 +87,18 @@
 		else type = "buttonLeft";
 	};
 
-	let width: 0;
+	$: containerHeight;
 </script>
 
 <svelte:window bind:innerWidth={width} on:resize={resize} />
 
-<div class="flex stack flex-wrap lg:flex-nowrap" style="min-height: {containerHeight}px;">
+<div class="flex stack flex-wrap lg:flex-nowrap" style="min-height: {containerHeight + 24}px;">
 	<div
 		class="select space-y-4 lg:max-width-1/3 order-1"
 		class:lg:order-3={type === "buttonRight"}
 		class:right={type === "buttonRight"}
 		class:left={type === "buttonLeft"}
+		role="tablist"
 	>
 		<button
 			class="shadow-lg text-left py-2 px-4 rounded-lg"
@@ -101,16 +106,20 @@
 			class:selected={0 === selectedSection}
 			class:right={type === "buttonRight"}
 			class:left={type === "buttonLeft"}
+			role="tab"
+			aria-selected={0 === selectedSection}
+			id="tab-{ids[0]}"
+			aria-controls={ids[0]}
 		>
 			{#if type === "buttonRight"}
-				<svg fill="#fff" viewBox="0 0 319 511.61" height="12px" class="inline ps-3 right">
+				<svg fill="#fff" viewBox="0 0 319 511.61" height="12" class="inline ps-3 right">
 					<path
 						d="M48.92 505.72 5.88 462.68c-7.85-7.85-7.83-20.72 0-28.54l178.35-178.35L5.88 77.44c-7.85-7.85-7.8-20.73 0-28.54L48.92 5.87c7.83-7.82 20.71-7.82 28.54 0l192.25 192.26.37.36 43.04 43.03c7.82 7.84 7.86 20.69 0 28.54l-43.04 43.04-.37.36L77.46 505.72c-7.85 7.86-20.68 7.86-28.54 0z"
 					/>
 				</svg>{/if}
 			{options[0]}
 			{#if type === "buttonLeft"}
-				<svg style="transform: translateY(-1px)" fill="#fff" viewBox="0 0 319 511.61" height="12px" class="inline ps-3">
+				<svg style="transform: translateY(-1px)" fill="#fff" viewBox="0 0 319 511.61" height="12" class="inline ps-3">
 					<path
 						d="M48.92 505.72 5.88 462.68c-7.85-7.85-7.83-20.72 0-28.54l178.35-178.35L5.88 77.44c-7.85-7.85-7.8-20.73 0-28.54L48.92 5.87c7.83-7.82 20.71-7.82 28.54 0l192.25 192.26.37.36 43.04 43.03c7.82 7.84 7.86 20.69 0 28.54l-43.04 43.04-.37.36L77.46 505.72c-7.85 7.86-20.68 7.86-28.54 0z"
 					/>
@@ -123,16 +132,20 @@
 			class:selected={1 === selectedSection}
 			class:right={type === "buttonRight"}
 			class:left={type === "buttonLeft"}
+			role="tab"
+			aria-selected={1 === selectedSection}
+			id="tab-{ids[1]}"
+			aria-controls={ids[1]}
 		>
 			{#if type === "buttonRight"}
-				<svg fill="#fff" viewBox="0 0 319 511.61" height="12px" class="inline ps-3 right">
+				<svg fill="#fff" viewBox="0 0 319 511.61" height="12" class="inline ps-3 right">
 					<path
 						d="M48.92 505.72 5.88 462.68c-7.85-7.85-7.83-20.72 0-28.54l178.35-178.35L5.88 77.44c-7.85-7.85-7.8-20.73 0-28.54L48.92 5.87c7.83-7.82 20.71-7.82 28.54 0l192.25 192.26.37.36 43.04 43.03c7.82 7.84 7.86 20.69 0 28.54l-43.04 43.04-.37.36L77.46 505.72c-7.85 7.86-20.68 7.86-28.54 0z"
 					/>
 				</svg>{/if}
 			{options[1]}
 			{#if type === "buttonLeft"}
-				<svg style="transform: translateY(-1px)" fill="#fff" viewBox="0 0 319 511.61" height="12px" class="inline ps-3">
+				<svg style="transform: translateY(-1px)" fill="#fff" viewBox="0 0 319 511.61" height="12" class="inline ps-3">
 					<path
 						d="M48.92 505.72 5.88 462.68c-7.85-7.85-7.83-20.72 0-28.54l178.35-178.35L5.88 77.44c-7.85-7.85-7.8-20.73 0-28.54L48.92 5.87c7.83-7.82 20.71-7.82 28.54 0l192.25 192.26.37.36 43.04 43.03c7.82 7.84 7.86 20.69 0 28.54l-43.04 43.04-.37.36L77.46 505.72c-7.85 7.86-20.68 7.86-28.54 0z"
 					/>
@@ -145,16 +158,20 @@
 			class:selected={2 === selectedSection}
 			class:right={type === "buttonRight"}
 			class:left={type === "buttonLeft"}
+			role="tab"
+			aria-selected={2 === selectedSection}
+			id="tab-{ids[2]}"
+			aria-controls={ids[2]}
 		>
 			{#if type === "buttonRight"}
-				<svg fill="#fff" viewBox="0 0 319 511.61" height="12px" class="inline ps-3 right">
+				<svg fill="#fff" viewBox="0 0 319 511.61" height="12" class="inline ps-3 right">
 					<path
 						d="M48.92 505.72 5.88 462.68c-7.85-7.85-7.83-20.72 0-28.54l178.35-178.35L5.88 77.44c-7.85-7.85-7.8-20.73 0-28.54L48.92 5.87c7.83-7.82 20.71-7.82 28.54 0l192.25 192.26.37.36 43.04 43.03c7.82 7.84 7.86 20.69 0 28.54l-43.04 43.04-.37.36L77.46 505.72c-7.85 7.86-20.68 7.86-28.54 0z"
 					/>
 				</svg>{/if}
 			{options[2]}
 			{#if type === "buttonLeft"}
-				<svg style="transform: translateY(-1px)" fill="#fff" viewBox="0 0 319 511.61" height="12px" class="inline ps-3">
+				<svg style="transform: translateY(-1px)" fill="#fff" viewBox="0 0 319 511.61" height="12" class="inline ps-3">
 					<path
 						d="M48.92 505.72 5.88 462.68c-7.85-7.85-7.83-20.72 0-28.54l178.35-178.35L5.88 77.44c-7.85-7.85-7.8-20.73 0-28.54L48.92 5.87c7.83-7.82 20.71-7.82 28.54 0l192.25 192.26.37.36 43.04 43.03c7.82 7.84 7.86 20.69 0 28.54l-43.04 43.04-.37.36L77.46 505.72c-7.85 7.86-20.68 7.86-28.54 0z"
 					/>
@@ -168,21 +185,37 @@
 		class:right={type === "buttonRight"}
 		class="section order-2"
 		bind:this={container}
-		style="min-height: {containerHeight ? containerHeight + 'px' : '100%'};"
+		style="min-height: {containerHeight}px;"
 	>
-		{#key selectedSection}
-			<div hidden={selectedSection !== 0} transition:slide class="body">
-				<slot name="card0" />
-			</div>
+		{#if calculated}
+			{#key selectedSection}
+				<div hidden={selectedSection !== 0} transition:slide class="body">
+					<slot name="card0" />
+				</div>
 
-			<div hidden={selectedSection !== 1} transition:slide class="body">
-				<slot name="card1" />
-			</div>
+				<div hidden={selectedSection !== 1} transition:slide class="body">
+					<slot name="card1" />
+				</div>
 
-			<div hidden={selectedSection !== 2} transition:slide class="body">
-				<slot name="card2" />
-			</div>
-		{/key}
+				<div hidden={selectedSection !== 2} transition:slide class="body">
+					<slot name="card2" />
+				</div>
+			{/key}
+		{:else}
+			{#key selectedSection}
+				<div hidden={selectedSection !== 0} class="body">
+					<slot name="card0" />
+				</div>
+
+				<div hidden={selectedSection !== 1} class="body">
+					<slot name="card1" />
+				</div>
+
+				<div hidden={selectedSection !== 2} class="body">
+					<slot name="card2" />
+				</div>
+			{/key}
+		{/if}
 	</div>
 </div>
 
@@ -239,7 +272,9 @@
 	.section {
 		position: relative;
 		// padding-left: 1rem;
-		flex-grow: 1;
+		// flex-grow: 1;
+		// padding: 1rem 1rem;
+		height: fit-content;
 
 		@media screen and (max-width: 1023px) {
 			width: 100%;
@@ -259,6 +294,7 @@
 			padding: 1rem 1rem;
 			border-radius: 8px;
 			background-color: rgb(31 41 55);
+			// display: block;
 		}
 	}
 </style>

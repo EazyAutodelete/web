@@ -6,8 +6,8 @@
 <nav>
 	<ul class="navlist w-11/12 xl:w-3/4">
 		<li class="brand">
-			<a href="https://eazyautodelete.xyz"><img src="/assets/img/logo-small.webp" alt="EazyAutodelete Logo" /></a>
-			<a href="https://eazyautodelete.xyz">EazyAutodelete</a>
+			<a href="/"><img src="/assets/img/logo-small.webp" height="32" width="32" alt="EazyAutodelete Logo" title="EazyAutodelete Logo" /></a>
+			<a href="/">EazyAutodelete</a>
 		</li>
 
 		<li>
@@ -34,7 +34,9 @@
 			<a href={$u("status")}>Status</a>
 		</li>
 
-		<a target="_blank" href="invite" class="invite"><li>Invite</li></a>
+		<li>
+			<a target="_blank" href="invite" class="invite">Invite</a>
+		</li>
 
 		<li class="lang">
 			<LangSwitcher />
@@ -114,18 +116,12 @@
 		transition: background-color ease-in-out 0.2s;
 		padding: 0.5rem 1rem;
 
-		li {
-			font-weight: 900 !important;
-		}
+		
 		&:hover {
 			background-color: var(--color-primary);
 			color: #f0f0f0;
 			text-decoration: underline 0.1em solid #f0f0f0 !important;
 			cursor: pointer;
-
-			li {
-				text-decoration: underline 0.1em solid #f0f0f0 !important;
-			}
 		}
 	}
 </style>

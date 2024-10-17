@@ -6,7 +6,6 @@
 
 	function toggle() {
 		toggled = !toggled;
-		console.log(toggled);
 	}
 
 	const cL = (l: string) => {

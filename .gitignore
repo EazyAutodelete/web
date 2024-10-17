@@ -22,3 +22,5 @@ vite.config.ts.timestamp-*
 
 i18n/
 special.json
+
+schemas.js

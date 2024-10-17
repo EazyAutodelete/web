@@ -1,15 +1,20 @@
 <script>
 	import PageContent from "$lib/components/PageContent.svelte";
-	import { u } from "$lib/i18n";
+	import { _, u } from "$lib/i18n";
 </script>
 
 <svelte:head>
-	<title>Frequently Asked Questions - EazyAutodelete</title>
+	<title>{$_("faq")} | EazyAutodelete - Discord Bot</title>
+
+	<meta
+	content="See Frequently Asked Questions of users of EazyAutodelete - the best & most customizable Autodelete Bot for Discord. Completely free & in unlimited channels. With EazyAutodelete's advanced configuration options, you can autodelete messages based on user roles, mentions, a large number of filters or time intervals. Set durations like 5 minutes, 1 hour, 1 day, 24 hour or 1 week."
+	name="description"
+/>
 </svelte:head>
 
 <PageContent>
 	<div class="w-full">
-		<h1 class="text-center underline">Frequently Asked Questions</h1>
+		<h1 class="text-center underline">{$_("faq")}</h1>
 
 		<div>
 			<ul class="nav">
@@ -111,6 +116,7 @@
 							<img
 								src="https://translate.eazyautodelete.xyz/widget/eazyautodelete/commands/horizontal-blue.svg"
 								alt="Translation status Bot"
+								title="Translation status Bot"
 							/>
 						</a>
 
@@ -119,6 +125,7 @@
 							<img
 								src="https://translate.eazyautodelete.xyz/widget/eazyautodelete/website/horizontal-blue.svg"
 								alt="Translation status Website"
+								title="Translation status Website"
 							/>
 						</a>
 
@@ -127,6 +134,7 @@
 							<img
 								src="https://translate.eazyautodelete.xyz/widget/eazyautodelete/dashboard/horizontal-blue.svg"
 								alt="Translation status Dashboard"
+								title="Translation status Dashboard"
 							/>
 						</a>
 					</div>
