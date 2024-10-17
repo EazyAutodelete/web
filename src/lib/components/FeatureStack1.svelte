@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { _ } from "$lib/i18n";
+	import replaceNameWithLink from "$lib/utils/replaceNameWithLink";
+	import replaceWordWithLink from "$lib/utils/replaceWordWithLink";
 	import { animate, skipFeatureCycle } from "../../routes/stores";
 	import FeatureStack from "./FeatureStack.svelte";
 
@@ -35,13 +38,11 @@
 		: 0;
 </script>
 
-<FeatureStack options={["User-defined configs", "Multiple modes", "Long durations"]}>
+<FeatureStack options={[$_("userConfigs"), $_("modes"), $_("longDurations")]}>
 	<div slot="card0">
-		<p>
-			EazyAutodelete being the most customizable Autodelete Discord Bot allows you to create multiple fully editable
-			individual configurations for your channels.
-		</p>
-		<p>You have full control & flexibility about what messages are when deleted.</p>
+		{#each $_("userConfigsText").split("\n") as line}
+			<p>{@html replaceNameWithLink(line)}</p>
+		{/each}
 
 		<div class="w-full flex space-x-4">
 			<div class="w-1/2">
@@ -56,13 +57,10 @@
 	</div>
 
 	<div slot="card1">
-		<p>
-			Choose from 4 different <a class="link primary" href="https://docs.eazyautodelete.xyz/config/mode" target="_blank"
-				>modes</a
-			>
-			that delete the messages.<br />You can delete the messages after a certain number of messages, a certain duration
-			or many other criteria.
-		</p>
+		{#each $_("modesText").split("\n") as line}
+			<p>{@html replaceWordWithLink(line, "Modes", "https://docs.eazyautodelete.xyz/config/mode")}</p>
+		{/each}
+
 		<div class="w-full flex space-x-4">
 			<div class="w-1/2">
 				<video class="rounded-lg shadow w-full" autoplay loop muted>
@@ -82,10 +80,9 @@
 	</div>
 
 	<div slot="card2">
-		<p>
-			<a href="/invite" class="link primary">EazyAutodelete</a> is designed to offer maximum flexibility and control. Therefore,
-			you can set the duration of the messages to be deleted to up to 14 days - depending on your mode and more.
-		</p>
+		{#each $_("longDurationsText").split("\n") as line}
+			<p>{@html replaceNameWithLink(line)}</p>
+		{/each}
 		<div class="w-full flex space-x-4">
 			<div class="w-1/2"><img src="" alt="" /></div>
 			<div class="w-1/2"><img src="" alt="" /></div>
@@ -94,7 +91,17 @@
 </FeatureStack>
 
 <style lang="scss">
-	p {
+	.text {
+		text-align: justify;
+
+		margin-bottom: 0.5rem;
+
+		> * {
+			margin-bottom: 0.5rem;
+		}
+	}
+	p,
+	.p {
 		text-align: justify;
 
 		&:not(:last-child) {

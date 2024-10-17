@@ -3,6 +3,9 @@
 	import { animate, skipFeatureCycle } from "../../routes/stores";
 	import { onMount } from "svelte";
 	import FeatureStack from "./FeatureStack.svelte";
+	import { _ } from "$lib/i18n";
+	import replaceNameWithLink from "$lib/utils/replaceNameWithLink";
+	import replaceWordWithLink from "$lib/utils/replaceWordWithLink";
 
 	let sections = 3;
 
@@ -37,23 +40,16 @@
 		: 0;
 </script>
 
-<FeatureStack
-	type="buttonRight"
-	options={["Filters for everything", "Ignore / Target Roles & Bots", "Load up old messages"]}
->
+<FeatureStack type="buttonRight" options={[$_("filtersForEverything"), $_("ignoreTarget"), $_("lazyload")]}>
 	<div slot="card0">
-		<p>
-			You can choose from a large amout of <a href="https://docs.eazyautodelete.xyz/config/filters" class="link primary"
-				>filters</a
-			>
-			that the messages must match to be deleted.
-		</p>
-		<p>You decide whether messages must match all filters or just a single filter to be deleted.</p>
-		<p>
-			Using <a href="/invite" class="link primary">EazyAutodelete</a>'s filters, you can automatically delete pinned
-			messages, messages that are not pinned, message that contain mentions, links or emojis as well as messages that
-			have (no) attachments or voice messages.
-		</p>
+		{#each $_("filtersForEverythingText").split("\n") as line}
+			<p>
+				{@html replaceNameWithLink(
+					replaceWordWithLink(line, "Filters", "https://docs.eazyautodelete.xyz/config/filters")
+				)}
+			</p>
+		{/each}
+
 		<div class="w-full flex space-x-4">
 			<div class="w-1/2">
 				<img src="/assets/img/filters.webp" alt="" />
@@ -67,18 +63,15 @@
 	</div>
 
 	<div slot="card1">
-		<p>
-			You can select to either <a
-				class="link primary"
-				href="https://docs.eazyautodelete.xyz/config/ignore-roles"
-				target="_blank">Ignore or Target messages</a
-			> from members with certain roles. This allows you to maintain organized channels while differentiating between varios
-			user groups.
-		</p>
-		<p>
-			Additionally, you have options to only delete messages that were sent by bots and to ignore messages by real
-			users, or otherwise only delete messages that were sent by real users and ignore messages by bots.
-		</p>
+		{#each $_("ignoreTargetText").split("\n") as line}
+			<p>
+				{@html replaceWordWithLink(
+					line,
+					"Ignore or Target messages",
+					"https://docs.eazyautodelete.xyz/config/ignore-roles"
+				)}
+			</p>
+		{/each}
 
 		<div class="w-full flex space-x-4">
 			<div class="w-1/2">
@@ -93,15 +86,9 @@
 	</div>
 
 	<div slot="card2">
-		<p>
-			You decide whether you want the bot to load & process old messages sent before you set it up, or just ignore them
-			and start at the point you tell it to.
-		</p>
-		<p>
-			Additionally, in case of disruptions in its or Discords Service, <a href="/invite" class="link primary"
-				>EazyAutodelete</a
-			> will fetch all missed out messages and process them like it normally would have.
-		</p>
+		{#each $_("lazyloadText").split("\n") as line}
+			<p>{@html replaceNameWithLink(line)}</p>
+		{/each}
 	</div>
 </FeatureStack>
 
