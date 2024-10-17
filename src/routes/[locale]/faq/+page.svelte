@@ -105,14 +105,38 @@
 					language below.
 				</p>
 				<div class="w-full">
-					<a href="https://translate.eazyautodelete.xyz/engage/eazyautodelete/">
+					<div class="images">
+
+					<a href="https://translate.eazyautodelete.xyz/engage/eazyautodelete/" target="_blank">
+						<p>Bot</p>
 						<img
-							class="w-full lg:w-1/2"
-							src="https://translate.eazyautodelete.xyz/widget/eazyautodelete/commands/multi-blue.svg"
-							alt="Translation status"
+							src="https://translate.eazyautodelete.xyz/widget/eazyautodelete/commands/horizontal-blue.svg"
+							alt="Translation status Bot"
+						/>
+					</a>
+
+					<a href="https://translate.eazyautodelete.xyz/engage/eazyautodelete/" target="_blank">
+						<p>Web</p>
+						<img
+							src="https://translate.eazyautodelete.xyz/widget/eazyautodelete/website/horizontal-blue.svg"
+							alt="Translation status Website"
+						/>
+					</a>
+
+					<a href="https://translate.eazyautodelete.xyz/engage/eazyautodelete/" target="_blank">
+						<p>Dash</p>
+						<img
+
+							src="https://translate.eazyautodelete.xyz/widget/eazyautodelete/dashboard/horizontal-blue.svg"
+							alt="Translation status Dashboard"
 						/>
 					</a>
 				</div>
+
+				</div>
+				<p>Some languages only have some parts translated. Untranslated strings are shown in English. If you are missing translations or have found an issue with a translation, please contact us on <a href="/discord" class="link primary">Discord</a>.</p>
+				<p>If you want to help us translating, click on the charts above or visit <a href="/traslate" class="link primary">eazyautodelete.xyz/translate</a>.</p>
+
 				<h2 id="what-are-the-limits"><li>7. What are the limits of EazyAutodelete?</li></h2>
 				<p>
 					EazyAutodelete has a few limits to ensure a reliable and fast service as well as a pleasant user experience.
@@ -276,6 +300,22 @@
 </PageContent>
 
 <style lang="scss">
+
+.images {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	justify-content: space-around;
+
+
+	 > * {
+		p {
+			text-align: center;
+		}
+	 }
+
+}
+
 	h1 {
 		padding-bottom: 0;
 	}
