@@ -6,7 +6,7 @@
 	import { page } from "$app/stores";
 	import Tick from "$lib/icons/Tick.svelte";
 	import Cross from "$lib/icons/Cross.svelte";
-	import { u } from "$lib/i18n";
+	import { _, u } from "$lib/i18n";
 	// import Spinner from '$lib/components/Spinner.svelte';
 	// import { error } from '../../../../stores';
 
@@ -103,6 +103,11 @@
 				<div />
 				<div>Community Version</div>
 				<div>Premium Plan</div>
+			</div>
+			<div class="grid">
+				<div>{ $_("unlimitedChannels")}</div>
+				<Tick />
+				<Tick />
 			</div>
 			<div class="grid">
 				<div>All filters</div>

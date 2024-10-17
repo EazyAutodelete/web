@@ -26,10 +26,9 @@
 
 	$: innerWidth = innerWidth;
 
-
-const skip = (e) => {
-	e.stopPropagation();
-}
+	const skip = e => {
+		e.stopPropagation();
+	};
 </script>
 
 <svelte:window bind:innerWidth />
@@ -92,7 +91,8 @@ const skip = (e) => {
 					</a>
 
 					<div on:click={stop}>
-					<LangSwitcher /></div>
+						<LangSwitcher />
+					</div>
 					<!-- svelte-ignore a11y-missing-attribute -->
 				</div>
 			</div>
