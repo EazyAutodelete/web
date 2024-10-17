@@ -2,8 +2,6 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	font-family: Exo;
-	// font-size: small;
 }
 
 :global(html) {
@@ -16,19 +14,8 @@
 }
 
 @tailwind base;
-@tailwind components;
+// @tailwind components;
 @tailwind utilities;
-
-@keyframes updown {
-	0%,
-	100% {
-		transform: translateY(-15%);
-	}
-
-	50% {
-		transform: translateY(15%);
-	}
-}
 
 ::-webkit-scrollbar {
 	width: 0.4rem;
@@ -44,21 +31,9 @@
 }
 
 @font-face {
-	font-family: "M PLUS Rounded 1c";
-	font-style: normal;
-	font-weight: 500;
-	src: url("/assets/fonts/m-plus-rounded-1c-v15-latin-500.eot");
-	src:
-		local(""),
-		url("/assets/fonts/m-plus-rounded-1c-v15-latin-500.eot?#iefix") format("embedded-opentype"),
-		url("/assets/fonts/m-plus-rounded-1c-v15-latin-500.woff2") format("woff2"),
-		url("/assets/fonts/m-plus-rounded-1c-v15-latin-500.woff") format("woff"),
-		url("/assets/fonts/m-plus-rounded-1c-v15-latin-500.ttf") format("truetype"),
-		url("/assets/fonts/m-plus-rounded-1c-v15-latin-500.svg#MPLUSRounded1c") format("svg");
-}
-@font-face {
 	font-family: Exo;
 	font-style: normal;
+	font-display: swap;
 	font-weight: 400;
 	src: url("/assets/fonts/exo-v20-latin-regular.eot");
 	src:
@@ -100,7 +75,8 @@ h5 {
 	padding: 0.75rem 0 0.5rem;
 }
 
-button {
+button,
+.button {
 	cursor: pointer;
 	width: fit-content;
 	border-radius: 10px;
@@ -110,7 +86,6 @@ button {
 	display: inline-block;
 
 	transition: 0.2s ease-in-out;
-	// box-shadow: 0 0px 16px 8px rgba(0, 0, 0, 0.2);
 
 	&:hover {
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
@@ -177,10 +152,8 @@ button {
 	text-underline-position: below;
 }
 
-/* OLD */
-
 body {
-	font-family: "M PLUS Rounded 1c", sans-serif;
+	font-family: Exo;
 	background-color: #26262b;
 	color: #fff;
 }
@@ -189,69 +162,3 @@ body {
 	display: inline-block;
 	line-break: normal;
 }
-
-/*
-a[href^="https://docs.eazyautodelete.xyz/"]
-{
-	color: #a2a9ff;
-	text-decoration: none;
-}
-a[href^="https://docs.eazyautodelete.xyz/"]:hover
-{
-	color: #5261ff;
-	text-decoration: none;
-	transition: 0.2s;
-}
-#stats {
-	color: #999999;
-	cursor: pointer;
-	white-space: nowrap;
-	text-decoration-line: underline;
-}
-
-.footer-text {
-	color: #fff;
-}
-.footer-text:hover {
-	color: #0cf;
-}
-.shape-animation {
-	animation: 7.5s infinite updown;
-	position: absolute;
-	top: 90%;
-	z-index: 0;
-}
-.navtext {
-	transition: 0.4s;
-	color: #fff;
-}
-.navtext:hover {
-	transition: 0.4s;
-	color: #5865f2;
-}
-.animated-105 {
-	transition: 0.7s;
-}
-.animated-105:hover {
-	transition: 0.7s;
-	transform: scale(1.05);
-}
-.underline,
-.underline:hover {
-	text-decoration: underline !important;
-	text-decoration-color: #5865f2 !important;
-	text-decoration-thickness: 15% !important;
-	text-underline-position: below !important;
-	text-decoration-skip-ink: none !important;
-}
-
-.nolink,
-.nolink:hover {
-	text-decoration: wavy;
-	text-decoration-color: #4b8ee7;
-	color: #fff;
-}
-.feature-card {
-	background-color: #26262b;
-	color: #fff;
-} */

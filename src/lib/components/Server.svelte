@@ -8,7 +8,7 @@
 <div class=" outer-guild">
 	<div class="guild">
 		<div class="icon">
-			<img src="/assets/ref/{id}.webp" alt="{name} Discord Logo" />
+			<img src="/assets/ref/{id}.webp" title="{name} Discord Logo" alt="{name} Discord Logo" loading="lazy" height="40" width="40" />
 		</div>
 		<div class="info">
 			<div class="name">
@@ -26,10 +26,10 @@
 					</svg>
 				{/if}
 				{#if type === "verified"}
-					<img src="/assets/verified.png" alt="White check mark" height="16" width="16" />
+					<img src="/assets/verified.webp" title="White check mark" alt="White check mark" height="16" width="16" />
 				{/if}
 				{#if type === "large"}
-					<img src="/assets/large.png" alt="Silhouette" height="16" width="16" />
+					<img src="/assets/large.webp" title="Silhouette" alt="Silhouette" height="16" width="16" />
 				{/if}
 
 				<span>{name}</span>
@@ -84,7 +84,6 @@
 				img {
 					border-radius: 50%;
 					width: 100%;
-					height: 2.5rem;
 				}
 			}
 

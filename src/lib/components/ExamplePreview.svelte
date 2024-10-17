@@ -10,7 +10,7 @@
 
 <a href="{$u('use-cases-examples')}/{id}">
 	<div class="example">
-		<img src={img} alt={title} />
+		<img src={img} alt={title} title={title} />
 		<h3>{title}</h3>
 		<p>{description}</p>
 		<div class="tags">

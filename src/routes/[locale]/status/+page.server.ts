@@ -1,7 +1,6 @@
 import { GATEWAY_AUTH, GATEWAY_URL } from "$env/static/private";
-import type { ShardData } from "../../../app.js";
 
-let cache: ShardData[] = [];
+let cache: any[] = [];
 
 let lastUpdated = 0;
 let updating = false;
@@ -30,8 +29,6 @@ async function updateShards() {
 	if (shards) {
 		cache = await (<any>shards).json();
 	}
-
-	console.log(cache);
 
 	lastUpdated = Date.now();
 

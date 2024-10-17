@@ -14,21 +14,19 @@ export async function handle({ event, resolve }) {
 	}
 
 	const currentPathLang = event.url.pathname.split("/")[1];
-	if (!locales.includes(currentPathLang)) {
-		throw redirect(
-			301,
-			"/en" + event.url.pathname.replace(currentPathLang, "").replace("/", "") + event.url.search + event.url.hash
-		);
+	if (!currentPathLang) {
+		const locale = event.request.headers.get("accept-language")?.split(",")[0]?.split("-")[0];
+		throw redirect(302, `/${locale || "en"}` + event.url.pathname + event.url.search + event.url.hash);
 	}
 
-	locale.set(currentPathLang);
-
-	const currentPage = event.url.pathname.split("/")[2];
-	if (currentPage) {
-		const pageTag = getPageTagForLocalizedPageName(currentPage);
-		const newPage = getPage(pageTag);
-		if (currentPage !== newPage) {
-			throw redirect(301, `/${currentPathLang}/${newPage}` + event.url.search + event.url.hash);
+	if (locales.includes(currentPathLang)) {
+		const currentPage = event.url.pathname.split("/")[2];
+		if (currentPage) {
+			const pageTag = getPageTagForLocalizedPageName(currentPage);
+			const newPage = getPage(pageTag);
+			if (currentPage !== newPage) {
+				throw redirect(301, `/${currentPathLang}/${newPage}` + event.url.search + event.url.hash);
+			}
 		}
 	}
 

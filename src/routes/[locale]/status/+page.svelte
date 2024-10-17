@@ -14,7 +14,12 @@
 </script>
 
 <svelte:head>
-	<title>Status - EazyAutodelete</title>
+	<title>Status Page - See Bot Status | EazyAutodelete Discord Bot</title>
+
+	<meta
+	content="See the Status Page of EazyAutodelete - the best & most customizable Autodelete Bot for Discord. Completely free & in unlimited channels. With EazyAutodelete's advanced configuration options, you can autodelete messages based on user roles, mentions, a large number of filters or time intervals. Set durations like 5 minutes, 1 hour, 1 day, 24 hour or 1 week."
+	name="description"
+/>
 </svelte:head>
 
 <PageContent>

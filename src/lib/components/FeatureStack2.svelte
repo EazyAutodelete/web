@@ -1,47 +1,16 @@
 <script lang="ts">
-	import { slide } from "svelte/transition";
-	import { animate, skipFeatureCycle } from "../../routes/stores";
-	import { onMount } from "svelte";
 	import FeatureStack from "./FeatureStack.svelte";
 	import { _ } from "$lib/i18n";
 	import replaceNameWithLink from "$lib/utils/replaceNameWithLink";
 	import replaceWordWithLink from "$lib/utils/replaceWordWithLink";
-
-	let sections = 3;
-
-	let selectedSection = 0;
-
-	const selectSection = async (section: number, s?: boolean) => {
-		if (!s) {
-			skipFeatureCycle.set(true);
-			clearInterval(t);
-
-			setTimeout(() => {
-				clearInterval(t);
-				skipFeatureCycle.set(false);
-				if (!$animate) return;
-				t = setInterval(() => {
-					if ($skipFeatureCycle) return;
-					const nextSection = (selectedSection + 1) % sections;
-					selectSection(nextSection, true);
-				}, 10000);
-			}, 15000);
-		}
-
-		selectedSection = section;
-	};
-
-	let t = $animate
-		? setInterval(() => {
-				if ($skipFeatureCycle) return;
-				const nextSection = (selectedSection + 1) % sections;
-				selectSection(nextSection, true);
-			}, 5000)
-		: 0;
 </script>
 
-<FeatureStack type="buttonRight" options={[$_("filtersForEverything"), $_("ignoreTarget"), $_("lazyload")]}>
-	<div slot="card0">
+<FeatureStack
+	type="buttonRight"
+	options={[$_("filtersForEverything"), $_("ignoreTarget"), $_("lazyload")]}
+	ids={["filters", "ignore-target", "load-old-messages"]}
+>
+	<section slot="card0" id="filters" role="tabpanel" aria-describedby="tab-filters">
 		{#each $_("filtersForEverythingText").split("\n") as line}
 			<p>
 				{@html replaceNameWithLink(
@@ -52,17 +21,25 @@
 
 		<div class="w-full flex space-x-4">
 			<div class="w-1/2">
-				<img src="/assets/img/filters.webp" alt="" />
-				<span class="desc">Menu to select a config</span>
+				<img
+					src="/assets/img/filters-1.webp"
+					alt="Select different Message Types"
+					title="Select different Message Types"
+				/>
+				<span class="desc">Select different Message Types</span>
 			</div>
 			<div class="w-1/2">
-				<img src="/assets/img/configs.webp" alt="" />
-				<span class="desc">Mode 1 + 10 sec limit</span>
+				<img
+					src="/assets/img/filters-2.webp"
+					alt="Select different Message Contents"
+					title="Select different Message Contents"
+				/>
+				<span class="desc">Select different Message Contents</span>
 			</div>
 		</div>
-	</div>
+	</section>
 
-	<div slot="card1">
+	<section slot="card1" id="ignore-target" role="tabpanel" aria-describedby="tab-ignore-target">
 		{#each $_("ignoreTargetText").split("\n") as line}
 			<p>
 				{@html replaceWordWithLink(
@@ -75,21 +52,32 @@
 
 		<div class="w-full flex space-x-4">
 			<div class="w-1/2">
-				<img src="/assets/img/bots.webp" alt="Toggle author is bot or author isnt bot" />
-				<span class="desc">Mode 1 + 10 sec limit</span>
+				<img src="/assets/img/target.webp" alt="Only target specific roles" title="Only target specific roles" />
+				<span class="desc">Only target specific roles</span>
 			</div>
 			<div class="w-1/2">
-				<img src="/assets/img/roles.webp" alt="Toggle roles to ignore or target" />
-				<span class="desc">Mode 1 + 10 sec limit</span>
+				<img src="/assets/img/ignore.webp" alt="Ignore specific roles" title="Ignore specific roles" />
+				<span class="desc">Ignore specific roles</span>
 			</div>
 		</div>
-	</div>
+	</section>
 
-	<div slot="card2">
+	<section slot="card2" id="load-old-messages" role="tabpanel" aria-describedby="tab-load-old-messages">
 		{#each $_("lazyloadText").split("\n") as line}
 			<p>{@html replaceNameWithLink(line)}</p>
 		{/each}
-	</div>
+
+		<div class="w-full flex space-x-4">
+			<div class="w-full">
+				<img
+					src="/assets/img/load-old-messages.webp"
+					alt="Bot asking whether to load old messages"
+					title="Bot asking whether to load old messages"
+				/>
+				<span class="desc">Bot asking whether to load old messages</span>
+			</div>
+		</div>
+	</section>
 </FeatureStack>
 
 <!--  -->
@@ -108,8 +96,7 @@
 		color: #8d8d8d;
 	}
 
-	img,
-	video {
+	img {
 		box-shadow:
 			0 0 #0000,
 			0 0 #0000,

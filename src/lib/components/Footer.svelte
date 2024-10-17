@@ -27,10 +27,10 @@
 		<div class="footer">
 			<div class="brand w-full lg:w-1/2 order-2 lg:order-1 lg:pe-2">
 				<div class="img-name">
-					<a href="https://eazyautodelete.xyz">
-						<img src="/assets/img/logo-small.webp" alt="EazyAutodelete Logo" />
+					<a href="/">
+						<img src="/assets/img/logo-small.webp" height="42" width="42" alt="EazyAutodelete Logo" title="EazyAutodelete Logo" />
 					</a>
-					<a href="https://eazyautodelete.xyz"> <p class="name">EazyAutodelete</p></a>
+					<a href="/"> <p class="name">EazyAutodelete</p></a>
 				</div>
 
 				<p class="ad">{$_("ad")}</p>
@@ -111,7 +111,7 @@
 		</div>
 	</PageContent>
 	<div class="disclaimer">
-		<a href="https://eazyautodelete.xyz">EazyAutodelete</a> is not affiliated with Discord Inc.
+		<a href="/">EazyAutodelete</a> is not affiliated with Discord Inc.
 	</div>
 </footer>
 

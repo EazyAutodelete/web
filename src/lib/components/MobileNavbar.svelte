@@ -38,13 +38,13 @@
 		<div class="block flex">
 			<div class="text-sm navlist">
 				<a href={$u("")} class="navheader block">
-					<img src="/assets/img/logo-small.webp" class="logo shadow" alt="EazyAutodelete Logo" />
+					<img src="/assets/img/logo-small.webp" width="48" height="48" class="logo shadow" alt="EazyAutodelete Logo" title="EazyAutodelete Logo" />
 				</a>
 			</div>
 		</div>
 
 		<div class="block h-full name">
-			<a href="https://eazyautodelete.xyz"><p class="accent">EazyAutodelete</p></a>
+			<a href="/"><p class="accent">EazyAutodelete</p></a>
 		</div>
 
 		<div class="block">
@@ -120,6 +120,7 @@
 		border-radius: 15px;
 		display: inline-block;
 		height: 3rem;
+		width: 3rem;
 	}
 
 	nav {
