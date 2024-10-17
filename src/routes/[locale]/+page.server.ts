@@ -1,3 +1,5 @@
+import { error, redirect } from "@sveltejs/kit";
+
 const cache = {
 	guilds: { count: 14800 },
 	messages: {
@@ -44,7 +46,9 @@ async function updateStats() {
 setInterval(updateStats, 1000 * 60 * 5);
 
 /** @type {import('./$types').PageServerLoad} */
-export async function load({}) {
+export async function load({ params }) {
+	if (!params.locale || (params.locale !== "en" && params.locale !== "de")) throw error(404, "Language was not found");
+
 	if (lastUpdated + 1000 * 30 < Date.now()) await updateStats();
 
 	return cache;

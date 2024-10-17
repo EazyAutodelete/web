@@ -2,6 +2,10 @@
 	import PageContent from "$lib/components/PageContent.svelte";
 </script>
 
+<svelte:head>
+	<title>Thank for Adding me! | EazyAutodelete - Discord Autodelete Bot</title>
+</svelte:head>
+
 <PageContent>
 	<div class="w-full">
 		<img
@@ -11,6 +15,7 @@
 			width="128"
 			style="border-radius: 35px"
 			class="mx-auto my-4"
+			title="EazyAutodelete Logo"
 		/>
 		<h1 class="underline text-center">Thanks, for adding me to your server!</h1>
 		<h2 class="mb-6">

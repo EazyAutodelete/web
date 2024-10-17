@@ -47,6 +47,13 @@
 
 <svelte:window bind:innerWidth />
 
+<svelte:head>
+	<meta
+	content="The best & most customizable Autodelete Bot for Discord. Completely free & in unlimited channels. You can customise every setting to suit your needs."
+	name="description"
+/>
+</svelte:head>
+
 {#if innerWidth >= 1024}
 	<Navbar />
 {:else}

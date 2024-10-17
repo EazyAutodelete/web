@@ -1,7 +1,7 @@
 import { derived, get, writable, type Writable } from "svelte/store";
 import { routeMap } from "./routeMap";
 
-export const locale = writable("de");
+export const locale = writable("en");
 
 export const dictionary: Writable<{ [lang: string]: { [key: string]: string } }> = writable({});
 
@@ -37,7 +37,6 @@ export const u = derived([locale], () => getUrl);
 export const _ = derived([locale, dictionary], () => translate);
 
 export function initI18n(lang: string) {
-	console.log("initI18n", lang);
 	locale.set(lang);
 	// return Promise.resolve();
 }

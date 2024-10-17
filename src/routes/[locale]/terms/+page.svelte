@@ -4,7 +4,12 @@
 </script>
 
 <svelte:head>
-	<title>{$_("terms")} | EazyAutodelete</title>
+	<title>{$_("terms")} | EazyAutodelete - Discord Autodelete Bot</title>
+
+	<meta
+	content="See the Terms of EazyAutodelete - the best & most customizable Autodelete Bot for Discord. Completely free & in unlimited channels. With EazyAutodelete's advanced configuration options, you can autodelete messages based on user roles, mentions, a large number of filters or time intervals. Set durations like 5 minutes, 1 hour, 1 day, 24 hour or 1 week."
+	name="description"
+/>
 </svelte:head>
 
 <PageContent>

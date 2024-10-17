@@ -9,7 +9,10 @@
 	import FeatureStack1 from "$lib/components/FeatureStack1.svelte";
 	import FeatureStack2 from "$lib/components/FeatureStack2.svelte";
 	import FeatureStack3 from "$lib/components/FeatureStack3.svelte";
-	import { _ } from "$lib/i18n";
+	import { _, locale } from "$lib/i18n";
+	import { onDestroy, onMount } from "svelte";
+	import ImageVideo from "$lib/components/ImageVideo.svelte";
+	// import { schemaOrg } from "../stores";
 
 	export let data: {
 		incident: any;
@@ -45,6 +48,11 @@
 
 <svelte:head>
 	<title>EazyAutodelete - Autodelete Discord Bot</title>
+
+	<meta
+	content="The best & most customizable Autodelete Bot for Discord. Completely free & in unlimited channels. With EazyAutodelete's advanced configuration options, you can autodelete messages based on user roles, mentions, a large number of filters or time intervals.  Set durations like 5 minutes, 1 hour, 1 day, 24 hour or 1 week."
+	name="description"
+/>
 </svelte:head>
 
 <svelte:window bind:innerWidth={width} />
@@ -69,8 +77,8 @@
 			<IntroWriter />
 
 			<div class="stats space-x-2 space-y-2">
-				<a href="invite">
-					<button type="button" class="primary px-2 py-2 lg:py-4">{$_("addToDc")}</button>
+				<a href="invite" class="button primary px-2 py-2 lg:py-4">
+					{$_("addToDc")}
 				</a>
 
 				<GuildCounter guilds={data.guilds.count} />
@@ -80,18 +88,13 @@
 		</div>
 
 		{#if width >= 1024}
-			<div class="w-1/3 h-full">
-				<video id="mode-1" class="rounded-3 animated-105 shadow" width="100%" height="100%" autoplay loop muted>
-					<source src="/assets/vid/webm/mode-1.webm" type="video/mp4" />
-					Your Browser does not support the video tag.
-				</video>
-			</div>
+			<ImageVideo />
 		{/if}
 	</div>
 </PageContent>
 
 <div style="background-color: #1b1c1c;" class="mt-6 pb-6 lg:mt-6 lg:p-0">
-	<svg width="100%" height="100%" id="svg" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg">
+	<svg width="100%" height="100%" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg">
 		<path
 			d="M 0,400 C 0,400 0,133 0,133 C 85.25936104431463,139.16695293713502 170.51872208862926,145.33390587427002 237,135 C 303.48127791137074,124.66609412572998 351.1844726897974,97.83132944005497 407,95 C 462.8155273102026,92.16867055994503 526.7433871521813,113.34077636551012 603,137 C 679.2566128478187,160.65922363448988 767.841978701477,186.80556509790455 841,174 C 914.158021298523,161.19443490209545 971.88869804191,109.43696324287184 1031,107 C 1090.11130195809,104.56303675712816 1150.603229130883,151.44658193060806 1219,164 C 1287.396770869117,176.55341806939194 1363.6983854345585,154.77670903469595 1440,133 C 1440,133 1440,400 1440,400 Z"
 			stroke="none"
@@ -134,7 +137,7 @@
 
 <!-- SVG -->
 <div style="background-color: #1b1c1c">
-	<svg width="100%" height="100%" id="svg" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg">
+	<svg width="100%" height="100%" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg">
 		<path
 			d="M 0,400 C 0,400 0,133 0,133 C 53.204397114393686,147.87873582961183 106.40879422878737,162.75747165922365 173,168 C 239.59120577121263,173.24252834077635 319.5692201992443,168.84884919271727 391,170 C 462.4307798007557,171.15115080728273 525.3143249742357,177.84713156990728 603,168 C 680.6856750257643,158.15286843009272 773.1734799038131,131.7626245276537 836,115 C 898.8265200961869,98.2373754723463 931.9917554105118,91.10237031947786 995,104 C 1058.0082445894882,116.89762968052214 1150.8594984541394,149.8278941944349 1230,158 C 1309.1405015458606,166.1721058055651 1374.5702507729302,149.58605290278257 1440,133 C 1440,133 1440,400 1440,400 Z"
 			stroke="none"
