@@ -168,7 +168,7 @@
 		class:right={type === "buttonRight"}
 		class="section order-2"
 		bind:this={container}
-		style="min-height: {containerHeight ? (containerHeight + "px") : "100%"};"
+		style="min-height: {containerHeight ? containerHeight + 'px' : '100%'};"
 	>
 		{#key selectedSection}
 			<div hidden={selectedSection !== 0} transition:slide class="body">
