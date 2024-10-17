@@ -93,10 +93,6 @@
 		font-weight: 700;
 	}
 
-	h1 {
-		padding-top: 2rem;
-	}
-
 	.guild-con {
 		height: 2.5rem;
 		width: 100%;

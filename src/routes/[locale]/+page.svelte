@@ -52,8 +52,8 @@
 {#if data.incident}
 	<Alert
 		title={"Status Information"}
-		text={"Check the status of the bot and the API on our status page."}
-		duration={7500}
+		text={`Visit <a class="link primary" href="https://status.eazyautodelete.xyz">status.eazyautodelete.xyz</a> for more information.`}
+		duration={5000}
 		type="warning"
 	/>
 {/if}
