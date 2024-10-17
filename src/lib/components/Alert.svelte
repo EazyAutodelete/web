@@ -74,10 +74,8 @@
 		</div>
 
 		<div class="message">
-			<span class="text text-1">{title}</span>
-			<span class="text text-2"
-				>Visit <a href="https://status.eazyautodelete.xyz">status.eazyautodelete.xyz</a> for more information.</span
-			>
+			<span class="text title">{title}</span>
+			<span class="text">{@html text}</span>
 		</div>
 	</div>
 
@@ -180,13 +178,13 @@
 	}
 	.message {
 		.text {
-			font-size: large;
 			font-weight: 400;
-			// color: $color_2;
+			font-size: medium;
 		}
-		.text.text-1 {
+		.text.title {
+			font-size: large;
 			font-weight: 600;
-			// color: $color_3;
+			text-align: start;
 		}
 	}
 	.progress.active {

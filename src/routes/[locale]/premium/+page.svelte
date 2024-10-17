@@ -1,89 +1,33 @@
 <script lang="ts">
 	import PageContent from "$lib/components/PageContent.svelte";
 
-	import type Stripe from "stripe";
-	import { onMount } from "svelte";
-	import { page } from "$app/stores";
 	import Tick from "$lib/icons/Tick.svelte";
 	import Cross from "$lib/icons/Cross.svelte";
 	import { _, u } from "$lib/i18n";
-	// import Spinner from '$lib/components/Spinner.svelte';
-	// import { error } from '../../../../stores';
+	import Command from "$lib/components/Command.svelte";
+	import replaceWordWithLink from "$lib/utils/replaceWordWithLink";
 
-	let guildId = $page.params.guildId;
+	let ref: Element;
+	let highlighted = false;
+	let t: NodeJS.Timeout;
 
-	type PlanData = { product: Stripe.Product; price: Stripe.Price };
+	const highlight = () => {
+		clearTimeout(t);
 
-	let yearlyPlans: PlanData[];
-	let monthlyPlans: PlanData[];
-	let selected: "yearly" | "monthly" | "loading" = $page.url.search.includes("yearly")
-		? "yearly"
-		: $page.url.search.includes("mothly")
-			? "monthly"
-			: "loading";
-	let currency: "eur" | "usd" = "eur";
+		ref.scrollIntoView({
+			behavior: "smooth",
+			block: "center",
+			inline: "nearest",
+		});
 
-	let checkout = -1;
+		setTimeout(() => {
+			highlighted = true;
 
-	let premium = false;
-
-	onMount(async () => {
-		const premiumReq = await fetch("/api/data/guilds/" + guildId + "/modules/premium");
-		const premiumData = await premiumReq.json();
-
-		premium = premiumData.premium;
-
-		if (premium) return;
-
-		const plansData = await fetch("/api/billing/plans");
-
-		const data = await plansData.json();
-
-		yearlyPlans = data.yearlyPlans;
-		monthlyPlans = data.monthlyPlans;
-
-		selected = $page.url.hash.includes("yearly") ? "yearly" : "monthly";
-	});
-
-	const changePlan = (option: "yearly" | "monthly") => {
-		selected = option;
-		checkout = -1;
+			t = setTimeout(() => {
+				highlighted = false;
+			}, 500);
+		}, 200);
 	};
-
-	async function createCheckOutSession(plan: PlanData) {
-		// const priceId = plan.price.id;
-		// const data = await fetch(
-		// 	`/api/billing/create-checkout-session` +
-		// 		`?price=${priceId}` +
-		// 		`&back=${'/manage/' + guildId + '/premium'}` +
-		// 		`&guild=${guildId}`,
-		// 	{
-		// 		method: 'POST'
-		// 	}
-		// );
-		// const body = await data.json();
-		// if (body.url) window.location = body.url;
-		// else {
-		// 	const error = body;
-		// 	($error = [
-		// 		{ text: `Failed to create checkout session [Code 1]`, id: $error.length, read: false },
-		// 		...$error!
-		// 	]),
-		// 		console.error(`[${data.status}]: ${data.statusText} - ${data.url}`);
-		// 	console.error(error);
-		// }
-	}
-
-	function scroll() {
-		const element = document.getElementById("#plans")!;
-		element.scrollIntoView({ behavior: "smooth" });
-	}
-
-	$: monthlyPlans;
-	$: yearlyPlans;
-	$: selected;
-	$: currency;
-	$: checkout;
 </script>
 
 <svelte:head>
@@ -94,100 +38,134 @@
 	<div class="w-full">
 		<h1 class="text-center underline">Premium</h1>
 		<p>
-			Subscribe to EazyAutodelete Premium to get access to more features, better limits and support the development of
-			the project.
+			{$_("subscribe")}
+		</p>
+		<p>
+			{$_("moneyUse")}
 		</p>
 
 		<div class="w-full table">
 			<div class="grid heading">
 				<div />
-				<div>Community Version</div>
-				<div>Premium Plan</div>
+				<div><h2>Community Version</h2></div>
+				<div><h2>Premium Plan</h2></div>
 			</div>
 			<div class="grid">
-				<div>{ $_("unlimitedChannels")}</div>
+				<div>{$_("unlimitedChannels")}</div>
 				<Tick />
-				<Tick />
-			</div>
-			<div class="grid">
-				<div>All filters</div>
-				<Tick />
-				<Tick />
-			</div>
-			<div class="grid">
-				<div>All commands</div>
-				<Tick />
-				<Tick />
-			</div>
-			<div class="grid">
-				<div>More than 3 configs per channel</div>
-				<Cross />
-
 				<Tick />
 			</div>
 			<div class="grid">
 				<div>
-					Better limits (<a class="link secondary" href={$u("faq") + "#what-are-the-limits"}>See here</a>)
+					{$_("premiumFilters")}
+				</div>
+				<Tick />
+				<Tick />
+			</div>
+			<div class="grid">
+				<div>
+					{$_("premiumCommands")}
+				</div>
+				<Tick />
+				<Tick />
+			</div>
+			<div class="grid">
+				<div>
+					{$_("premiumMoreConfigs")}
 				</div>
 				<Cross />
 
 				<Tick />
 			</div>
 			<div class="grid">
-				<div>Your channels are handled first</div>
+				<div>
+					{@html replaceWordWithLink($_("premiumLimits"), "See here", $u("faq") + "#what-are-the-limits", true, false)}
+				</div>
 				<Cross />
 
 				<Tick />
 			</div>
 			<div class="grid">
 				<div>
-					More than 10 <a class="link secondary" href="https://docs.eazyautodelete.xyz/config/roles">Target/Ignore</a> Roles
+					{$_("premiumHandledFirst")}
 				</div>
-				<!-- <div> -->
 				<Cross />
-				<!-- </div> -->
 
-				<!-- <div> -->
 				<Tick />
-				<!-- </div> -->
 			</div>
-			<!-- <div class="grid">
+			<div class="grid">
 				<div>
-					RegEx Evaluations per Hour 
+					{@html replaceWordWithLink(
+						$_("premiumMoreRoles"),
+						"Target/Ignore",
+						"https://docs.eazyautodelete.xyz/config/roles",
+						true,
+						false
+					)}
 				</div>
-			</div> -->
+				<Cross />
+				<Tick />
+			</div>
 			<div class="grid">
 				<div />
 
 				<div>
-					<a href="discord://-/channels/{guildId}">
-						<button class=""> Start using </button>
+					<a href="/invite">
+						<button>{$_("startUsing")}</button>
 					</a>
 				</div>
 				<div>
-					<a href={premium ? "/subscriptions" : "#plans"} on:click={() => scroll()}>
-						<button class="primary" class:premium>{premium ? "Manage" : "Subscribe Now"} </button></a
-					>
+				 <button class="primary" on:click={highlight}>Subscribe</button>
 				</div>
 			</div>
 		</div>
-		<p class="disclaimer px-2">
-			Better limits and more configs result in higher server load. Therefore, premium users have better limits as they
-			help cover the server costs. The limits are experimental and may be changed in the future.
+		<p class="disclaimer pb-6">
+			{$_("premiumDisclaimer")}
 		</p>
+
+		<h3 class="text-center" bind:this={ref} class:animate={highlighted}>
+			{$_("premiumCommand").split("%command")[0]}
+			<Command name={"premium"} />
+			{$_("premiumCommand").split("%command")[1]}
+		</h3>
 	</div>
 </PageContent>
 
 <style lang="scss">
-	.premium {
-		background-color: var(--lighter);
-		color: rgb(14 159 110) !important;
-		border-color: rgb(14 159 110) !important;
+	@keyframes grow {
+		0% {
+			// font-size: 1rem;
+			scale: 1;
+			background-color: transparent;
+		}
+		50% {
+			scale: 1.025;
+			// font-size: 1.2rem;
+			background-color: rgba(255, 255, 0, 0.212);
+		}
+		100% {
+			scale: 1;
+
+			// font-size: 1rem;
+			// background-color: transparent;
+		}
 	}
 
-	h1 {
-		padding-top: 2rem;
-		font-weight: bold;
+	h3 {
+		overflow: hidden;
+		padding: 0.5rem;
+		border-radius: 0.5rem;
+		&.animate {
+			animation: grow 0.5s;
+		}
+	}
+
+	p {
+		margin-bottom: 0.5rem;
+	}
+
+	h2 {
+		font-size: 1rem;
 	}
 
 	.disclaimer {
@@ -199,20 +177,9 @@
 	.table {
 		margin-top: 2rem;
 
-		// button {
-		// 	background-color: var(--lighter);
-		// 	color: #fff;
-		// 	border: 2px solid var(--more-lighter);
-		// 	border-radius: 0.5rem;
-		// 	padding: 0.5rem 1rem;
-		// 	width: 100%;
-
-		// 	transition: all 0.2s ease-in-out;
-
-		// 	&:hover {
-		// 		background-color: var(--more-lighter);
-		// 	}
-		// }
+		button {
+			color: #fff;
+		}
 
 		.heading {
 			background-color: var(--dark);

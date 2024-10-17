@@ -91,22 +91,8 @@
 </FeatureStack>
 
 <style lang="scss">
-	.text {
-		text-align: justify;
-
-		margin-bottom: 0.5rem;
-
-		> * {
-			margin-bottom: 0.5rem;
-		}
-	}
-	p,
 	.p {
 		text-align: justify;
-
-		&:not(:last-child) {
-			margin-bottom: 0.5rem;
-		}
 	}
 
 	.desc {
