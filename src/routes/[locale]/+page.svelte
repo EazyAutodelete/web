@@ -152,7 +152,7 @@
 
 <PageContent>
 	<div id="servers" class="w-full servers">
-		<h2>Trusted by large & <span class="accent">partnered</span> Servers</h2>
+		<h2>{@html $_("trusted").replace("partnered", '<span class="accent">partnered</span>')}</h2>
 
 		<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
 			{#each activeServers.slice(0, 16) as server}
@@ -166,7 +166,6 @@
 </PageContent>
 
 <style lang="scss">
-
 	.shuffle {
 		text-decoration-color: inherit;
 		font-size: x-small;

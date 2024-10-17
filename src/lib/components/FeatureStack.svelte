@@ -3,6 +3,7 @@
 	import { animate, skipFeatureCycle } from "../../routes/stores";
 	import { onDestroy, onMount, tick } from "svelte";
 	import { page } from "$app/stores";
+	import { locale } from "$lib/i18n";
 
 	export let options: string[];
 	export let type: "buttonLeft" | "buttonRight" = "buttonLeft";
@@ -65,6 +66,12 @@
 
 		calcHeight();
 		resize();
+
+		u = locale.subscribe(() => {
+			tick().then(() => {
+				calcHeight();
+			});
+		});
 	});
 
 	onDestroy(() => {
@@ -161,7 +168,7 @@
 		class:right={type === "buttonRight"}
 		class="section order-2"
 		bind:this={container}
-		style="min-height: 100%; height: {containerHeight}px;"
+		style="min-height: {containerHeight ? (containerHeight + "px") : "100%"};"
 	>
 		{#key selectedSection}
 			<div hidden={selectedSection !== 0} transition:slide class="body">

@@ -7,11 +7,11 @@
 
 	import { onMount } from "svelte";
 	import "../app.scss";
-	import { dictionary, getPage, getPageTagForLocalizedPageName, initI18n, locale, u } from "$lib/i18n";
+	import { dictionary, getPage, getPageTagForLocalizedPageName, initI18n, locale } from "$lib/i18n";
 	import { goto } from "$app/navigation";
 
 	$: innerWidth = 0;
-	$: lang = $page.params.locale;
+	$: lang = $page.params?.locale;
 
 	export let data;
 	$dictionary = data.dic;
