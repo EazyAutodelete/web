@@ -38,7 +38,14 @@
 		<div class="block flex">
 			<div class="text-sm navlist">
 				<a href={$u("")} class="navheader block">
-					<img src="/assets/img/logo-small.webp" width="48" height="48" class="logo shadow" alt="EazyAutodelete Logo" title="EazyAutodelete Logo" />
+					<img
+						src="/assets/img/logo-small.webp"
+						width="48"
+						height="48"
+						class="logo shadow"
+						alt="EazyAutodelete Logo"
+						title="EazyAutodelete Logo"
+					/>
 				</a>
 			</div>
 		</div>

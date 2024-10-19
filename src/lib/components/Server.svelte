@@ -8,7 +8,14 @@
 <div class=" outer-guild">
 	<div class="guild">
 		<div class="icon">
-			<img src="/assets/ref/{id}.webp" title="{name} Discord Logo" alt="{name} Discord Logo" loading="lazy" height="40" width="40" />
+			<img
+				src="/assets/ref/{id}.webp"
+				title="{name} Discord Logo"
+				alt="{name} Discord Logo"
+				loading="lazy"
+				height="40"
+				width="40"
+			/>
 		</div>
 		<div class="info">
 			<div class="name">

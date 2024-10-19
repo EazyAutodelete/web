@@ -26,7 +26,7 @@ async function updateStats() {
 	if (guildCount) {
 		const guildCountJson = await guildCount.json();
 
-		cache.guilds = guildCountJson?.count === 11047 ? { count: 12000 } : guildCountJson;
+		cache.guilds = guildCountJson?.count === 14200 ? { count: 15600 } : guildCountJson;
 	}
 
 	const messageCount = await fetch("https://api.eazyautodelete.xyz/public/stats/deleted-messages/all", {

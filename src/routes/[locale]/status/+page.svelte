@@ -1,6 +1,7 @@
 <script lang="ts">
 	import PageContent from "$lib/components/PageContent.svelte";
 	import shards from "$lib/data/shards.json";
+	import { _ } from "$lib/i18n.js";
 
 	export let data;
 
@@ -14,25 +15,25 @@
 </script>
 
 <svelte:head>
-	<title>Status Page - See Bot Status | EazyAutodelete Discord Bot</title>
+	<title>Status Page - See Shard Status | EazyAutodelete Discord Bot</title>
 
 	<meta
-	content="See the Status Page of EazyAutodelete - the best & most customizable Autodelete Bot for Discord. Completely free & in unlimited channels. With EazyAutodelete's advanced configuration options, you can autodelete messages based on user roles, mentions, a large number of filters or time intervals. Set durations like 5 minutes, 1 hour, 1 day, 24 hour or 1 week."
-	name="description"
-/>
+		content="See the Shard & Bot Status Page of EazyAutodelete - the best & most customizable Autodelete Bot for Discord. Completely free & in unlimited channels. With EazyAutodelete's advanced configuration options, you can autodelete messages based on user roles, mentions, a large number of filters or time intervals. Set durations like 5 minutes, 1 hour, 1 day, 24 hour or 1 week."
+		name="description"
+	/>
 </svelte:head>
 
 <PageContent>
 	<div class="w-full">
-		<h1 class="text-center underline">Shards Status</h1>
-		<p>EazyAutodelete is split into shards for better performance. Each shard handles around 1,000 servers.</p>
+		<h1 class="text-center underline">{$_("shardsStatus")}</h1>
+		<p>{$_("statusInfo")}</p>
 	</div>
 
 	<div class="guild-con">
 		<input
 			class="guild-input"
 			type="text"
-			placeholder="Enter your guild id"
+			placeholder={$_("enterGuildId")}
 			bind:value={enteredId}
 			on:keyup={calcId}
 			on:change={calcId}
@@ -80,14 +81,14 @@
 		{:else}
 			<div class="shard">
 				<div class="shard-body p-3">
-					<h5 class="shard-title">No Shards found</h5>
+					<h5 class="shard-title">{$_("noShards")}</h5>
 				</div>
 			</div>
 		{/if}
 	</div>
 
 	<p class="status pt-4">
-		Check the <a class="link primary" href="https://status.eazyautodelete.xyz">Status Page</a> for more information.
+		{@html $_("checkStatusPage").replace("%statusPage", '<a class="link primary" href="https://status.eazyautodelete.xyz">Status Page</a>')}
 	</p>
 </PageContent>
 
