@@ -1,10 +1,12 @@
 <script lang="ts">
 	import PageContent from "$lib/components/PageContent.svelte";
-	import { u } from "$lib/i18n.js";
+	import { _, u } from "$lib/i18n";
+	import formatText from "$lib/utils/formatText.js";
+	import replaceNameWithLink from "$lib/utils/replaceNameWithLink";
 
 	export let data;
 
-	const { rank, guild, tags, configs, date, guildtext, text, avatar, icon, title, name } = data;
+	const { rank, guild, tags, configs, date, guildtext, text, avatar, icon, title, name, img, invite } = data;
 
 	// let name: string;
 	// let rank: string;
@@ -19,6 +21,12 @@
 	// let title: string;
 </script>
 
+{#if img}
+	<div class="banner">
+		<img src={img} alt="" />
+	</div>
+{/if}
+
 <PageContent>
 	<div class="w-full">
 		<h1 class="underline">{title}</h1>
@@ -32,33 +40,49 @@
 			</div>
 		</div>
 		<div class="server">
+			<a href="https://discord.com/invite/{invite}">
 			<img src={icon} alt="Server Icon of {guild}" title="Server Icon of {guild}" />
 			<div class="text">
 				<h4>{guild}</h4>
 				<p>{guildtext}</p>
 			</div>
+		</a>
 		</div>
 		<p>Tags</p>
 		<ul class="tags">
 			{#each tags as tag}
-				<a href={$u("/use-cases-examples") + "?tag=" + tag.toLowerCase()}><li>{tag}</li></a>
+				<li><a href={$u("/use-cases-examples") + "?tag=" + tag.toLowerCase()}>{tag}</a></li>
 			{/each}
 		</ul>
-		<p>Shared configs</p>
+		<p>{$_("sharedConfigs")}</p>
 
 		<ul class="configs">
 			{#each configs as config}
-				<a href={$u("/share") + "/{config}"}><li>{config}</li></a>
+				<li><a href={`https://dash.eazyautodelete.xyz/share/${config.share}`}>{config.id}</a></li>
 			{/each}
 		</ul>
 		<p class="date">{date.toString()}</p>
 	</div>
 	<div class="w-full lg:w-3/4 lg:order-1">
-		{@html text}
+		{#each text.split("\n") as line}
+			{@html formatText(replaceNameWithLink(line))}
+		{/each}
 	</div>
 </PageContent>
 
 <style lang="scss">
+	.banner {
+		display: block;
+		width: 100%;
+		max-height: 30vh;
+		object-fit: fill;
+
+		img {
+			width: 100%;
+			max-height: inherit;
+			object-fit: cover;
+		}
+	}
 	p {
 		text-align: justify;
 		margin-bottom: 0.5rem;
@@ -71,16 +95,22 @@
 			align-items: center;
 			gap: 1rem;
 			background-color: #283444;
-			padding: 1rem;
+			padding: 0.5rem 1rem;
 			border-radius: 10px;
 			width: 100%;
 			margin-bottom: 1rem;
 
 			.text {
+				overflow: hidden;
+
 				h4 {
-					font-size: large;
+					font-size: medium;
 					font-weight: 700;
-					padding: 0 0 0.25rem;
+					padding: 0;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					max-width: 100%;
 				}
 
 				p {
@@ -114,24 +144,24 @@
 			flex-wrap: wrap;
 			gap: 0.5rem;
 
-			a {
-				text-decoration: none;
-				color: white;
-
-				&:hover {
-					text-decoration: underline;
-					cursor: pointer;
-				}
-			}
-
 			li {
-				padding: 0.5rem 1rem;
-				border-radius: 10px;
-				background-color: #283444;
-				font-size: small;
-				font-weight: 600;
-				letter-spacing: 0.5px;
-				word-wrap: break-word;
+				padding: 0.25rem 0;
+				a {
+					text-decoration: none;
+					color: white;
+					padding: 0.5rem 1rem;
+					border-radius: 10px;
+					background-color: #283444;
+					font-size: small;
+					font-weight: 600;
+					letter-spacing: 0.5px;
+					word-wrap: break-word;
+
+					&:hover {
+						text-decoration: underline;
+						cursor: pointer;
+					}
+				}
 			}
 		}
 

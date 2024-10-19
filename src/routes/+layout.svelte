@@ -19,29 +19,37 @@
 	onMount(() => {
 		if ($page.status !== 200) return;
 
-		initI18n(lang);
-
 		document.documentElement.lang = $locale;
 
-		locale.subscribe(newLang => {
-			document.documentElement.lang = newLang;
+		setTimeout(
+			() =>
+				locale.subscribe(newLang => {
+					document.documentElement.lang = newLang;
 
-			const currentPathLang = $page.url.pathname.split("/")[1];
-			if (currentPathLang === newLang) return;
+					const currentPathLang = $page.url.pathname.split("/")[1];
+					if (currentPathLang === newLang) return;
 
-			const currentPage = $page.url.pathname.split("/")[2];
+					const currentPage = $page.url.pathname.split("/")[2];
 
-			if (!currentPage) return goto(`/${newLang}` + $page.url.search + $page.url.hash);
+					if (!currentPage) return goto(`/${newLang}` + $page.url.search + $page.url.hash);
 
-			const more = $page.url.pathname.split(currentPage).slice(1).join(currentPage);
+					const more = $page.url.pathname.split(currentPage).slice(1).join(currentPage);
 
-			const pageTag = getPageTagForLocalizedPageName(currentPage);
-			const newPage = getPage(pageTag);
+					const pageTag = getPageTagForLocalizedPageName(currentPage);
+					const newPage = getPage(pageTag, newLang);
 
-			if (!newPage) return;
+					console.log({ currentPathLang, currentPage, more, pageTag, newPage, newLang });
 
-			return goto(`/${newLang}/${newPage}${more}` + $page.url.search + $page.url.hash);
-		});
+					if (!newPage) return;
+
+					return goto(
+						`/${newLang}/${newPage}${more.startsWith("/") ? more : "/" + more}` + $page.url.search + $page.url.hash
+					);
+				}),
+			100
+		);
+
+		initI18n(lang);
 	});
 </script>
 
@@ -49,9 +57,9 @@
 
 <svelte:head>
 	<meta
-	content="The best & most customizable Autodelete Bot for Discord. Completely free & in unlimited channels. You can customise every setting to suit your needs."
-	name="description"
-/>
+		content="The best & most customizable Autodelete Bot for Discord. Completely free & in unlimited channels. You can customise every setting to suit your needs."
+		name="description"
+	/>
 </svelte:head>
 
 {#if innerWidth >= 1024}

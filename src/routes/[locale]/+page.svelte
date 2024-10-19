@@ -9,10 +9,8 @@
 	import FeatureStack1 from "$lib/components/FeatureStack1.svelte";
 	import FeatureStack2 from "$lib/components/FeatureStack2.svelte";
 	import FeatureStack3 from "$lib/components/FeatureStack3.svelte";
-	import { _, locale } from "$lib/i18n";
-	import { onDestroy, onMount } from "svelte";
+	import { _ } from "$lib/i18n";
 	import ImageVideo from "$lib/components/ImageVideo.svelte";
-	// import { schemaOrg } from "../stores";
 
 	export let data: {
 		incident: any;
@@ -50,9 +48,9 @@
 	<title>EazyAutodelete - Autodelete Discord Bot</title>
 
 	<meta
-	content="The best & most customizable Autodelete Bot for Discord. Completely free & in unlimited channels. With EazyAutodelete's advanced configuration options, you can autodelete messages based on user roles, mentions, a large number of filters or time intervals.  Set durations like 5 minutes, 1 hour, 1 day, 24 hour or 1 week."
-	name="description"
-/>
+		content="The best & most customizable Autodelete Bot for Discord. Completely free & in unlimited channels. With EazyAutodelete's advanced configuration options, you can autodelete messages based on user roles, mentions, a large number of filters or time intervals.  Set durations like 5 minutes, 1 hour, 1 day, 24 hour or 1 week."
+		name="description"
+	/>
 </svelte:head>
 
 <svelte:window bind:innerWidth={width} />
