@@ -28,7 +28,13 @@
 			<div class="brand w-full lg:w-1/2 order-2 lg:order-1 lg:pe-2">
 				<div class="img-name">
 					<a href="/">
-						<img src="/assets/img/logo-small.webp" height="42" width="42" alt="EazyAutodelete Logo" title="EazyAutodelete Logo" />
+						<img
+							src="/assets/img/logo-small.webp"
+							height="42"
+							width="42"
+							alt="EazyAutodelete Logo"
+							title="EazyAutodelete Logo"
+						/>
 					</a>
 					<a href="/"> <p class="name">EazyAutodelete</p></a>
 				</div>

@@ -16,6 +16,8 @@
 	const close = () => {
 		toggled = false;
 	};
+
+	$: $locale = $locale;
 </script>
 
 <svg
@@ -32,8 +34,10 @@
 </svg>
 
 <div on:click={close} class:hidden={!toggled} class="overlay" transition:slide={{ duration: 500 }}>
-	<button class:high={$locale === "en"} class="p-4" on:click={() => cL("en")}>English</button>
-	<button class:high={$locale === "de"} class="p-4" on:click={() => cL("de")}>Deutsch</button>
+	{#key $locale}
+		<button class:high={$locale === "en"} class="p-4" on:click={() => cL("en")}>English</button>
+		<button class:high={$locale === "de"} class="p-4" on:click={() => cL("de")}>Deutsch</button>
+	{/key}
 </div>
 
 <style lang="scss">

@@ -10,13 +10,16 @@
 
 <a href="{$u('use-cases-examples')}/{id}">
 	<div class="example">
-		<img src={img} alt={title} title={title} />
+		<img src={img} alt={title} {title} />
 		<h3>{title}</h3>
 		<p>{description}</p>
 		<div class="tags">
-			{#each tags as tag}
+			{#each tags.slice(0, 3) as tag}
 				<span>{tag}</span>
 			{/each}
+			{#if tags.length > 3}
+				<span>...</span>
+			{/if}
 		</div>
 	</div>
 </a>
@@ -43,15 +46,15 @@
 		}
 
 		h3 {
-			font-size: x-large;
+			font-size: medium;
 			font-weight: 700;
 			padding-top: 0;
 		}
 
 		p {
-			font-size: medium;
+			font-size: small;
 			font-weight: 400;
-			margin-bottom: 1rem;
+			margin-bottom: 0.75rem;
 		}
 
 		.tags {
@@ -64,7 +67,7 @@
 				border-radius: 5px;
 				background-color: #283444;
 				font-size: small;
-				font-weight: 700;
+				font-weight: 600;
 			}
 		}
 

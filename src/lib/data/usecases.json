@@ -1,0 +1,53 @@
+[
+	{
+		"id": "automated-circus-katsu-ryu",
+		"title": "How I, Katsu Ryu, keep my channels in \"Automated Circus\" clean and relevant",
+		"description": "We had the problem old conversations cluttering up our chats and we needed a way to keep our server clean. EazyAutodelete helped us to automate the process of deleting old messages and keep our server clean and relevant.",
+		"tags": [
+			"Anime",
+			"Anime Games",
+			"Anime Community",
+			"Waifus",
+			"Husbandos",
+			"Anime",
+			"Moderation",
+			"Automation",
+			"Mudae",
+			"TsumaBot",
+			"Karuta"
+		],
+		"img": "",
+
+		"invite": "h7fJtuwb9r",
+		"guild": "Automated Circus",
+		"guildtext": "Anime Server",
+		"text": "Setting up a Discord server can take a lot of time. However once it’s set up the next challenge is maintaining one. My server started when me and 2 friends decided to start our own server and invite some friends, with the goal of growth over time.\nWe wanted to remove old posts to help keep the conversations easier to engage in. Nobody wants to scroll up to read a post to understand what people are talking about. The good news with an active conversation is people sharing thoughts, pictures, and ideas. The bad news is dozens/hundreds of “old posts” that require cleaning up over time. Manually moderating and cleaning up the server was taking up too much of my time, so I started looking for a solution.\n\n# The Problem\nDozens of Channels, each with a different subject all gathering hundreds of messages. Manually purging all the posts from a channel is at best a “band-aid” as it erases the current conversation as well as older conversations. We also have channels dedicated to Game Bots (Mudae, TsumaBot, Karuta, etc) that have hundreds of messages from humans and hundreds of messages from the various game bots.\nIt became clear the biggest challenge was keeping our channels clean and relevant. People would often post off-topic messages in channels meant for specific discussions, and old announcements or pinned messages would become outdated. It was hard to balance keeping the server tidy while also making sure users felt free to engage in conversations without feeling overly moderated.\nI needed an automated solution that could help me maintain some order in the server without constantly having to check every message myself. That's when I discovered the EazyAutodelete bot.\n\n# The Solution: EazyAutodelete Bot\nEazyAutodelete offered exactly what I needed. I can easily configure it automagically delete messages based on rules I set up. Then I can give that “configuration” an easy to remember name and copy it to other channels. Rinse and repeat and before long the whole server is set up and running smoothly. I was then able to setup access based on roles, so the people who need access to the bot have it. It helped me maintain a cleaner server while giving my moderators and me more time to focus on growing the community and engaging with members, rather than just doing housekeeping.\n\n# How I made it work for my server\n## 1. Setting up Message Lifetimes\nI used the bot to set different deletion times for different channels. For example, in the Game Bot channels, prone to surges of messages, I set the messages to automagically delete after an hour. In high-traffic chat rooms that don’t see a lot of conversations that last multiple days, I set messages to automatically delete after 24 hours to keep conversations fresh and relevant. In channels meant for polls and multi-day conversations, setting the limit to 5 or 7 days allows the conversation to be maintained long enough to keep the conversation relevant, and still purge it often enough to keep conversations fresh and relevant.\n\n## 2. Controlling Spam and Irrelevant Content\nWe had a few channels that were particularly prone to off-topic conversations and spam. By setting the bot to automatically remove messages that contained certain keywords or exceeded a certain length of Inactivity, I was able to keep these channels clean and focused without coming across as overly strict. And as messages were removed quietly, it reminded people to be more civil.",
+		"configs": [
+			{
+				"name": "7 days",
+				"share": "lm29dk0sdsocho",
+				"id": "clnl3sr32l60ld"
+			},
+			{
+				"name": "5 days",
+				"share": "lm29diunusk2j6",
+				"id": "clx0v7bjw1hpvyf"
+			},
+			{
+				"name": "1 day",
+				"share": "lm29dkqh3sr253",
+				"id": "clnjw1lry1cv3sa"
+			},
+			{
+				"name": "1 hour",
+				"share": "llx0v0bag1haz2p",
+				"id": "clx0uq8hb1gsxil"
+			}
+		],
+		"date": "2024-10-17",
+		"icon": "https://cdn.discordapp.com/icons/1151875816679018599/a_2a3844c6616b50edb4b29d77d2f70bd9.webp",
+		"rank": "Owner",
+		"name": "Katsu Ryu",
+		"avatar": "https://cdn.discordapp.com/avatars/892177479429672981/7d5b6d77278d28ad78a198ae0a4d74d4.png"
+	}
+]

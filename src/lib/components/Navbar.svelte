@@ -6,7 +6,15 @@
 <nav>
 	<ul class="navlist w-11/12 xl:w-3/4">
 		<li class="brand">
-			<a href="/"><img src="/assets/img/logo-small.webp" height="32" width="32" alt="EazyAutodelete Logo" title="EazyAutodelete Logo" /></a>
+			<a href="/"
+				><img
+					src="/assets/img/logo-small.webp"
+					height="32"
+					width="32"
+					alt="EazyAutodelete Logo"
+					title="EazyAutodelete Logo"
+				/></a
+			>
 			<a href="/">EazyAutodelete</a>
 		</li>
 
@@ -116,7 +124,6 @@
 		transition: background-color ease-in-out 0.2s;
 		padding: 0.5rem 1rem;
 
-		
 		&:hover {
 			background-color: var(--color-primary);
 			color: #f0f0f0;
