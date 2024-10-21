@@ -5,17 +5,9 @@ declare global {
 		// interface Error {}
 		// interface Locals {}
 		// interface PageData {}
+		// interface PageState {}
 		// interface Platform {}
 	}
 }
 
 export {};
-
-export type ShardData = {
-	workerId: number;
-	shardId: number;
-	rtt: number;
-	state: number;
-	queue: number;
-	data?: { guilds: string[]; unavailable: string[] };
-};

@@ -1,0 +1,164 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:global(html) {
+	scroll-behavior: smooth;
+}
+
+:root {
+	--color-primary: #5865f2;
+	--color-secondary: #3f4f9f;
+}
+
+@tailwind base;
+// @tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+	width: 0.4rem;
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--color-primary);
+	/* border-radius: 3px; */
+}
+
+::-webkit-scrollbar-track {
+	background: 0 0;
+}
+
+@font-face {
+	font-family: Exo;
+	font-style: normal;
+	font-display: swap;
+	font-weight: 400;
+	src: url("/assets/fonts/exo-v20-latin-regular.eot");
+	src:
+		local(""),
+		url("/assets/fonts/exo-v20-latin-regular.eot?#iefix") format("embedded-opentype"),
+		url("/assets/fonts/exo-v20-latin-regular.woff2") format("woff2"),
+		url("/assets/fonts/exo-v20-latin-regular.woff") format("woff"),
+		url("/assets/fonts/exo-v20-latin-regular.ttf") format("truetype"),
+		url("/assets/fonts/exo-v20-latin-regular.svg#Exo") format("svg");
+}
+
+h1 {
+	font-size: xx-large;
+	font-weight: 700;
+	padding: 1.5rem 0 0.5rem;
+}
+
+h2 {
+	font-size: x-large;
+	font-weight: 600;
+	padding: 1.25rem 0 0.5rem;
+}
+
+h3 {
+	font-size: large;
+	font-weight: 600;
+	padding: 1rem 0 0.5rem;
+}
+
+h4 {
+	font-size: medium;
+	font-weight: 600;
+	padding: 0.8125rem 0 0.5rem;
+}
+
+h5 {
+	font-size: medium;
+	font-weight: 600;
+	padding: 0.75rem 0 0.5rem;
+}
+
+button,
+.button {
+	cursor: pointer;
+	width: fit-content;
+	border-radius: 10px;
+	background-color: #1b1c1c;
+	padding: 1rem 0.5rem;
+	text-align: center;
+	display: inline-block;
+
+	transition: 0.2s ease-in-out;
+
+	&:hover {
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+	}
+
+	&.primary {
+		background-color: var(--color-primary);
+		transition: 0.2s ease-in-out;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+		&:hover {
+			background-color: #3f4f9f;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+		}
+	}
+}
+
+.shadow {
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.link {
+	text-decoration: underline solid #fff 2px;
+	text-underline-offset: 4px;
+	font-weight: 500;
+	transition: all 0.2s ease-in-out;
+	cursor: pointer;
+	color: #aaa;
+
+	&:hover {
+		color: #fff;
+		text-decoration-color: #fff;
+	}
+
+	&.light {
+		color: #fff;
+		text-decoration: underline solid #ddd 1px;
+
+		&:hover {
+			text-decoration-color: #aaa;
+			color: #aaa;
+		}
+	}
+
+	&.primary {
+		text-decoration-color: var(--color-primary);
+		color: #aaa;
+
+		&:hover {
+			color: #fff;
+		}
+	}
+}
+
+.accent,
+.accent:hover {
+	color: #5865f2;
+}
+
+.underline {
+	text-decoration: underline;
+	text-decoration-color: #5865f2;
+	text-decoration-thickness: 15%;
+	text-underline-position: below;
+}
+
+body {
+	font-family: Exo;
+	background-color: #26262b;
+	color: #fff;
+}
+
+.inline {
+	display: inline-block;
+	line-break: normal;
+}
