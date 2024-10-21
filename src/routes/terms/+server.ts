@@ -1,4 +1,4 @@
-import { locales } from "$lib/const";
+import { locales } from "$lib/const.js";
 import { getPage } from "$lib/i18n";
 import { redirect } from "@sveltejs/kit";
 
@@ -7,5 +7,5 @@ export function GET({ request }) {
 	let locale = request.headers.get("accept-language")?.split(",")[0]?.split("-")[0];
 	if (!locale || !locales.includes(locale)) locale = "en";
 
-	throw redirect(301, `/${locale}/${getPage("imprint", locale)}`);
+	throw redirect(301, `/${locale}/${getPage("terms", locale)}`);
 }

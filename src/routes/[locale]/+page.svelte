@@ -44,7 +44,7 @@
 	let width: number;
 	$: width;
 
-	$: description =  $_("descSuffix");
+	$: description = $_("descSuffix");
 	$: title = "EazyAutodelete - Discord Autodelete Bot";
 </script>
 
