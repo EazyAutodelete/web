@@ -3,10 +3,11 @@ export default function (
 	word: string,
 	link: string,
 	newTab: boolean = true,
-	primary: boolean = true
+	primary: boolean = true,
+	newText?: string
 ): string {
 	return string.replaceAll(
 		word,
-		`<a class="link ${primary ? "primary" : "secondary"}" href="${link}" target="${newTab ? "_blank" : ""}">${word}</a>`
+		`<a class="link ${primary ? "primary" : "secondary"}" href="${link}" target="${newTab ? "_blank" : ""}">${newText || word}</a>`
 	);
 }

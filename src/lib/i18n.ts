@@ -6,7 +6,7 @@ export const locale = writable("en");
 export const dictionary: Writable<{ [lang: string]: { [key: string]: string } }> = writable({});
 
 const translate = (key: string) => {
-	return (get(dictionary)[get(locale)]?.[key] || get(dictionary)?.["en"]?.[key] || key)
+	return (get(dictionary)[get(locale)]?.[key] || get(dictionary)?.["en"]?.[key] || key || "")
 		.replace("&auml;", "ä")
 		.replace("&ouml;", "ö")
 		.replace("&uuml;", "ü");
@@ -14,7 +14,11 @@ const translate = (key: string) => {
 
 const getUrl = (page: string) => {
 	if (page.startsWith("/")) page = page.replace("/", "");
-	return "/" + get(locale) + (page ? "/" : "") + (routeMap[get(locale)]?.[page] || routeMap["en"]?.[page] || page);
+
+	const pageTag = getPageTagForLocalizedPageName(page);
+	const newPage = getPage(pageTag, get(locale));
+
+	return "/" + get(locale) + (newPage ? "/" : "") + newPage;
 };
 
 export const getPage = (page: string, lang?: string) => {
