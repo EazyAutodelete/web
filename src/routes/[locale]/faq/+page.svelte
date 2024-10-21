@@ -2,6 +2,7 @@
 	import PageContent from "$lib/components/PageContent.svelte";
 	import { titleSuffix } from "$lib/const";
 	import { _, u } from "$lib/i18n";
+	import replaceWordWithLink from "$lib/utils/replaceWordWithLink";
 
 	$: description = $_("seeFAQ") + $_("descSuffix");
 	$: title = $_("faq") + titleSuffix;
@@ -24,57 +25,57 @@
 		<div>
 			<ul class="nav">
 				<li>
-					<a href="#getting-started" class="link primary">Getting Started</a>
+					<a href="#getting-started" class="link primary">{$_("gettingStarted")}</a>
 					<ul>
-						<li><a href="#how-to-invite" class="link primary">1. How to add EazyAutodelete to my server?</a></li>
-						<li><a href="#how-to-use" class="link primary">2. How do I use EazyAutodelete?</a></li>
-						<li><a href="#how-many-channels" class="link primary">3. How many channels can I configure?</a></li>
-						<li><a href="#how-many-configs" class="link primary">4. How many configurations can I create?</a></li>
+						<li><a href="#how-to-invite" class="link primary">1. {$_("howToAdd")}</a></li>
+						<li><a href="#how-to-use" class="link primary">2. {$_("howToUse")}</a></li>
+						<li><a href="#how-many-channels" class="link primary">3. {$_("howManyChannels")}</a></li>
+						<li><a href="#how-many-configs" class="link primary">4. {$_("howManyConfigs")}</a></li>
 					</ul>
 				</li>
 				<li>
-					<a href="#supported-features" class="link primary">Supported Features</a>
+					<a href="#supported-features" class="link primary">{$_("supportFeatures")}</a>
 					<ul>
 						<li>
 							<a href="#supported-channel-types" class="link primary"
-								>5. Does EazyAutodelete work with Announcement, Thread, Voice or Forum Channels?</a
+								>5. {$_("supportedChannels")}</a
 							>
 						</li>
-						<li><a href="#which-languages-are-supported" class="link primary">6. Which languages are supported?</a></li>
-						<li><a href="#what-are-the-limits" class="link primary">7. What are the limits of EazyAutodelete?</a></li>
+						<li><a href="#which-languages-are-supported" class="link primary">6. {$_("supportedLanguages")}</a></li>
+						<li><a href="#what-are-the-limits" class="link primary">7. {$_("whatAreTheLimits")}</a></li>
 					</ul>
 				</li>
 				<li>
 					<a href="#support" class="link primary">Support</a>
 					<ul>
-						<li><a href="#is-the-bot-online" class="link primary">8. Is EazyAutodelete online 24/7?</a></li>
-						<li><a href="#get-help" class="link primary">9. Where can I get help?</a></li>
-						<li><a href="#why-not-delete" class="link primary">10. Why does EazyAutodelete not delete messages?</a></li>
+						<li><a href="#is-the-bot-online" class="link primary">8. {$_("isTheBotOnline")}</a></li>
+						<li><a href="#get-help" class="link primary">9. {$_("getHelp")}</a></li>
+						<li><a href="#why-not-delete" class="link primary">10. {$_("whyNotDelete")}</a></li>
 					</ul>
 				</li>
 				<li>
-					<a href="#contribution" class="link primary">Contribution</a>
+					<a href="#contribution" class="link primary">{$_("contribution")}</a>
 					<ul>
-						<li><a href="#how-to-report-bugs" class="link primary">11. How do I report bugs?</a></li>
-						<li><a href="#how-to-request-features" class="link primary">12. How do I request features?</a></li>
-						<li><a href="#how-to-report-abuse" class="link primary">13. How do I report abuse?</a></li>
-						<li><a href="#how-to-contact" class="link primary">14. How can I contact the team?</a></li>
+						<li><a href="#how-to-report-bugs" class="link primary">11. {$_("howToReportBugs")}</a></li>
+						<li><a href="#how-to-request-features" class="link primary">12. {$_("howToRequestFeatures")}</a></li>
+						<li><a href="#how-to-report-abuse" class="link primary">13. {$_("howToReportAbuse")}</a></li>
+						<li><a href="#how-to-contact" class="link primary">14. {$_("howToContact")}</a></li>
 					</ul>
 				</li>
 				<li>
 					<a href="#support-bot" class="link primary">Supporting EazyAutodelete</a>
 					<ul>
-						<li><a href="#how-to-support" class="link primary">15. How can I support EazyAutodelete?</a></li>
-						<li><a href="#premium-plan" class="link primary">16. What is EazyAutodelete Premium?</a></li>
-						<li><a href="#how-to-translate" class="link primary">17. How can I help translate EazyAutodelete?</a></li>
+						<li><a href="#how-to-support" class="link primary">15. {$_("howToSupport")}</a></li>
+						<li><a href="#premium-plan" class="link primary">16. {$_("whatIsPremium")}</a></li>
+						<li><a href="#how-to-translate" class="link primary">17. {$_("howToTranslate")}</a></li>
 					</ul>
 				</li>
 			</ul>
 
-			<h1 id="getting-started">Getting Started</h1>
+			<h1 id="getting-started">{$_("gettingStarted")}</h1>
 			<ul>
 				<li>
-					<h2 id="how-to-invite">1. How to add EazyAutodelete to my server?</h2>
+					<h2 id="how-to-invite">1. {$_("howToAdd")}</h2>
 					<p>Click on the invite link: <a href="/invite" class="link primary">eazyautodelete.xyz/invite</a>.</p>
 					<p>Select your server and press the "Authorize" Button.</p>
 					<p>
@@ -83,7 +84,7 @@
 				</li>
 
 				<li>
-					<h2 id="how-to-use">2. How do I use EazyAutodelete?</h2>
+					<h2 id="how-to-use">2. {$_("howToUse")}</h2>
 					<p>After inviting EazyAutodelete, use the <code>/setup</code> command to create a new configuration.</p>
 					<p>
 						You can contact the team on our <a href="/discord" class="link primary">Support Server</a>. We are happy to
@@ -95,33 +96,30 @@
 					</p>
 				</li>
 				<li>
-					<h2 id="how-many-channels">3. How many channels can I configure?</h2>
-					<p>There is no limit to the number of channels you can configure.</p>
+					<h2 id="how-many-channels">3. {$_("howManyChannels")}</h2>
+					<p>{$_("manyChannels")}</p>
 				</li>
 				<li>
-					<h2 id="how-many-configs">4. How many configurations can I create?</h2>
+					<h2 id="how-many-configs">4. {$_("howManyConfigs")}</h2>
 					<p>
-						You are limited to 3 configs per channel. If that doesn't fulfill your needs, you should consider
-						subscribing to <a href={$u("/premium")} class="link primary">EazyAutodelete Premium</a>.
+						{@html replaceWordWithLink($_("manyConfigs"), "EazyAutodelete Premium", $u("premium"))}
 					</p>
 				</li>
 			</ul>
 
-			<h1 id="supported-features">Supported Features</h1>
+			<h1 id="supported-features">{$_("supportFeatures")}</h1>
 			<ul>
 				<li>
 					<h2 id="supported-channel-types">
-						5. Does EazyAutodelete work with Announcement, Thread, Voice or Forum Channels?
+					5. {$_("supportedChannels")}
 					</h2>
-					<p>Yes, EazyAutodelete supports all types of channels on Discord.</p>
+					<p>{$_("channelTypes")}</p>
 				</li>
 
 				<li>
-					<h2 id="which-languages-are-supported">6. Which languages are supported?</h2>
+					<h2 id="which-languages-are-supported">6. {$_("supportedLanguages")}</h2>
 					<p>
-						EazyAutodelete is available in multiple Languages. Those Languages include English, German, French,
-						Japanese, Dutch, Korean, Spanish, Turkish, Portuguese and Polish. You can see the translation Progress for
-						every language below.
+						{$_("supportedLanguagesDesc1")}
 					</p>
 					<div class="w-full">
 						<div class="images">
@@ -154,35 +152,40 @@
 						</div>
 					</div>
 					<p>
-						Some languages only have some parts translated. Untranslated strings are shown in English. If you are
-						missing translations or have found an issue with a translation, please contact us on <a
-							href="/discord"
-							class="link primary">Discord</a
-						>.
+						{@html replaceWordWithLink($_("supportedLanguagesDesc2"), "Discord", "/discord")}
 					</p>
 					<p>
-						If you want to help us translating, click on the charts above or visit <a
-							href="/traslate"
-							class="link primary">eazyautodelete.xyz/translate</a
-						>.
+						{@html replaceWordWithLink($_("supportedLanguagesDesc3"), "eazyautodelete.xyz/translate", "/translate")}
 					</p>
 				</li>
 
 				<li>
-					<h2 id="what-are-the-limits">7. What are the limits of EazyAutodelete?</h2>
+					<h2 id="what-are-the-limits">7. {$_("whatAreTheLimits")}</h2>
 					<p>
 						EazyAutodelete has a few limits to ensure a reliable and fast service as well as a pleasant user experience.
 						The limits are evaluated regularly and chosen wisely.
 					</p>
-					<ul>
-						<li><strong>Max. Configs per Channel:</strong> 3</li>
-						<li><strong>Mode 1 Limit:</strong> &#62;10 secs, &#60;7 days</li>
-						<li><strong>Mode 2 Limit:</strong> &#62;10 secs, &#60;2 days</li>
-						<li><strong>Mode 3 Limit:</strong> &#62;5 msgs, &#60;100 msgs</li>
-						<li><strong>Mode 4 Limit:</strong> &#62;3 msgs, &#60;200 msgs</li>
-					</ul>
+					<div class="grid grid-cols-2 gap-x-3 pb-3">
+						<ul>
+							<li><h3 class="p-0">Normal:</h3></li>
+							<li><strong> Max. Configs per Channel:</strong> 3</li>
+							<li><strong>Mode 1 Limit:</strong> &#62;10 secs, &#60;7 days</li>
+							<li><strong>Mode 2 Limit:</strong> &#62;10 secs, &#60;2 days</li>
+							<li><strong>Mode 3 Limit:</strong> &#62;5 msgs, &#60;100 msgs</li>
+							<li><strong>Mode 4 Limit:</strong> &#62;3 msgs, &#60;200 msgs</li>
+						</ul>
+						<ul>
+							<li><h3 class="p-0">Premium:</h3></li>
+							<li><strong>Max. Configs per Channel:</strong> 6</li>
+							<li><strong>Mode 1 Limit:</strong> &#62;3 secs, &#60;13,96 days</li>
+							<li><strong>Mode 2 Limit:</strong> &#62;3 secs, &#60;7 days</li>
+							<li><strong>Mode 3 Limit:</strong> &#62;1 msgs, &#60;500 msgs</li>
+							<li><strong>Mode 4 Limit:</strong> &#62;1 msgs, &#60;1,000 msgs</li>
+						</ul>
+					</div>
+					
 					<p>
-						If you need more configurations or want to increase the limits, you should consider subscribing to <a
+						If you need more configurations or want access to the Premium Limits, you should consider subscribing to <a
 							href={$u("/premium")}
 							class="link primary">EazyAutodelete Premium</a
 						>.
@@ -192,13 +195,12 @@
 						server costs. The limits are experimental and may be changed in the future.</span
 					>
 				</li>
-				<li></li>
 			</ul>
 
 			<h1 id="support">Support</h1>
 			<ul>
 				<li>
-					<h2 id="is-the-bot-online">8. Is EazyAutodelete online 24/7?</h2>
+					<h2 id="is-the-bot-online">8. {$_("isTheBotOnline")}</h2>
 					<p>Yes. EazyAutodelete is online 24/7 and processes messages in real-time.</p>
 					<p>
 						However, neither we, Discord nor our partners are 100% protected of Downtimes. We all are only humans and
@@ -214,7 +216,7 @@
 				</li>
 
 				<li>
-					<h2 id="get-help">9. Where can I get help?</h2>
+					<h2 id="get-help">9. {$_("getHelp")}</h2>
 					<p>
 						First of all, you should read this FAQ to check if your message has been answered here. Our Documentation at <a
 							href="https://docs.eazyautodelete.xyz"
@@ -228,7 +230,7 @@
 				</li>
 
 				<li>
-					<h2 id="why-not-delete">10. Why does EazyAutodelete not delete messages?</h2>
+					<h2 id="why-not-delete">10. {$_("whyNotDelete")}</h2>
 					<p>If EazyAutodelete does not delete messages, you should check the following:</p>
 					<ul>
 						<li>
@@ -265,40 +267,33 @@
 				</li>
 			</ul>
 
-			<h1 id="contribution">Contribution</h1>
+			<h1 id="contribution">{$_("contribution")}</h1>
 			<ul>
 				<li>
-					<h2 id="how-to-report-bugs">11. How do I report bugs?</h2>
+					<h2 id="how-to-report-bugs">11. {$_("howToReportBugs")}</h2>
 					<p>
-						If you encounter a bug, you can report it on our <a href="/discord" class="link primary">Support Server</a>.
-						Please provide as much information as possible, so we can reproduce the bug and fix it.
+						{@html replaceWordWithLink($_("reportBugs"), "Support Server", "/discord")}
 					</p>
 				</li>
 
 				<li>
-					<h2 id="how-to-request-features">12. How do I request features?</h2>
+					<h2 id="how-to-request-features">12. {$_("howToRequestFeatures")}</h2>
 					<p>
-						If you have a feature request, you can submit it on our <a href="/discord" class="link primary"
-							>Support Server</a
-						>. We will review your request and decide if it fits our roadmap.
+						{@html replaceWordWithLink($_("requestFeatures"), "Support Server", "/discord")}
 					</p>
 				</li>
 
 				<li>
-					<h2 id="how-to-report-abuse">13. How do I report abuse?</h2>
+					<h2 id="how-to-report-abuse">13. {$_("howToReportAbuse")}</h2>
 					<p>
-						If you encounter abuse or misuse of EazyAutodelete, you can report it on our <a
-							href="/discord"
-							class="link primary">Support Server</a
-						>. Please provide as much information as possible, so we can take action against the abuser.
+						{@html replaceWordWithLink($_("reportAbuse"), "Support Server", "/discord")}
 					</p>
 				</li>
 
 				<li>
-					<h2 id="how-to-contact">14. How can I contact the team?</h2>
+					<h2 id="how-to-contact">14. {$_("howToContact")}</h2>
 					<p>
-						You can contact the team on our <a href="/discord" class="link primary">Support Server</a>. We are happy to
-						help you with any questions or issues you might have.
+						{@html replaceWordWithLink($_("contactTeam"), "Support Server", "/discord")}
 					</p>
 				</li>
 			</ul>
@@ -306,7 +301,7 @@
 			<h1 id="support-bot">Supporting EazyAutodelete</h1>
 			<ul>
 				<li>
-					<h2 id="how-to-support">15. How can I support EazyAutodelete?</h2>
+					<h2 id="how-to-support">15. {$_("howToSupport")}</h2>
 					<p>
 						You can support EazyAutodelete by inviting it to your server, using it and sharing it with your friends and
 						just help spreading the word.
@@ -326,7 +321,7 @@
 				</li>
 
 				<li>
-					<h2 id="premium-plan">16. What is EazyAutodelete Premium?</h2>
+					<h2 id="premium-plan">16. {$_("whatIsPremium")}</h2>
 					<p>
 						EazyAutodelete Premium is a subscription plan that offers additional features and benefits to its users.
 						Premium users have higher limits, more configurations and access to premium support.
@@ -344,20 +339,16 @@
 				</li>
 
 				<li>
-					<h2 id="how-to-translate">17. How can I help translate EazyAutodelete?</h2>
+					<h2 id="how-to-translate">17. {$_("howToTranslate")}</h2>
 					<p>
-						If you want to help translate EazyAutodelete into your language, you can do so on our <a
-							href="https://translate.eazyautodelete.xyz/engage/eazyautodelete/"
-							class="link primary">Translation Platform</a
-						>. A short introduction to translating EazyAutodelete is available on our GitHub Profile at
-						<a href="https://eazyautodelete.xyz/translate" class="link primary">eazyautodelete.xyz/translate</a>.
+						{@html replaceWordWithLink(replaceWordWithLink($_("helpTranslate"), "Translation Platform", "https://translate.eazyautodelete.xyz/engage/eazyautodelete/", true), "eazyautodelete.xyz/translate", "/translate")}
 					</p>
 				</li>
 			</ul>
 		</div>
 
 		<h3 class="text-center">
-			Got any other questions? Join our <a class="link primary" href="/discord">Support Server</a>!
+			{@html replaceWordWithLink($_("gotOtherQuestions"), "Support Server", "/discord")}
 		</h3>
 	</div>
 </PageContent>

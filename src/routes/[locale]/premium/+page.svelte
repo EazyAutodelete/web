@@ -89,7 +89,7 @@
 			</div>
 			<div class="grid">
 				<div>
-					{@html replaceWordWithLink($_("premiumLimits"), "See here", $u("faq") + "#what-are-the-limits", true, false)}
+					{@html replaceWordWithLink(replaceWordWithLink($_("premiumLimits"), "See here", $u("faq") + "#what-are-the-limits", true, false), "Siehe hier", $u("faq") + "#what-are-the-limits", true, false)}
 				</div>
 				<Cross />
 
@@ -105,9 +105,14 @@
 			</div>
 			<div class="grid">
 				<div>
-					{@html replaceWordWithLink(
+					{@html replaceWordWithLink(replaceWordWithLink(
 						$_("premiumMoreRoles"),
 						"Target/Ignore",
+						"https://docs.eazyautodelete.xyz/config/roles",
+						true,
+						false
+					),
+						"Target/Ignorier",
 						"https://docs.eazyautodelete.xyz/config/roles",
 						true,
 						false
