@@ -1,14 +1,24 @@
 <script>
 	import ExamplePreview from "$lib/components/ExamplePreview.svelte";
 	import PageContent from "$lib/components/PageContent.svelte";
+	import { titleSuffix } from "$lib/const";
 	import { _ } from "$lib/i18n";
 	import replaceNameWithLink from "$lib/utils/replaceNameWithLink";
 
 	export let data;
+
+	$: description = $_("seeUseCases") + $_("descSuffix");
+	$: title = $_("useCasesHeading") + titleSuffix;
 </script>
 
 <svelte:head>
-	<title>{$_("useCasesHeading")} | EazyAutodelete</title>
+	<meta content={description} name="description" />
+	<meta content={description} property="og:description" />
+	<meta content={description} name="twitter:description" />
+
+	<meta content={title} property="og:title" />
+	<meta content={title} property="twitter:title" />
+	<title>{title}</title>
 </svelte:head>
 
 <PageContent>

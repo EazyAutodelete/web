@@ -7,7 +7,7 @@ export const load = () => {
 			title: usecase.title,
 			description: usecase.description,
 			tags: usecase.tags,
-			img: usecase.img || usecase.icon,
+			img: usecase.preview || usecase.img || usecase.icon,
 		})),
 	};
 };
