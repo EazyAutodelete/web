@@ -44,7 +44,7 @@
 	<div class="alert-content">
 		<div class="check">
 			{#if type === "success"}
-				<svg fill="none" height="2rem" viewBox="0 0 24 24" width="2rem" xmlns="http://www.w3.org/2000/svg">
+				<svg fill="none" height="32" viewBox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
 					<path
 						d="M4.89163 13.2687L9.16582 17.5427L18.7085 8"
 						stroke="#fff"
@@ -54,12 +54,12 @@
 					/>
 				</svg>
 			{:else if type === "error"}
-				<svg fill="none" height="2rem" viewBox="0 0 24 24" width="2rem" xmlns="http://www.w3.org/2000/svg">
+				<svg fill="none" height="32" viewBox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
 					<path d="M18 6L6 18" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" />
 					<path d="M6 6L18 18" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" />
 				</svg>
 			{:else if type === "warning"}
-				<svg fill="none" height="2rem" viewBox="0 0 24 24" width="2rem" xmlns="http://www.w3.org/2000/svg">
+				<svg fill="none" height="32" viewBox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
 					<path d="M12 9V12" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" />
 					<path d="M12 17.25V17.251" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" />
 					<path
@@ -74,10 +74,8 @@
 		</div>
 
 		<div class="message">
-			<span class="text text-1">{title}</span>
-			<span class="text text-2"
-				>Visit <a href="https://status.eazyautodelete.xyz">status.eazyautodelete.xyz</a> for more information.</span
-			>
+			<span class="text title">{title}</span>
+			<span class="text">{@html text}</span>
 		</div>
 	</div>
 
@@ -169,7 +167,7 @@
 			min-width: 35px;
 			background-color: var(--color);
 			// color: $color_1;
-			font-size: 20px;
+			font-size: x-large;
 			border-radius: 50%;
 		}
 		.message {
@@ -180,13 +178,13 @@
 	}
 	.message {
 		.text {
-			font-size: 16px;
 			font-weight: 400;
-			// color: $color_2;
+			font-size: medium;
 		}
-		.text.text-1 {
+		.text.title {
+			font-size: large;
 			font-weight: 600;
-			// color: $color_3;
+			text-align: start;
 		}
 	}
 	.progress.active {
