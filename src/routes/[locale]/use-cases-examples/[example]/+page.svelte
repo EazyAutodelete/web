@@ -22,7 +22,7 @@
 	// let title: string;
 
 	$: description = $_("seeUseCaseExample").replace("%user", name).replace("%server", guild) + $_("descSuffix");
-	$: metaTitle = $_("useCaseTitle") + titleSuffix;
+	$: metaTitle = $_("useCaseTitle").replace("%user", name).replace("%server", guild) + titleSuffix;
 </script>
 
 <svelte:head>
