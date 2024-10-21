@@ -37,9 +37,7 @@
 					<a href="#supported-features" class="link primary">{$_("supportFeatures")}</a>
 					<ul>
 						<li>
-							<a href="#supported-channel-types" class="link primary"
-								>5. {$_("supportedChannels")}</a
-							>
+							<a href="#supported-channel-types" class="link primary">5. {$_("supportedChannels")}</a>
 						</li>
 						<li><a href="#which-languages-are-supported" class="link primary">6. {$_("supportedLanguages")}</a></li>
 						<li><a href="#what-are-the-limits" class="link primary">7. {$_("whatAreTheLimits")}</a></li>
@@ -111,7 +109,7 @@
 			<ul>
 				<li>
 					<h2 id="supported-channel-types">
-					5. {$_("supportedChannels")}
+						5. {$_("supportedChannels")}
 					</h2>
 					<p>{$_("channelTypes")}</p>
 				</li>
@@ -183,7 +181,7 @@
 							<li><strong>Mode 4 Limit:</strong> &#62;1 msgs, &#60;1,000 msgs</li>
 						</ul>
 					</div>
-					
+
 					<p>
 						If you need more configurations or want access to the Premium Limits, you should consider subscribing to <a
 							href={$u("/premium")}
@@ -341,7 +339,16 @@
 				<li>
 					<h2 id="how-to-translate">17. {$_("howToTranslate")}</h2>
 					<p>
-						{@html replaceWordWithLink(replaceWordWithLink($_("helpTranslate"), "Translation Platform", "https://translate.eazyautodelete.xyz/engage/eazyautodelete/", true), "eazyautodelete.xyz/translate", "/translate")}
+						{@html replaceWordWithLink(
+							replaceWordWithLink(
+								$_("helpTranslate"),
+								"Translation Platform",
+								"https://translate.eazyautodelete.xyz/engage/eazyautodelete/",
+								true
+							),
+							"eazyautodelete.xyz/translate",
+							"/translate"
+						)}
 					</p>
 				</li>
 			</ul>

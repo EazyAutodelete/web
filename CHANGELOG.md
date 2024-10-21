@@ -4,31 +4,28 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [2.0.1](https://github.com/EazyAutodelete/web/compare/v0.0.2...v2.0.1) (2024-10-21)
 
-
 ### Bug Fixes
 
-* **repo:** fix versions ([9a2c8d6](https://github.com/EazyAutodelete/web/commit/9a2c8d67cd946838a3083910b6f80e7947d3f62e))
+- **repo:** fix versions ([9a2c8d6](https://github.com/EazyAutodelete/web/commit/9a2c8d67cd946838a3083910b6f80e7947d3f62e))
 
 ### [0.0.2](https://github.com/EazyAutodelete/web/compare/v0.2.1...v0.0.2) (2024-10-21)
 
-
 ### Features
 
-* add i18n, rewrite page ([ebf1df2](https://github.com/EazyAutodelete/web/commit/ebf1df2e5b964cdaea1e1768c0bd2adb17ed992c))
-* **faq:** add more i18n stats ([833c189](https://github.com/EazyAutodelete/web/commit/833c18938030937b09395fb55ae948d24683b2a8))
-* **i18n:** localize premium page ([5bbf896](https://github.com/EazyAutodelete/web/commit/5bbf896f6a1f6b548230c170cd2be88196d96100))
-* more i18n, more a11y, more seo friendly ([1daa9ae](https://github.com/EazyAutodelete/web/commit/1daa9ae94dc3a3198f971a0f0c5f1da1a919ee8d))
-* replace bootstrap libs with tailwind libs ([8a60038](https://github.com/EazyAutodelete/web/commit/8a60038a90c3e108bb11f9093f0a9de67aa07932))
-* seo, meta and more ([72d3ccf](https://github.com/EazyAutodelete/web/commit/72d3ccf3bf58130299fe5234e80349216f3ba59e))
-* use svelte, rewrite, new /, add /faq, /premium ([b6e923c](https://github.com/EazyAutodelete/web/commit/b6e923cc71b69661643daf13ac247e14bd4af9a8))
-
+- add i18n, rewrite page ([ebf1df2](https://github.com/EazyAutodelete/web/commit/ebf1df2e5b964cdaea1e1768c0bd2adb17ed992c))
+- **faq:** add more i18n stats ([833c189](https://github.com/EazyAutodelete/web/commit/833c18938030937b09395fb55ae948d24683b2a8))
+- **i18n:** localize premium page ([5bbf896](https://github.com/EazyAutodelete/web/commit/5bbf896f6a1f6b548230c170cd2be88196d96100))
+- more i18n, more a11y, more seo friendly ([1daa9ae](https://github.com/EazyAutodelete/web/commit/1daa9ae94dc3a3198f971a0f0c5f1da1a919ee8d))
+- replace bootstrap libs with tailwind libs ([8a60038](https://github.com/EazyAutodelete/web/commit/8a60038a90c3e108bb11f9093f0a9de67aa07932))
+- seo, meta and more ([72d3ccf](https://github.com/EazyAutodelete/web/commit/72d3ccf3bf58130299fe5234e80349216f3ba59e))
+- use svelte, rewrite, new /, add /faq, /premium ([b6e923c](https://github.com/EazyAutodelete/web/commit/b6e923cc71b69661643daf13ac247e14bd4af9a8))
 
 ### Bug Fixes
 
-* **i18n:** more localization, fix link generation ([1c3cc6c](https://github.com/EazyAutodelete/web/commit/1c3cc6c90284f9004ce6ce06bf9da3319f4202ac))
-* **meta:** fix meta tags for main page ([faabc8f](https://github.com/EazyAutodelete/web/commit/faabc8f9e5d3e26d854b26777b09884e65827886))
-* **seo,meta,a11y:** optimize seo, fix meta tags and enhance a11y ([49503c1](https://github.com/EazyAutodelete/web/commit/49503c1fbd03300664d753b626c76cbb719fe7d9))
-* **usecases:** replace vars in title ([aa5a007](https://github.com/EazyAutodelete/web/commit/aa5a007d41defdd442bf1ac6c9e2cfadc831c8c6))
+- **i18n:** more localization, fix link generation ([1c3cc6c](https://github.com/EazyAutodelete/web/commit/1c3cc6c90284f9004ce6ce06bf9da3319f4202ac))
+- **meta:** fix meta tags for main page ([faabc8f](https://github.com/EazyAutodelete/web/commit/faabc8f9e5d3e26d854b26777b09884e65827886))
+- **seo,meta,a11y:** optimize seo, fix meta tags and enhance a11y ([49503c1](https://github.com/EazyAutodelete/web/commit/49503c1fbd03300664d753b626c76cbb719fe7d9))
+- **usecases:** replace vars in title ([aa5a007](https://github.com/EazyAutodelete/web/commit/aa5a007d41defdd442bf1ac6c9e2cfadc831c8c6))
 
 ### [0.2.1](https://github.com/EazyAutodelete/web/compare/v0.2.0...v0.2.1) (2023-07-24)
 

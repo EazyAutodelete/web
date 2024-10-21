@@ -1,13 +1,10 @@
+import { locales } from "$lib/const";
 import { getPage, getPageTagForLocalizedPageName, locale } from "$lib/i18n";
 import { loadLocales } from "$lib/loadLocales";
-import { routeMap } from "$lib/routeMap";
-import { error, redirect } from "@sveltejs/kit";
-import { get } from "svelte/store";
+import { redirect } from "@sveltejs/kit";
 
 let loaded = false;
 loadLocales();
-
-const locales = ["en", "de"];
 
 export async function handle({ event, resolve }) {
 	if (!loaded) {
