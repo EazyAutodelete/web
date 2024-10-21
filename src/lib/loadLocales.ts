@@ -16,11 +16,12 @@ async function loadLanguage(lang: string) {
 				Authorization: `Token ${WEBLATE_TOKEN}`,
 			},
 		}
-	).catch(console.error);
+	);
 
-	if (!result) return;
+	if (!result) throw new Error("Failed to fetch translations");
 
 	const data = await result.json();
+	if (data?.detail === "Invalid token.") throw new Error("Invalid Weblate token");
 
 	if (!existsSync("./i18n")) mkdirSync("./i18n");
 	writeFileSync(`./i18n/${lang}.json`, JSON.stringify(data, null, 2));

@@ -1,7 +1,9 @@
 <script lang="ts">
 	import PageContent from "$lib/components/PageContent.svelte";
+	import { titleSuffix } from "$lib/const";
 	import { _, u } from "$lib/i18n";
-	import formatText from "$lib/utils/formatText.js";
+	import { replaceSpecialChars } from "$lib/replaceSpecialChars";
+	import formatText from "$lib/utils/formatText";
 	import replaceNameWithLink from "$lib/utils/replaceNameWithLink";
 
 	export let data;
@@ -19,7 +21,20 @@
 	// let avatar: string;
 	// let icon: string;
 	// let title: string;
+
+	$: description = $_("seeUseCaseExample").replace("%user", name).replace("%server", guild) + $_("descSuffix");
+	$: metaTitle = $_("useCaseTitle") + titleSuffix;
 </script>
+
+<svelte:head>
+	<meta content={replaceSpecialChars(description)} name="description" />
+	<meta content={replaceSpecialChars(description)} property="og:description" />
+	<meta content={replaceSpecialChars(description)} name="twitter:description" />
+
+	<meta content={replaceSpecialChars(metaTitle)} property="og:title" />
+	<meta content={replaceSpecialChars(metaTitle)} property="twitter:title" />
+	<title>{metaTitle}</title>
+</svelte:head>
 
 {#if img}
 	<div class="banner">
@@ -39,15 +54,14 @@
 				<p>{rank}</p>
 			</div>
 		</div>
-		<div class="server">
-			<a href="https://discord.com/invite/{invite}">
+		<a class="server" href="https://discord.com/invite/{invite || '9AKqaza'}">
 			<img src={icon} alt="Server Icon of {guild}" title="Server Icon of {guild}" />
 			<div class="text">
 				<h4>{guild}</h4>
 				<p>{guildtext}</p>
 			</div>
 		</a>
-		</div>
+
 		<p>Tags</p>
 		<ul class="tags">
 			{#each tags as tag}

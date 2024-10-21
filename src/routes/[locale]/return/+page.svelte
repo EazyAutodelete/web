@@ -1,9 +1,20 @@
 <script>
 	import PageContent from "$lib/components/PageContent.svelte";
+	import { titleSuffix } from "$lib/const";
+	import { _ } from "$lib/i18n";
+
+	$: description = $_("returnTitle") + $_("descSuffix");
+	$: title = $_("returnTitle") + titleSuffix;
 </script>
 
 <svelte:head>
-	<title>Thank for Adding me! | EazyAutodelete - Discord Autodelete Bot</title>
+	<meta content={description} name="description" />
+	<meta content={description} property="og:description" />
+	<meta content={description} name="twitter:description" />
+
+	<meta content={title} property="og:title" />
+	<meta content={title} property="twitter:title" />
+	<title>{title}</title>
 </svelte:head>
 
 <PageContent>
@@ -17,7 +28,7 @@
 			class="mx-auto my-4"
 			title="EazyAutodelete Logo"
 		/>
-		<h1 class="underline text-center">Thanks, for adding me to your server!</h1>
+		<h1 class="underline text-center">{$_("returnTitle")}</h1>
 		<h2 class="mb-6">
 			How about reading
 			<a href="https://docs.eazyautodelete.xyz/getting-started" style="color: #fff">

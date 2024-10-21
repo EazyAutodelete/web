@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>Error {code} | EazyAutodelete - Discord Bot</title>
+	<title>Error {code} | EazyAutodelete - Discord Autodelete Bot</title>
 </svelte:head>
 
 <div class="err">

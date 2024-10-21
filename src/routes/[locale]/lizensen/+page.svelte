@@ -1,17 +1,21 @@
 <script lang="ts">
 	import PageContent from "$lib/components/PageContent.svelte";
+	import { titleSuffix } from "$lib/const";
 	import { _ } from "$lib/i18n";
+	import { replaceSpecialChars } from "$lib/replaceSpecialChars";
+
+	$: description = $_("seeLegalInfo").replace("%topic", $_("licenses")) + $_("descSuffix");
+	$: title = $_("licenses") + titleSuffix;
 </script>
 
 <svelte:head>
-	<title>{$_("licenses")} | EazyAutodelete - Discord Autodelete Bot</title>
+	<meta content={replaceSpecialChars(description)} name="description" />
+	<meta content={replaceSpecialChars(description)} property="og:description" />
+	<meta content={replaceSpecialChars(description)} name="twitter:description" />
 
-	<meta
-		content="See legal Information about the {$_(
-			'licenses'
-		)} of EazyAutodelete - the best & most customizable Autodelete Bot for Discord. Completely free & in unlimited channels. With EazyAutodelete's advanced configuration options, you can autodelete messages based on user roles, mentions, a large number of filters or time intervals. Set durations like 5 minutes, 1 hour, 1 day, 24 hour or 1 week."
-		name="description"
-	/>
+	<meta content={replaceSpecialChars(title)} property="og:title" />
+	<meta content={replaceSpecialChars(title)} property="twitter:title" />
+	<title>{title}</title>
 </svelte:head>
 
 <PageContent>
