@@ -11,6 +11,7 @@
 	import FeatureStack3 from "$lib/components/FeatureStack3.svelte";
 	import { _ } from "$lib/i18n";
 	import ImageVideo from "$lib/components/ImageVideo.svelte";
+	import { replaceSpecialChars } from "$lib/replaceSpecialChars";
 
 	export let data: {
 		incident: any;
@@ -42,15 +43,19 @@
 
 	let width: number;
 	$: width;
+
+	$: description =  $_("descSuffix");
+	$: title = "EazyAutodelete - Discord Autodelete Bot";
 </script>
 
 <svelte:head>
-	<title>EazyAutodelete - Autodelete Discord Bot</title>
+	<meta content={replaceSpecialChars(description)} name="description" />
+	<meta content={replaceSpecialChars(description)} property="og:description" />
+	<meta content={replaceSpecialChars(description)} name="twitter:description" />
 
-	<meta
-		content="The best & most customizable Autodelete Bot for Discord. Completely free & in unlimited channels. With EazyAutodelete's advanced configuration options, you can autodelete messages based on user roles, mentions, a large number of filters or time intervals.  Set durations like 5 minutes, 1 hour, 1 day, 24 hour or 1 week."
-		name="description"
-	/>
+	<meta content={replaceSpecialChars(title)} property="og:title" />
+	<meta content={replaceSpecialChars(title)} property="twitter:title" />
+	<title>{title}</title>
 </svelte:head>
 
 <svelte:window bind:innerWidth={width} />
