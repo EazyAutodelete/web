@@ -5,9 +5,9 @@
 	import MobileNavbar from "$lib/components/MobileNavbar.svelte";
 	import Navbar from "$lib/components/Navbar.svelte";
 
-	import { onMount } from "svelte";
+	import { getContext, onMount } from "svelte";
 	import "../app.scss";
-	import { dictionary, getPage, getPageTagForLocalizedPageName, initI18n, locale } from "$lib/i18n";
+	import { _, dictionary, getPage, getPageTagForLocalizedPageName, initI18n, locale } from "$lib/i18n";
 	import { goto } from "$app/navigation";
 
 	$: innerWidth = 0;
@@ -38,7 +38,7 @@
 					const pageTag = getPageTagForLocalizedPageName(currentPage);
 					const newPage = getPage(pageTag, newLang);
 
-					console.log({ currentPathLang, currentPage, more, pageTag, newPage, newLang });
+					// console.log({ currentPathLang, currentPage, more, pageTag, newPage, newLang });
 
 					if (!newPage) return;
 
@@ -54,13 +54,6 @@
 </script>
 
 <svelte:window bind:innerWidth />
-
-<svelte:head>
-	<meta
-		content="The best & most customizable Autodelete Bot for Discord. Completely free & in unlimited channels. You can customise every setting to suit your needs."
-		name="description"
-	/>
-</svelte:head>
 
 {#if innerWidth >= 1024}
 	<Navbar />

@@ -1,4 +1,4 @@
-import { dictionary } from "$lib/i18n.js";
+import { dictionary } from "$lib/i18n";
 import { get } from "svelte/store";
 
 let incident:

@@ -29,7 +29,7 @@ export async function handle({ event, resolve }) {
 			const pageTag = getPageTagForLocalizedPageName(currentPage);
 			const newPage = getPage(pageTag);
 			const more = event.url.pathname.split("/").slice(3).join("/");
-			console.log({ currentPage, locale: get(locale), pageTag, newPage });
+			// console.log({ currentPage, locale: get(locale), pageTag, newPage });
 			if (currentPage !== newPage) {
 				throw redirect(
 					301,

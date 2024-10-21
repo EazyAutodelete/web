@@ -6,7 +6,10 @@ export const locale = writable("en");
 export const dictionary: Writable<{ [lang: string]: { [key: string]: string } }> = writable({});
 
 const translate = (key: string) => {
-	return get(dictionary)[get(locale)]?.[key] || get(dictionary)?.["en"]?.[key] || key;
+	return (get(dictionary)[get(locale)]?.[key] || get(dictionary)?.["en"]?.[key] || key)
+		.replace("&auml;", "ä")
+		.replace("&ouml;", "ö")
+		.replace("&uuml;", "ü");
 };
 
 const getUrl = (page: string) => {
@@ -40,5 +43,3 @@ export function initI18n(lang: string) {
 	locale.set(lang);
 	// return Promise.resolve();
 }
-
-

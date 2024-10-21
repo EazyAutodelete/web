@@ -1,18 +1,22 @@
 <script>
 	import PageContent from "$lib/components/PageContent.svelte";
+	import { titleSuffix } from "$lib/const";
 	import { _ } from "$lib/i18n";
+
+	$: description = $_("seeLegalInfo").replace("%topic", $_("imprint")) + $_("descSuffix");
+	$: title = $_("imprint") + titleSuffix;
 </script>
 
 <svelte:head>
-	<title>{$_("imprint")} | EazyAutodelete - Discord Autodelete Bot</title>
+	<meta content={description} name="description" />
+	<meta content={description} property="og:description" />
+	<meta content={description} name="twitter:description" />
 
-	<meta
-		content="See legal Information about the {$_(
-			'imprint'
-		)} of EazyAutodelete - the best & most customizable Autodelete Bot for Discord. Completely free & in unlimited channels. With EazyAutodelete's advanced configuration options, you can autodelete messages based on user roles, mentions, a large number of filters or time intervals. Set durations like 5 minutes, 1 hour, 1 day, 24 hour or 1 week."
-		name="description"
-	/>
+	<meta content={title} property="og:title" />
+	<meta content={title} property="twitter:title" />
+	<title>{title}</title>
 </svelte:head>
+
 <PageContent>
 	<div class="w-full">
 		<h1>{$_("imprint")}</h1>
