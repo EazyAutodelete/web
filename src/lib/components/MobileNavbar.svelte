@@ -25,10 +25,6 @@
 	let innerWidth = 0;
 
 	$: innerWidth = innerWidth;
-
-	const skip = e => {
-		e.stopPropagation();
-	};
 </script>
 
 <svelte:window bind:innerWidth />

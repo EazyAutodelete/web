@@ -5,7 +5,7 @@
 	import MobileNavbar from "$lib/components/MobileNavbar.svelte";
 	import Navbar from "$lib/components/Navbar.svelte";
 
-	import { getContext, onMount } from "svelte";
+	import {  onMount } from "svelte";
 	import "../app.scss";
 	import { _, dictionary, getPage, getPageTagForLocalizedPageName, initI18n, locale } from "$lib/i18n";
 	import { goto } from "$app/navigation";
