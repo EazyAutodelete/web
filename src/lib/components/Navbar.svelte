@@ -8,7 +8,7 @@
 		<li class="brand">
 			<a href="/"
 				><img
-					src="/assets/img/logo-small.webp"
+					src="https://storage.eazyautodelete.xyz/public/logos/logo-small.webp"
 					height="32"
 					width="32"
 					alt="EazyAutodelete Logo"

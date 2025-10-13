@@ -35,7 +35,7 @@
 			<div class="text-sm navlist">
 				<a href={$u("")} class="navheader block">
 					<img
-						src="/assets/img/logo-small.webp"
+						src="https://storage.eazyautodelete.xyz/public/logos/logo-small.webp"
 						width="48"
 						height="48"
 						class="logo shadow"

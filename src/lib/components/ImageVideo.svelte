@@ -20,7 +20,7 @@
 	{#if !videoLoaded}
 		<img
 			loading="lazy"
-			src="/assets/img/logo-small.webp"
+			src="https://storage.eazyautodelete.xyz/public/logos/logo-small.webp"
 			class="rounded-lg shadow-lg"
 			alt="Logo of EazyAutodelete. Black Trashcan on Blue Background."
 			title="Logo of EazyAutodelete. Black Trashcan on Blue Background."
@@ -43,7 +43,7 @@
 		on:loadeddata={handleLoaded}
 		style="display: {videoLoaded ? 'block' : 'block'}; position: {videoLoaded ? 'relative' : 'relative'}"
 	>
-		<source src={width >= 1024 ? "/assets/vid/webm/mode-1.webm" : ""} type="video/mp4" />
+		<source src={width >= 1024 ? "https://storage.eazyautodelete.xyz/public/videos/webm/mode-1.webm" : ""} type="video/mp4" />
 		Your Browser does not support the video tag.
 	</video>
 </div>

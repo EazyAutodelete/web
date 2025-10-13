@@ -22,7 +22,7 @@
 		<div class="w-full flex space-x-4">
 			<div class="w-1/2">
 				<img
-					src="/assets/img/filters-1.webp"
+					src="https://storage.eazyautodelete.xyz/public/images/filters-1.webp"
 					alt="Select different Message Types"
 					title="Select different Message Types"
 				/>
@@ -30,7 +30,7 @@
 			</div>
 			<div class="w-1/2">
 				<img
-					src="/assets/img/filters-2.webp"
+					src="https://storage.eazyautodelete.xyz/public/images/filters-2.webp"
 					alt="Select different Message Contents"
 					title="Select different Message Contents"
 				/>
@@ -45,18 +45,18 @@
 				{@html replaceWordWithLink(
 					line,
 					"Ignore or Target messages",
-					"https://docs.eazyautodelete.xyz/config/ignore-roles"
+					"https://docs.eazyautodelete.xyz/config/roles"
 				)}
 			</p>
 		{/each}
 
 		<div class="w-full flex space-x-4">
 			<div class="w-1/2">
-				<img src="/assets/img/target.webp" alt="Only target specific roles" title="Only target specific roles" />
+				<img src="https://storage.eazyautodelete.xyz/public/images/target.webp" alt="Only target specific roles" title="Only target specific roles" />
 				<span class="desc">Only target specific roles</span>
 			</div>
 			<div class="w-1/2">
-				<img src="/assets/img/ignore.webp" alt="Ignore specific roles" title="Ignore specific roles" />
+				<img src="https://storage.eazyautodelete.xyz/public/images/ignore.webp" alt="Ignore specific roles" title="Ignore specific roles" />
 				<span class="desc">Ignore specific roles</span>
 			</div>
 		</div>
@@ -70,7 +70,7 @@
 		<div class="w-full flex space-x-4">
 			<div class="w-full">
 				<img
-					src="/assets/img/load-old-messages.webp"
+					src="https://storage.eazyautodelete.xyz/public/images/load-old-messages.webp"
 					alt="Bot asking whether to load old messages"
 					title="Bot asking whether to load old messages"
 				/>
