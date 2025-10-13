@@ -32,7 +32,7 @@
 		<div class="w-full flex space-x-4">
 			<div class="w-1/2">
 				<img
-					src="/assets/img/configs.webp"
+					src="https://storage.eazyautodelete.xyz/public/images/configs.webp"
 					title="Menu to select a config8"
 					alt="A Discord Embed listing 2 EazyAutodelete configs with their options. A dropdown to select a config at the bottom."
 				/>
@@ -40,7 +40,7 @@
 			</div>
 			<div class="w-1/2">
 				<img
-					src="/assets/img/mode-select.webp"
+					src="https://storage.eazyautodelete.xyz/public/images/mode-select.webp"
 					title="Dropdown to select a mode"
 					alt="A Discord Dropdown showing 4 Modes of EazyAutodelete."
 				/>
@@ -57,14 +57,14 @@
 		<div class="w-full flex space-x-4">
 			<div>
 				<video autoplay loop muted playsinline style="height: 240px; width: auto">
-					<source src="/assets/vid/webm/mode-1.webm" type="video/mp4" />
+					<source src="https://storage.eazyautodelete.xyz/public/videos/webm/mode-1.webm" type="video/mp4" />
 					Your Browser does not support the video tag.
 				</video>
 				<p class="desc">Mode 1 + 10 sec limit</p>
 			</div>
 			<div>
 				<video autoplay loop muted playsinline style="height: 240px; width: auto">
-					<source src="/assets/vid/webm/mode-3.webm" type="video/mp4" />
+					<source src="https://storage.eazyautodelete.xyz/public/videos/webm/mode-3.webm" type="video/mp4" />
 					Your Browser does not support the video tag.
 				</video>
 				<p class="desc">Mode 3 + 3 msg limit</p>

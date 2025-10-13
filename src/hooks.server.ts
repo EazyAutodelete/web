@@ -7,7 +7,10 @@ let loaded = false;
 loadLocales();
 
 export async function handle({ event, resolve }) {
+	console.log("Handling request for", event.url.pathname);
+
 	if (!loaded) {
+		console.log("Loading locales...");
 		await loadLocales();
 		loaded = true;
 	}

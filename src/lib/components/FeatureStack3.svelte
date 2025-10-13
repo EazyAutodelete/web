@@ -26,7 +26,7 @@
 		{#each $_("fastText").split("\n") as line}
 			<p>
 				{@html replaceNameWithLink(line)
-					.replace("%statsServers", Math.floor(15600 * 1).toLocaleString())
+					.replace("%statsServers", Math.floor(27100 * 1).toLocaleString())
 					.replace("%statsUsers", Math.floor(7000000 * 1).toLocaleString())
 					.replace("%statsWeek", (Math.floor(stats[604800000] / 100) * 100).toLocaleString())
 					.replace("%statsMonth", (Math.floor(stats[2592000000] / 100) * 100).toLocaleString())

@@ -29,7 +29,7 @@
 				<div class="img-name">
 					<a href="/">
 						<img
-							src="/assets/img/logo-small.webp"
+							src="https://storage.eazyautodelete.xyz/public/logos/logo-small.webp"
 							height="42"
 							width="42"
 							alt="EazyAutodelete Logo"

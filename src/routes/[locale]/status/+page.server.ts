@@ -1,4 +1,7 @@
-import { GATEWAY_AUTH, GATEWAY_URL } from "$env/static/private";
+import { env } from "$env/dynamic/private"
+
+const GATEWAY_URL = env.GATEWAY_URL;
+const GATEWAY_AUTH = env.GATEWAY_AUTH;
 
 let cache: any[] = [];
 

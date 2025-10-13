@@ -9,7 +9,7 @@
 	<div class="guild">
 		<div class="icon">
 			<img
-				src="/assets/ref/{id}.webp"
+				src="https://storage.eazyautodelete.xyz/public/refs/{id}.webp"
 				title="{name} Discord Logo"
 				alt="{name} Discord Logo"
 				loading="lazy"
@@ -33,10 +33,10 @@
 					</svg>
 				{/if}
 				{#if type === "verified"}
-					<img src="/assets/verified.webp" title="White check mark" alt="White check mark" height="16" width="16" />
+					<img src="https://storage.eazyautodelete.xyz/public/icons/verified.webp" title="White check mark" alt="White check mark" height="16" width="16" />
 				{/if}
 				{#if type === "large"}
-					<img src="/assets/large.webp" title="Silhouette" alt="Silhouette" height="16" width="16" />
+					<img src="https://storage.eazyautodelete.xyz/public/icons/large.webp" title="Silhouette" alt="Silhouette" height="16" width="16" />
 				{/if}
 
 				<span>{name}</span>
