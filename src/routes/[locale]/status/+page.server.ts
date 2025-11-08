@@ -1,9 +1,8 @@
 import { env } from "$env/dynamic/private"
 
-const GATEWAY_URL = env.GATEWAY_URL;
-const GATEWAY_AUTH = env.GATEWAY_AUTH;
+const GATEWAY_URL = env.GATEWAY_URL || "http://gateway-watcher-http.ea-prod.svc.cluster.local/status";
 
-let cache: any[] = [];
+let cache: { shardId: number, workerId: number, state: number, data: { available: number, unavailable: number }, rtt: number }[] = [];
 
 let lastUpdated = 0;
 let updating = false;
@@ -20,17 +19,42 @@ async function updateShards() {
 	updating = true;
 
 	const shards = await Promise.race([
-		fetch(GATEWAY_URL, {
+		fetch(GATEWAY_URL.replace("/shard", "/status"), {
 			headers: {
-				"content-type": "application/json",
-				"Authorization": GATEWAY_AUTH,
+				"Content-Type": "application/json",
 			},
+			method: "GET"
 		}),
 		new Promise(resolve => setTimeout(() => resolve(null), 750)),
 	]).catch(e => console.error(e));
 
 	if (shards) {
-		cache = await (<any>shards).json();
+		type APIShardData = {
+			id: number,
+			data: {
+				available: number,
+				unavailable: number,
+			},
+			latency: number,
+			status: string,
+			node: string,
+			last_data: Date
+		}
+
+		const fetched = await (<any>shards).json() as { shards: APIShardData[] };
+
+		console.log(fetched)
+
+		cache = fetched.shards.map(shard => ({
+			shardId: shard.id,
+			workerId: Number(shard.node.split("-").pop()),
+			state: shard.status === "Ready" ? 0 : shard.status === "Connecting" ? 1 : -1,
+			data: {
+				available: shard.data.available,
+				unavailable: shard.data.unavailable,
+			},
+			rtt: shard.latency,
+		}));
 	}
 
 	lastUpdated = Date.now();
@@ -40,7 +64,7 @@ async function updateShards() {
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({}) {
-	if (lastUpdated + 1000 < Date.now()) updateShards();
+	if (lastUpdated + 10000 < Date.now()) updateShards();
 
 	return { shards: cache };
 }

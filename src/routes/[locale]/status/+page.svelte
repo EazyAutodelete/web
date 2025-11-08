@@ -75,8 +75,8 @@
 						</h5>
 
 						<div class="shard-info">
-							<p>Servers: {shard.data?.guilds?.length || 0}</p>
-							<p>Unvailable: {shard.data?.unavailable?.length || 0}</p>
+							<p>Servers: {shard.data?.available || 0}</p>
+							<p>Unvailable: {shard.data?.unavailable || 0}</p>
 							<p>Ping: {shard.rtt}ms</p>
 						</div>
 					</div>

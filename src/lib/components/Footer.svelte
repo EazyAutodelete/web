@@ -42,8 +42,8 @@
 				<p class="ad">{$_("ad")}</p>
 
 				<p class="copy">
-					&copy; 2020-2024 -
-					<a href="https://qreepex.xyz">Ben</a>
+					&copy; 2020-{new Date().getFullYear()} -
+					<a href="https://schiemann.work">Ben</a>
 				</p>
 			</div>
 			<div class="navigation w-full order-1 lg:w-1/2 lg:ps-2">
