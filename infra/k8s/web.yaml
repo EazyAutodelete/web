@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ea-web
-  namespace: website
+  namespace: web
 spec:
   replicas: 2
   selector:
@@ -14,9 +14,11 @@ spec:
       labels:
         app: ea-web
     spec:
+      imagePullSecrets:
+      - name: ghcr-secret
       containers:
       - name: ea-web
-        image: ghcr.io/eazyautodelete/ea-web:latest
+        image: ghcr.io/eazyautodelete/web:2.0.7
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
@@ -27,6 +29,19 @@ spec:
           value: "production"
         - name: PORT
           value: "3000"
+        - name: GATEWAY_URL
+          valueFrom:
+            configMapKeyRef:
+              name: ea-prod-config
+              key: SHARD_MONITORING_URL
+        - name: WEBLATE_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: ea-prod-secret
+              key: TRANSLATIONS_TOKEN
+        volumeMounts:
+        - name: i18n-cache
+          mountPath: /app/i18n
         resources:
           requests:
             memory: "128Mi"
@@ -50,6 +65,9 @@ spec:
           periodSeconds: 5
           timeoutSeconds: 3
           failureThreshold: 3
+      volumes:
+      - name: i18n-cache
+        emptyDir: {}
       securityContext:
         runAsNonRoot: true
         runAsUser: 1001
@@ -60,7 +78,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: ea-web-service
-  namespace: website
+  namespace: web
   labels:
     app: ea-web
 spec:
@@ -78,7 +96,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ea-web-ingress
-  namespace: website
+  namespace: web
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
@@ -106,7 +124,7 @@ apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: ea-web-hpa
-  namespace: website
+  namespace: web
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
