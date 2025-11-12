@@ -15,7 +15,11 @@
 
 	export let data: {
 		incident: any;
-		messages: { 3600000: 0; 86400000: 0; 604800000: 0; 2592000000: 0; 31536000000: 0 };
+		messages: { 		all: 111_893_985,
+		year: 31_876_256,
+		month: 3_893_438,
+		week: 2_581_721,
+		day: 368_817, };
 		guilds: { count: number };
 	};
 
@@ -86,7 +90,7 @@
 
 				<GuildCounter guilds={data.guilds.count} />
 
-				<MessageCounter data={data.messages} />
+				<MessageCounter  />
 			</div>
 		</div>
 

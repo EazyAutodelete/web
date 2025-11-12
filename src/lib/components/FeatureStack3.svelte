@@ -28,9 +28,9 @@
 				{@html replaceNameWithLink(line)
 					.replace("%statsServers", Math.floor(27100 * 1).toLocaleString())
 					.replace("%statsUsers", Math.floor(7000000 * 1).toLocaleString())
-					.replace("%statsWeek", (Math.floor(stats[604800000] / 100) * 100).toLocaleString())
-					.replace("%statsMonth", (Math.floor(stats[2592000000] / 100) * 100).toLocaleString())
-					.replace("%statsYear", (Math.floor(stats[31536000000] / 1000) / 1000).toLocaleString())}
+					.replace("%statsWeek", (Math.floor(stats["week"] / 100) * 100).toLocaleString())
+					.replace("%statsMonth", (Math.floor(stats["month"] / 100) * 100).toLocaleString())
+					.replace("%statsYear", (Math.floor(stats["year"] / 1000) / 1000).toLocaleString())}
 			</p>
 		{/each}
 	</div>
