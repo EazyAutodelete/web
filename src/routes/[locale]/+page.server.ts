@@ -1,46 +1,49 @@
-import { error, redirect } from "@sveltejs/kit";
+import { error } from "@sveltejs/kit";
 
 const cache = {
-	guilds: { count: 14800 },
+	guilds: { count: 27700 },
 	messages: {
-		all: 0,
-		year: 0,
-		month: 0,
-		week: 0,
-		day: 0,
+		all: 111_893_985,
+		year: 31_876_256,
+		month: 3_893_438,
+		week: 2_581_721,
+		day: 368_817,
 	},
 };
-let lastUpdated = 0;
 let updating = false;
 updateStats();
 async function updateStats() {
 	if (updating) return;
 
-	updating = true;
+	try {
+		// updating = true;
 
-	const guildCount = await fetch("https://api.eazyautodelete.xyz/public/stats/guilds", {
-		headers: { "content-type": "application/json" },
-	}).catch(e => {
-		updating = false;
-	});
-	if (guildCount) {
-		const guildCountJson = await guildCount.json();
+		// const guildCount = await fetch("https://api.eazyautodelete.xyz/public/stats/guilds", {
+		// 	headers: { "content-type": "application/json" },
+		// }).catch(e => {
+		// 	updating = false;
+		// });
+		// if (guildCount) {
+		// 	const guildCountJson = await guildCount.json();
 
-		cache.guilds = guildCountJson?.count === 14200 ? { count: 27000 } : guildCountJson;
+		// 	cache.guilds = guildCountJson?.count === 14200 ? { count: 27000 } : guildCountJson;
+
+		// }
+
+		// const messageCount = await fetch("https://api.eazyautodelete.xyz/public/stats/deleted-messages/all", {
+		// 	headers: { "content-type": "application/json" },
+		// }).catch(e => {
+		// 	updating = false;
+		// });
+		// if (messageCount) {
+		// 	const messageCountJson = await messageCount.json();
+
+		// 	cache.messages = messageCountJson;
+		// }
+
+	} catch (e) {
+		// ignore
 	}
-
-	const messageCount = await fetch("https://api.eazyautodelete.xyz/public/stats/deleted-messages/all", {
-		headers: { "content-type": "application/json" },
-	}).catch(e => {
-		updating = false;
-	});
-	if (messageCount) {
-		const messageCountJson = await messageCount.json();
-
-		cache.messages = messageCountJson;
-	}
-
-	lastUpdated = Date.now();
 }
 
 setInterval(updateStats, 1000 * 60 * 5);
@@ -49,7 +52,7 @@ setInterval(updateStats, 1000 * 60 * 5);
 export async function load({ params }) {
 	if (!params.locale || (params.locale !== "en" && params.locale !== "de")) throw error(404, "Language was not found");
 
-	if (lastUpdated + 1000 * 30 < Date.now()) await updateStats();
+	// if (lastUpdated + 1000 * 30 < Date.now()) await updateStats();
 
 	return cache;
 }
