@@ -23,7 +23,7 @@
 		<p class="intro">when purchasing a premium subscription.</p>
 
 		<p>
-			This declaration only applies to purchases made online via our website using the payment processor Stripe.
+			This declaration only applies to purchases made online via our website using the payment processors Stripe and Paddle.
 			Purchases made directly via the Discord platform are subject to Discord's <a
 				class="link primary"
 				href="https://discord.com/terms/paid-services-terms">Paid Service Terms</a
@@ -97,7 +97,7 @@
 		</p>
 
 		<p>
-			<i> This document was last updated on 13th of April, 2024. </i>
+			<i> This document was last updated on November 14, 2025. </i>
 		</p>
 
 		<br />

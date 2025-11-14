@@ -21,7 +21,7 @@
 	<div class="w-full">
 		<h1 class="text-center underline">{$_("terms")}</h1>
 
-		<p>These terms are effective as of November 24, 2021 and were last changed on August 8, 2024.</p>
+		<p>These terms are effective as of November 24, 2021 and were last changed on November 14, 2025.</p>
 
 		<h1>1. Introduction</h1>
 
@@ -167,6 +167,14 @@
 		</p>
 
 		<p>
+			<strong>Access after permission changes.</strong> We cannot guarantee that users will immediately lose access to the
+			dashboard, admin areas, or other parts of the Service when their permissions or roles are changed or revoked. Due to
+			factors such as caching, API propagation delays, synchronization latencies, or actions taken by third parties (e.g.
+			Discord or server administrators), permission changes may not be reflected instantly. We are not liable for any loss,
+			damage or other consequences that may arise from continued access after permissions have been revoked.
+		</p>
+
+		<p>
 			<strong>Certain Restrictions.</strong> The rights granted to you in these Terms are subject to the following restrictions:
 			(a) you may not sell, rent, lease, transfer, assign, distribute, host or otherwise commercially exploit the Service
 			or access to the Service; (b) you may not modify, derive, disassemble, reverse compile or reverse engineer any portion
@@ -195,11 +203,19 @@
 			</li>
 			<li>Some filters may only become active for messages that were sent after the filters were set.</li>
 			<li>
-				The number of messages that are processed in a deletion run with activated mode 3 and deleted promptly after
-				checking and filtering is limited for premium users to the upper limit for the adjustable limit for mode 3 + 20%
-				and for normal users to the upper limit for the adjustable limit for mode 3 + 15%.
+				Loading and processing old messages is limited for a maximum age of 14 days due to API limits enforced by
+				Discord that affect all bots.
+			</li>
+			<li>
+				We are not liable for data that is mistakenly not deleted because our service was offline, malfunctioning or
+				otherwise not working properly at the time the data was created or modified.
 			</li>
 		</ul>
+
+		<p>
+			The Service relies on Discord's API and other third-party services. We are not responsible for changes, outages,
+			restrictions, or policy updates by Discord or any third party that may affect the Service.
+		</p>
 
 		<h1>7. Third-Party Links & Ads; Other Users</h1>
 
@@ -338,6 +354,12 @@
 			that any termination of your account may result in the deletion of the User Content associated with your account from
 			our live databases. We will not be liable to you in any way for any termination of your rights under these Terms. Even
 			after termination of your rights under these Terms, certain provisions of these Terms will remain in effect.
+		</p>
+
+		<h1>12. Governing Law & Jurisdiction</h1>
+		<p>
+			These Terms shall be governed by and construed in accordance with the laws of Germany. Any disputes arising from
+			or related to these Terms shall be subject to the exclusive jurisdiction of the courts in Hamburg, Germany.
 		</p>
 	</div>
 </PageContent>
