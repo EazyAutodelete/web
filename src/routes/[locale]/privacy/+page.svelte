@@ -429,8 +429,8 @@
 		<p>
 			To exercise any of your rights (information, rectification, deletion, restriction, portability or objection) simply
 			reach out via the Imprint contact details. Please note: full deletion of your data may mean the Service can no longer
-			function as before (e.g. loss of custom settings, stored configurations or premium access). Re‑registration or
-			re‑configuration may be required to restore certain functionality.
+			function as before (e.g. loss of custom settings, stored configurations or premium access). Re-registration or
+			re-configuration may be required to restore certain functionality.
 		</p>
 		<h3>Right to demand processing restrictions</h3>
 		<p>
