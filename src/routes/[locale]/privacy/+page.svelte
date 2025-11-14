@@ -27,7 +27,7 @@
 			The following information will provide you with information on how we process data within our services. The term
 			&ldquo;personal data&rdquo; comprises all data that can be used to personally identify you.
 		</p>
-		<p>This policy is effective as of February 2, 2022 and was last updated on August 8, 2024.</p>
+		<p>This policy is effective as of February 2, 2022 and was last updated on November 11, 2025.</p>
 
 		<p>
 			We have the discretion to change our Privacy Policy to reflect updates to our business processes, current
@@ -202,6 +202,24 @@
 			basis of Art. 6(1)(a) GDPR and &sect; 25 (1) TDDDG, insofar the consent includes the storage of cookies or the
 			access to information in the user&rsquo;s end device (e.g., device fingerprinting) within the meaning of the
 			TDDDG. This consent can be revoked at any time.
+		</p>
+		<h3>OVH</h3>
+		<p>
+			The provider is the OVH GmbH, Kelsterbacher Str. 8, 65451 Kelsterbach, Germany (hereinafter referred to as: OVH).
+		</p>
+		<p>
+			For details, please view the data privacy policy of OVH: <a
+				href="https://www.ovhcloud.com/de/personal-data-protection/"
+				target="_blank"
+				rel="noopener noreferrer">https://www.ovhcloud.com/de/personal-data-protection/</a
+			>.
+		</p>
+		<p>
+			We use OVH on the basis of Art. 6(1)(f) GDPR. We have a legitimate interest in the most reliable depiction of our
+			service possible. If appropriate consent has been obtained, the processing is carried out exclusively on the basis
+			of Art. 6(1)(a) GDPR and &sect; 25 (1) TDDDG, insofar the consent includes the storage of cookies or the access to
+			information in the user&rsquo;s end device (e.g., device fingerprinting) within the meaning of the TDDDG. This
+			consent can be revoked at any time.
 		</p>
 
 		<h4>Data processing</h4>
@@ -403,10 +421,16 @@
 		</p>
 		<h3>Information about, rectification and eradication of data</h3>
 		<p>
-			Within the scope of the applicable statutory provisions, you have the right to demand information about your
-			archived personal data, their source and recipients as well as the purpose of the processing of your data at any
-			time. You may also have a right to have your data rectified or eradicated. If you have questions about this
-			subject matter or any other questions about personal data, please do not hesitate to contact us at any time.
+			Subject to applicable law, you may request information about your personal data (source, recipients, purposes) and
+			request rectification or deletion. For any questions regarding personal data, contact us at any time using the
+			information provided in the Imprint.
+		</p>
+
+		<p>
+			To exercise any of your rights (information, rectification, deletion, restriction, portability or objection) simply
+			reach out via the Imprint contact details. Please note: full deletion of your data may mean the Service can no longer
+			function as before (e.g. loss of custom settings, stored configurations or premium access). Re-registration or
+			re-configuration may be required to restore certain functionality.
 		</p>
 		<h3>Right to demand processing restrictions</h3>
 		<p>
@@ -466,43 +490,87 @@
 		</p>
 		<h2>4. Recording of data</h2>
 		<h3>Discord</h3>
-		<p>We collect data of Discord via its API and Gateway.</p>
-		<p>
-			The service has the ability to read every message and its attachments in the channels it has access to through the
-			Discord API and Gateway. The service will only read the content of messages and attachments if it is setup to work
-			in that specific channel.
-		</p>
-		<p>
-			The content of message and attachments is read and processed to provide core features of the service. Once the
-			content has been processed once without being written to a disk, it is not read or saved. After that, we can not
-			and do not intend to access this content.
-		</p>
-		<p>
-			Other information about every message in your server can be stored, written on disk and re-processed at any time.
-			Those information include:
-		</p>
-		<ul>
-			<li>IDs of the message, the webhook, the author, the channel and guild it was sent in;</li>
-			<li>timestamps of when the message was sent and last edited;</li>
-			<li>flags, type, mentions of the message and whether it is pinned;</li>
-			<li>amout of attachments, reactions, emojis, stickersand embeds in the message;</li>
-		</ul>
-		<p>The Bot may store data other than messages, including but not limited to:</p>
-		<ul>
-			<li>name, ID, invite, features, date of joining, owner-ID and icon of your server;</li>
-			<li>IDs, roles, preffered locale, username, avatar and permissions of all members within your server;</li>
-			<li>IDs, names, permissions and positions of all roles within your server;</li>
-			<li>
-				name, ID, meta-data, type, position, flag and last message ids of all channels and threads within your server.
-			</li>
-		</ul>
+		<p>We collect data from Discord via its API and Gateway.</p>
 
 		<p>
-			Some of the data we collect is listed in Discord as explained at <a
-				href="https://support.discord.com/hc/de/articles/7933951485975-Visibility-of-Bot-Data-Access"
-				>https://support.discord.com/hc/de/articles/7933951485975-Visibility-of-Bot-Data-Access</a
-			>.
+			The service is technically capable of reading all messages and attachments in any channel it has access to through
+			the Discord API and Gateway. However, it will only read messages in channels where the service is explicitly
+			enabled.
 		</p>
+
+		<p>
+			When processing messages, the content of messages and attachments is only read as necessary to provide core
+			features. Message content is processed once in memory and is not written to disk. After processing, we cannot and
+			do not intend to access this content again.
+		</p>
+
+		<h4>Stored Message Metadata (No Message Content)</h4>
+		<p>
+			While we do not store any message content by default, we do store detailed metadata about messages for operational
+			functionality. This includes:
+		</p>
+
+		<ul>
+			<li>message ID, timestamp, author ID, server ID, channel ID;</li>
+			<li>whether the author is a bot or webhook account;</li>
+			<li>whether the message is pinned;</li>
+			<li>message type and flags;</li>
+			<li>whether the message was edited;</li>
+			<li>whether message references exist (such as replies);</li>
+			<li>whether the message contains attachments, images, voice messages, embeds or polls;</li>
+			<li>counts and details of reactions;</li>
+			<li>whether the content contains emojis, mentions, links or stickers.</li>
+		</ul>
+
+		<h4>Stored Server and Channel Data</h4>
+		<p>For the operation of the service, we store essential server and channel information, including:</p>
+
+		<ul>
+			<li>server name, ID, icon;</li>
+			<li>channel name, ID, position, parent channel, permissions;</li>
+			<li>channel metadata and configuration details.</li>
+		</ul>
+
+		<p>This information is required to ensure correct bot operation, permission checks, and feature configuration.</p>
+
+		<h4>Role and Permission Tracking</h4>
+		<p>
+			We store all roles within a server, including their IDs, names, permissions and positions. We also track updates
+			to role permissions and changes to the roles assigned to users. This is necessary to ensure that only authorized
+			users can access restricted areas or features of our services.
+		</p>
+
+		<h4>Language (Locale) Data</h4>
+		<p>
+			To provide translations for the bot, the website and connected services, we store the language (locale) you have
+			set in Discord. This information is transmitted when you execute a command or log into any of our online services
+			using your Discord account.
+		</p>
+
+		<h4>Optional User-Enabled Message Logging</h4>
+		<p>
+			We offer optional features that allow users to explicitly enable the storage of message logs. These logs may
+			include the full content of messages. This functionality is <strong>disabled by default</strong>; no message
+			content is stored unless the user explicitly activates it.
+		</p>
+
+		<p>
+			When a user activates message logging, they are responsible for ensuring that all participants in the affected
+			channel agree to the storage of their message content. Message logs are stored only for the duration specified
+			during configuration and are automatically deleted afterwards.
+		</p>
+
+		<p>
+			If message logging is not explicitly enabled, <strong>we do not store any message content</strong>.
+		</p>
+
+		<p>
+			Some of the data we have access to is listed in Discord as explained at
+			<a href="https://support.discord.com/hc/de/articles/7933951485975-Visibility-of-Bot-Data-Access">
+				https://support.discord.com/hc/de/articles/7933951485975-Visibility-of-Bot-Data-Access
+			</a>.
+		</p>
+
 		<h3>Cookies</h3>
 		<p>
 			Our services use what the industry refers to as &ldquo;cookies.&rdquo; Cookies are small data packages that do not
@@ -672,25 +740,30 @@
 			mandated by data privacy laws that guarantees that they process personal data of our service's users only based on
 			our instructions and in compliance with the GDPR.
 		</p>
-		<h3>ChatGPT</h3>
+		<h3>OpenAI</h3>
 		<p>
-			We use ChatGPT for our customer communication. The provider is OpenAI, 3180 18th St, San Francisco, CA 94110, USA, <a
+			We use Artificial Intelligence by OpenAI for our customer communication. The provider is OpenAI, 3180 18th St, San Francisco, CA 94110, USA, <a
 				href="https://openai.com"
 				target="_blank"
 				rel="noopener noreferrer">https://openai.com</a
-			>. We use ChatGPT for the following tools:
+			>. We use OpenAI's services for the following tools:
 		</p>
-		<ul><li>Providing interactive setup functions, only available with explicit consent;</li></ul>
+		<ul>
+			<li>Providing interactive setup functions, only available with explicit consent;</li>
+			<li>Providing interactive customer support, only available with explicit consent;</li>
+			<li>Generating placeholder content for our support server, user data only processed with explicit consent;</li>
+		</ul>
 		<p>
-			When you start a conversation with us via our service and ChatGPT is activated, your input (including metadata) is
-			transferred to ChatGPT's servers and processed there to generate a suitable response.
+			When you explicitly consent to use these features, data you provide (e.g., questions, messages and their metadata) will be
+			transferred to OpenAI's servers for processing. This enables us to provide you with AI assistance and content generation.
 		</p>
+
 		<p>
-			OpenAI reserves the right to process the input made in ChatGPT for training its own algorithm. We cannot judge the
+			OpenAI reserves the right to process all inputs for training its own algorithm. We cannot judge the
 			exact way in which the data is processed.
 		</p>
 		<p>
-			The use of ChatGPT is based on Art. 6 (1)(f) GDPR. The servoce operator has a legitimate interest in the most
+			The use of OpenAI's services is based on Art. 6 (1)(f) GDPR. The service operator has a legitimate interest in the most
 			efficient customer communication possible using modern technical solutions. If a corresponding consent has been
 			requested, the processing is carried out exclusively on the basis of Art. 6 (1)(a) GDPR and &sect; 25 (1) TDDDG.
 			The consent can be revoked at any time.
@@ -709,6 +782,53 @@
 			mandated by data privacy laws that guarantees that they process personal data of our service's users only based on
 			our instructions and in compliance with the GDPR.
 		</p>
+
+		<h3>Google AI</h3>
+		<p>
+			We use Artificial Intelligence by Google for our customer communication. The provider is Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA, <a
+				href="https://www.google.com"
+				target="_blank"
+				rel="noopener noreferrer">https://www.google.com</a
+			>. We use Google's services for the following tools:
+		</p>
+		<ul>
+			<li>Providing interactive setup functions, only available with explicit consent;</li>
+			<li>Providing interactive customer support, only available with explicit consent;</li>
+			<li>Generating placeholder content for our support server, user data only processed with explicit consent;</li>
+		</ul>
+
+		<p>
+			When you explicitly consent to use these features, data you provide (e.g., questions, messages and their metadata) will be
+			transferred to Google's servers for processing. This enables us to provide you with AI assistance and content generation.
+		</p>
+
+		<p>
+			Google reserves the right to process all inputs for training its own algorithm. We cannot judge the
+			exact way in which the data is processed.
+		</p>
+
+		<p>
+			The use of Google's services is based on Art. 6 (1)(f) GDPR. The service operator has a legitimate interest in the most
+			efficient customer communication possible using modern technical solutions. If a corresponding consent has been
+			requested, the processing is carried out exclusively on the basis of Art. 6 (1)(a) GDPR and &sect; 25 (1) TDDDG.
+			The consent can be revoked at any time.
+		</p>
+
+		<p>
+			You can obtain further information here: <a
+				href="https://policies.google.com/privacy"
+				target="_blank"
+				rel="noopener noreferrer">https://policies.google.com/privacy</a
+			>.
+		</p>
+
+		<h4>Data processing</h4>
+		<p>
+			We have concluded a data processing agreement (DPA) for the use of the above-mentioned service. This is a contract
+			mandated by data privacy laws that guarantees that they process personal data of our service's users only based on
+			our instructions and in compliance with the GDPR.
+		</p>
+
 		<h2>6. eCommerce and payment service providers</h2>
 		<h3>Processing of Customer and Contract Data</h3>
 		<p>
@@ -801,9 +921,23 @@
 				rel="noopener noreferrer">https://stripe.com/de/privacy</a
 			>.
 		</p>
+
+		<h4>Paddle</h4>
+		<p>
+			The provider for customers within the EU is Paddle.com (Paddle.com Market Ltd), Judd House, 18-29 Mora Street,
+			London, United Kingdom (hereinafter &ldquo;Paddle&rdquo;).
+		</p>
+		<p>
+			Details can be found in Paddle&rsquo;s Privacy Policy at the following link: <a
+				href="https://paddle.com/privacy/"
+				target="_blank"
+				rel="noopener noreferrer">https://paddle.com/privacy/</a
+			>.
+		</p>
+
 		<h4>Klarna</h4>
 		<p>
-			The supplier is Klarna AB, Sveav&auml;gen 46, 111 34 Stockholm, Sweden (hereinafter &ldquo;Klarna&ldquo;). Klarna
+			The supplier is Klarna AB, Sveav&auml;gen 46, 111 34 Stockholm, Sweden (hereinafter &ldquo;Klarna&rdquo;). Klarna
 			offers various payment options (e.g., hire purchase). If you choose to pay with Klarna (Klarna checkout solution),
 			Klarna will collect various personal data from you. Klarna uses cookies to optimize the use of Klarna checkout
 			solution. For details on the use of Klarna cookies, please see the following link: <a
