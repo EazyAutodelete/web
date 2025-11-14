@@ -18,7 +18,7 @@ spec:
       - name: ghcr-secret
       containers:
       - name: ea-web
-        image: ghcr.io/eazyautodelete/web:2.0.10
+        image: ghcr.io/eazyautodelete/web:2.0.11
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
