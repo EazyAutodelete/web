@@ -937,7 +937,7 @@
 
 		<h4>Klarna</h4>
 		<p>
-			The supplier is Klarna AB, Sveav&auml;gen 46, 111 34 Stockholm, Sweden (hereinafter &ldquo;Klarna&ldquo;). Klarna
+			The supplier is Klarna AB, Sveav&auml;gen 46, 111 34 Stockholm, Sweden (hereinafter &ldquo;Klarna&rdquo;). Klarna
 			offers various payment options (e.g., hire purchase). If you choose to pay with Klarna (Klarna checkout solution),
 			Klarna will collect various personal data from you. Klarna uses cookies to optimize the use of Klarna checkout
 			solution. For details on the use of Klarna cookies, please see the following link: <a
