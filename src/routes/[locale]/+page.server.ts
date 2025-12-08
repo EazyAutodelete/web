@@ -50,7 +50,8 @@ setInterval(updateStats, 1000 * 60 * 5);
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ params }) {
-	if (!params.locale || (params.locale !== "en" && params.locale !== "de")) throw error(404, "Language was not found");
+	const VALID_LOCALES = ["en", "de", "fr", "es", "pl", "pt"];
+	if (!params.locale || !VALID_LOCALES.includes(params.locale)) throw error(404, "Language was not found");
 
 	// if (lastUpdated + 1000 * 30 < Date.now()) await updateStats();
 

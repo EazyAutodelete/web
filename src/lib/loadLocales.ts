@@ -6,7 +6,7 @@ const WEBLATE_TOKEN = env.WEBLATE_TOKEN;
 
 export function loadLocales() {
 	console.log("Loading locales...");
-	return Promise.all(["en", "de"].map(lang => loadLanguage(lang)));
+	return Promise.all(["en", "de", "es", "pl", "fr", "pt_BR"].map(lang => loadLanguage(lang)));
 }
 
 async function loadLanguage(lang: string) {
@@ -22,6 +22,8 @@ async function loadLanguage(lang: string) {
 			},
 		}
 	);
+
+	if (lang == "pt_BR") lang = "pt";
 
 	if (!result) throw new Error("Failed to fetch translations");
 
