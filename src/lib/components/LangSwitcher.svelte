@@ -37,6 +37,10 @@
 	{#key $locale}
 		<button class:high={$locale === "en"} class="p-4" on:click={() => cL("en")}>English</button>
 		<button class:high={$locale === "de"} class="p-4" on:click={() => cL("de")}>Deutsch</button>
+		<button class:high={$locale === "fr"} class="p-4" on:click={() => cL("fr")}>Français</button>
+		<button class:high={$locale === "es"} class="p-4" on:click={() => cL("es")}>Español</button>
+		<button class:high={$locale === "pt"} class="p-4" on:click={() => cL("pt")}>Português</button>
+		<button class:high={$locale === "pl"} class="p-4" on:click={() => cL("pl")}>Polski</button>
 	{/key}
 </div>
 
