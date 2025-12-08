@@ -21,6 +21,8 @@ export const load = async function ({ fetch }) {
 };
 
 async function loadIncidents(fetch: any) {
+	lastUpdated = Date.now();
+
 	try {
 		const req = await fetch("https://status.eazyautodelete.xyz/api/status-page/bot");
 		if (!req) return;

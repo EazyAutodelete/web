@@ -38,8 +38,6 @@
 					const pageTag = getPageTagForLocalizedPageName(currentPage);
 					const newPage = getPage(pageTag, newLang);
 
-					// console.log({ currentPathLang, currentPage, more, pageTag, newPage, newLang });
-
 					if (!newPage) return;
 
 					return goto(
@@ -49,7 +47,7 @@
 			100
 		);
 
-		initI18n(lang);
+		initI18n(lang!);
 	});
 </script>
 

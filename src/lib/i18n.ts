@@ -44,6 +44,5 @@ export const u = derived([locale], () => getUrl);
 export const _ = derived([locale, dictionary], () => translate);
 
 export function initI18n(lang: string) {
-	locale.set(lang);
-	// return Promise.resolve();
+	locale.set(lang || "en");
 }
