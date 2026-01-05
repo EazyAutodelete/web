@@ -1,41 +1,20 @@
-import { env } from "$env/dynamic/private";
 import { get } from "svelte/store";
 import { dictionary } from "./i18n";
-
-const WEBLATE_TOKEN = env.WEBLATE_TOKEN;
+import en from "./i18n/en.json"
+import de from "./i18n/de.json"
+import es from "./i18n/es.json"
+import pl from "./i18n/pl.json"
+import fr from "./i18n/fr.json"
+import pt from "./i18n/pt_BR.json"
 
 export function loadLocales() {
-	console.log("Loading locales...");
-	return Promise.all(["en", "de", "es", "pl", "fr", "pt_BR"].map(lang => loadLanguage(lang)));
-}
-
-async function loadLanguage(lang: string) {
-	const { existsSync, mkdirSync, writeFileSync } = await import("fs");
-
-	console.log(`Loading language: ${lang}`);
-
-	const result = await fetch(
-		`https://translate.eazyautodelete.xyz/api/translations/eazyautodelete/website/${lang}/file/`,
-		{
-			headers: {
-				Authorization: `Token ${WEBLATE_TOKEN}`,
-			},
-		}
-	);
-
-	if (lang == "pt_BR") lang = "pt";
-
-	if (!result) throw new Error("Failed to fetch translations");
-
-	const data = await result.json();
-	if (data?.detail === "Invalid token.") throw new Error("Invalid Weblate token");
-
-	if (!existsSync("./i18n")) mkdirSync("./i18n");
-	writeFileSync(`./i18n/${lang}.json`, JSON.stringify(data, null, 2));
-
 	const dic = get(dictionary);
-
-	dic[lang] = data;
+	dic["en"] = en;
+	dic["de"] = de;
+	dic["es"] = es;
+	dic["pl"] = pl;
+	dic["fr"] = fr;
+	dic["pt_BR"] = pt;
 
 	dictionary.set(dic);
 }

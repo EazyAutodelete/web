@@ -3,6 +3,7 @@
 		"svelte": "^4.2.20"
 	},
 	"devDependencies": {
+		"@sveltejs/adapter-cloudflare": "^7.2.4",
 		"@sveltejs/adapter-node": "^5.3.3",
 		"@sveltejs/kit": "^2.46.5",
 		"@sveltejs/vite-plugin-svelte": "^3.1.2",
@@ -19,7 +20,8 @@
 	"name": "web",
 	"private": true,
 	"scripts": {
-		"build": "vite build",
+		"copy:i18n": "cp -r i18n/website/* src/lib/i18n/",
+		"build": "npm run copy:i18n && vite build",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"dev": "vite dev",
