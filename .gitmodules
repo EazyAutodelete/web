@@ -1,3 +1,3 @@
 [submodule "i18n"]
 	path = i18n
-	url = git@github.com:EazyAutodelete/translations.git
+	url = git://github.com/EazyAutodelete/translations.git
