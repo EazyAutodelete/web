@@ -1,7 +1,7 @@
 import { error } from "@sveltejs/kit";
 
 const cache = {
-	guilds: { count: 27700 },
+	guilds: { count: 29500 },
 	messages: {
 		all: 111_893_985,
 		year: 31_876_256,
@@ -46,7 +46,7 @@ async function updateStats() {
 	}
 }
 
-setInterval(updateStats, 1000 * 60 * 5);
+// setInterval(updateStats, 1000 * 60 * 5);
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ params }) {

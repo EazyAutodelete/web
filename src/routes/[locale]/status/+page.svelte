@@ -2,8 +2,7 @@
 	import PageContent from "$lib/components/PageContent.svelte";
 	import { titleSuffix } from "$lib/const";
 	import { _ } from "$lib/i18n";
-
-	export let data;
+	import { onMount } from "svelte";
 
 	let enteredId: string;
 	let shardId: bigint;
@@ -12,6 +11,25 @@
 		if (enteredId && /^[0-9]+$/.test(enteredId)) shardId = (BigInt(enteredId) >> 22n) % 16n;
 		else shardId = -1n;
 	}
+
+	let shards: { shardId: number, workerId: number, state: number, data: { available: number, unavailable: number }, rtt: number }[] = []
+	function fetchShardData() {
+		fetch("https://shards.eazyautodelete.xyz/status")
+			.then((res) => res.json())
+			.then((json) => {
+				shards = json;
+			})
+			.catch((err) => {
+				console.error("Error fetching shard data:", err);
+			});
+	}
+
+	onMount(() => {
+		fetchShardData();
+		const interval = setInterval(fetchShardData, 60000); // Refresh every 60 seconds
+
+		return () => clearInterval(interval); // Cleanup on component unmount
+	});
 
 	$: description = $_("seeStatusPage") + $_("descSuffix");
 	$: title = $_("shardsStatus") + titleSuffix;
@@ -51,8 +69,8 @@
 	</div>
 
 	<div class="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-		{#if data.shards && data.shards.length > 0}
-			{#each data.shards.sort((a, b) => a.shardId - b.shardId) as shard}
+		{#if shards && shards.length > 0}
+			{#each shards.sort((a, b) => a.shardId - b.shardId) as shard}
 				<div class="shard">
 					<div class="shard-body p-3" class:highlight={shardId === BigInt(shard.shardId)}>
 						<h5 class="shard-title">
