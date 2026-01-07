@@ -20,8 +20,7 @@
 	"name": "web",
 	"private": true,
 	"scripts": {
-		"copy:i18n": "cp -r i18n/website/* src/lib/i18n/",
-		"build": "npm run copy:i18n && vite build",
+		"build": "vite build",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"dev": "vite dev",
