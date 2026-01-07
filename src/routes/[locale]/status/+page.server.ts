@@ -1,6 +1,4 @@
-import { env } from "$env/dynamic/private"
-
-const GATEWAY_URL = env.GATEWAY_URL || "http://gateway-watcher-http.ea-prod.svc.cluster.local/status";
+const GATEWAY_URL = "https://shards.eazyautodelete.xyz/status";
 
 let cache: { shardId: number, workerId: number, state: number, data: { available: number, unavailable: number }, rtt: number }[] = [];
 
