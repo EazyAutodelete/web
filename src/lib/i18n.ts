@@ -5,6 +5,8 @@ export const locale = writable("en");
 
 export const dictionary: Writable<{ [lang: string]: { [key: string]: string } }> = writable({});
 
+export const LOCALES = ["en", "de", "es", "pl", "fr", "pt_BR"];
+
 const translate = (key: string) => {
 	return (get(dictionary)[get(locale)]?.[key] || get(dictionary)?.["en"]?.[key] || key || "")
 		.replace("&auml;", "ä")

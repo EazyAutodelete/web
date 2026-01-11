@@ -14,7 +14,7 @@ export function loadLocales() {
 	dic["es"] = es;
 	dic["pl"] = pl;
 	dic["fr"] = fr;
-	dic["pt_BR"] = pt;
+	dic["pt"] = pt;
 
 	dictionary.set(dic);
 }

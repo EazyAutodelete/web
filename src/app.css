@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -12,10 +14,6 @@
 	--color-primary: #5865f2;
 	--color-secondary: #3f4f9f;
 }
-
-@tailwind base;
-// @tailwind components;
-@tailwind utilities;
 
 ::-webkit-scrollbar {
 	width: 0.4rem;
