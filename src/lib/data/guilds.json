@@ -1,38 +1,29 @@
 [
 	{
-		"id": "927657096718204969",
-		"name": "The Fightory",
-		"members": 3400,
-		"type": "partnered"
-	},
-	{
 		"id": "170289352604254217",
 		"name": "GermanSimRacing",
 		"members": 11500,
-		"type": ["partnered", "verified"]
+		"type": [
+			"partnered",
+			"verified"
+		]
 	},
 	{
 		"id": "198050786440249344",
 		"name": "r/Indonesia",
-		"members": 7700,
-		"type": "partnered"
-	},
-	{
-		"id": "228236573370482688",
-		"name": "UniversoCraft",
-		"members": 306000,
+		"members": 8000,
 		"type": "partnered"
 	},
 	{
 		"id": "251162774833594369",
 		"name": "Fnatic",
-		"members": 35000,
+		"members": 41400,
 		"type": "verified"
 	},
 	{
 		"id": "278511854525874177",
 		"name": "Clash of Clans FR",
-		"members": 17500,
+		"members": 19400,
 		"type": "partnered"
 	},
 	{
@@ -43,26 +34,20 @@
 	},
 	{
 		"id": "343067824979443722",
-		"name": "Guild Wars 1 Community & [LGiT] Alliance",
-		"members": 9400,
+		"name": "Guild Wars Community & [LGiT] Alliance",
+		"members": 11950,
 		"type": "partnered"
 	},
 	{
 		"id": "346403197700538369",
 		"name": "Pokemon GO Remote Raids",
-		"members": 31800,
+		"members": 34860,
 		"type": "partnered"
 	},
 	{
 		"id": "958436550130139167",
 		"members": 3000,
 		"name": "Biblioteca da Meia-Noite",
-		"type": "partnered"
-	},
-	{
-		"id": "222916576217661440",
-		"members": 3200,
-		"name": "Beta64",
 		"type": "partnered"
 	},
 	{
@@ -75,12 +60,6 @@
 		"id": "469586581599158303",
 		"name": "Little Rock Games",
 		"members": 6000,
-		"type": "verified"
-	},
-	{
-		"id": "492821138305712149",
-		"name": "ECAC Esports",
-		"members": 6900,
 		"type": "verified"
 	},
 	{
@@ -98,7 +77,7 @@
 	{
 		"id": "574711449566445603",
 		"name": "Tolarian Community College",
-		"members": 30400,
+		"members": 37100,
 		"type": "partnered"
 	},
 	{
@@ -111,7 +90,10 @@
 		"id": "754130819634692106",
 		"name": "ZooMafia",
 		"members": 33100,
-		"type": ["partnered", "verified"]
+		"type": [
+			"partnered",
+			"verified"
+		]
 	},
 	{
 		"id": "774176471097933854",
@@ -136,12 +118,6 @@
 		"members": 7100,
 		"name": "iNeuron.ai",
 		"type": "verified"
-	},
-	{
-		"id": "904694496061689866",
-		"name": "Match Masters",
-		"members": 53400,
-		"type": "large"
 	},
 	{
 		"id": "928141101846650890",
@@ -169,7 +145,7 @@
 	},
 	{
 		"id": "329272032778780672",
-		"members": 24000,
+		"members": 25700,
 		"type": "verified",
 		"name": "Kitfox Games"
 	},
@@ -184,5 +160,74 @@
 		"name": "Sea of Thieves Poland",
 		"members": 23200,
 		"type": "partnered"
+	},
+	{
+		"id": "129594743393878017",
+		"name": "Trueshot Lodge",
+		"members": 131900,
+		"type": "partnered"
+	},
+	{
+		"id": "173493810079203328",
+		"name": "Studen Albatroz",
+		"members": 13100,
+		"type": "partnered"
+	},
+	{
+		"id": "370157764804345856",
+		"name": "Warface",
+		"members": 340490,
+		"type": "verified"
+	},
+	{
+		"id": "407257405861396480",
+		"name": "Go Off Kings",
+		"members": 2700,
+		"type": "partnered"
+	},
+	{
+		"id": "508675896417452032",
+		"name": "MrShibolet",
+		"members": 32000,
+		"type": "partnered"
+	},
+	{
+		"id": "526879084534562827",
+		"name": "SmashMC",
+		"members": 51600,
+		"type": "partnered"
+	},
+	{
+		"id": "624797280855392257",
+		"name": "G2 MINNESOTA",
+		"members": 3300,
+		"type": "verified"
+	},
+	{
+		"id": "668754054326779926",
+		"name": "AION",
+		"members": 12600,
+		"type": "verified"
+	},
+	{
+		"id": "675113113934364683",
+		"name": "The Commander Staple",
+		"members": 16700,
+		"type": [
+			"partnered",
+			"verified"
+		]
+	},
+	{
+		"id": "690236525337641043",
+		"name": "Scaleworx",
+		"members": 3000,
+		"type": "partnered"
+	},
+	{
+		"id": "889990467180175440",
+		"name": "Lost Ark",
+		"members": 51900,
+		"type": "verified"
 	}
 ]
