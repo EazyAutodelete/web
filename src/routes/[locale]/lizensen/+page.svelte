@@ -30,58 +30,28 @@
 
 		<ul>
 			<li><a class="link secondary" href="https://getbootstrap.com">Bootstrap</a></li>
+			<li><a class="link secondary" href="https://github.com/disgoorg/disgo">Disgo</a></li>
 			<li><a class="link secondary" href="https://discordeno.js.org/">Discordeno</a></li>
 			<li><a class="link secondary" href="https://abal.moe/Eris">Eris</a></li>
 			<li><a class="link secondary" href="https://tailwindcss.com">Tailwind CSS</a></li>
 			<li><a class="link secondary" href="https://svelte.dev">Svelte (+ Kit)</a></li>
+			<li><a class="link secondary" href="https://github.com/davfsa/nirn-proxy">Nirn</a></li>
 		</ul>
 		<ul>
-			<li><a class="link secondary" href="https://directus.io">Directus</a></li>
-			<li><a class="link secondary" href="https://grafana.com/">Grafana</a></li>
+			<li><a class="link secondary" href="https://grafana.com">Grafana</a></li>
+			<li><a class="link secondary" href="https://victoriametrics.com">VictoriaMetrics</a></li>
 			<li><a class="link secondary" href="https://mongodb.com">MongoDB</a></li>
+			<li><a class="link secondary" href="https://postgresql.org">PostgreSQL</a></li>
 			<li><a class="link secondary" href="https://nodejs.org">Node.js</a></li>
-			<li><a class="link secondary" href="https://npmjs.com">npm</a></li>
-			<li><a class="link secondary" href="https://portainer.io/">Portainer</a></li>
+			<li><a class="link secondary" href="https://go.dev">Go</a></li>
+			<li><a class="link secondary" href="https://k3s.io">k3s</a></li>
 			<li><a class="link secondary" href="https://prometheus.io">Prometheus</a></li>
 			<li><a class="link secondary" href="https://redis.io">Redis</a></li>
 			<li><a class="link secondary" href="https://stripe.com">Stripe</a></li>
-			<li><a class="link secondary" href="https://uptime.kuma.pet/">Uptime Kuma</a></li>
+			<li><a class="link secondary" href="https://paddle.com">Paddle</a></li>
+			<li><a class="link secondary" href="https://uptime.kuma.pet">Uptime Kuma</a></li>
 			<li><a class="link secondary" href="https://weblate.org">Weblate</a></li>
-		</ul>
-		<ul>
-			<li><a class="link secondary" href="https://npmjs.com/package/autoprefixer">autoprefixer</a></li>
-			<li><a class="link secondary" href="https://npmjs.com/package/axios">axios</a></li>
-			<li><a class="link secondary" href="https://npmjs.com/package/bootstrap-icons">Bootstrap Icons</a></li>
-			<li><a class="link secondary" href="https://npmjs.com/package/chalk">chalk</a></li>
-			<li><a class="link secondary" href="https://npmjs.com/package/colorette">colorette</a></li>
-			<li><a class="link secondary" href="https://npmjs.com/package/cors">cors</a></li>
-			<li><a class="link secondary" href="https://npmjs.com/package/commitizen">commitizen</a></li>
-			<li><a class="link secondary" href="https://npmjs.com/package/discord-api-types">discord-api-types</a></li>
-			<li>
-				<a class="link secondary" href="https://npmjs.com/package/discord-hybrid-sharding">discord-hybrid-sharding</a>
-			</li>
-			<li><a class="link secondary" href="https://npmjs.com/package/dotenv">dotenv</a></li>
-			<li><a class="link secondary" href="https://npmjs.com/package/eslint">eslint</a></li>
-			<li><a class="link secondary" href="https://npmjs.com/package/express">express</a></li>
-			<li><a class="link secondary" href="https://npmjs.com/package/fastify">fastify</a></li>
-			<li><a class="link secondary" href="https://npmjs.com/package/flowbite">flowbite</a></li>
-			<li><a class="link secondary" href="https://npmjs.com/package/husky">husky</a></li>
-			<li><a class="link secondary" href="https://npmjs.com/package/ioredis">ioredis</a></li>
-			<li><a class="link secondary" href="https://npmjs.com/package/mongodb">mongodb</a></li>
-			<li><a class="link secondary" href="https://npmjs.com/package/mongoose">mongoose</a></li>
-			<li><a class="link secondary" href="https://npmjs.com/package/ms">ms</a></li>
-			<li><a class="link secondary" href="https://npmjs.com/package/nanoid">nanoid</a></li>
-			<li><a class="link secondary" href="https://npmjs.com/package/node-emoji">node-emoji</a></li>
-			<li><a class="link secondary" href="https://npmjs.com/package/nodemailer">nodemailer</a></li>
-			<li><a class="link secondary" href="https://npmjs.com/package/postcss">postcss</a></li>
-			<li><a class="link secondary" href="https://npmjs.com/package/prettier">prettier</a></li>
-			<li><a class="link secondary" href="https://npmjs.com/package/prom-client">prom-client</a></li>
-			<li><a class="link secondary" href="https://npmjs.com/package/qs">qs</a></li>
-			<li><a class="link secondary" href="https://npmjs.com/package/redis">redis</a></li>
-			<li><a class="link secondary" href="https://npmjs.com/package/sass">sass</a></li>
-			<li><a class="link secondary" href="https://npmjs.com/package/standard-version">standard-version</a></li>
-			<li><a class="link secondary" href="https://npmjs.com/package/swc-node">swc-node</a></li>
-			<li><a class="link secondary" href="https://npmjs.com/package/typescript">typescript</a></li>
+			<li><a class="link secondary" href="https://temporal.io">Temporal</a></li>
 		</ul>
 	</div>
 </PageContent>

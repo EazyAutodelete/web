@@ -2,11 +2,7 @@
 	import { _ } from "$lib/i18n";
 	import { onMount } from "svelte";
 
-	 let data = { 		all: 111_893_985,
-		year: 31_876_256,
-		month: 3_893_438,
-		week: 2_581_721,
-		day: 368_817,};
+	let data = { all: 111_893_985, year: 31_876_256, month: 3_893_438, week: 2_581_721, day: 368_817 };
 
 	let messageIndex = 1;
 	let messagesStop = Math.round(Object.entries(data)[messageIndex][1] / 100) * 100;
@@ -45,14 +41,14 @@
 	}
 
 	$: messageCount = 0;
-	$: messageText = $_(statOptions[(Object.entries(data)[messageIndex][0] as keyof typeof statOptions)]);
+	$: messageText = $_(statOptions[Object.entries(data)[messageIndex][0] as keyof typeof statOptions]);
 
 	const statOptions = {
-		"hour": "hour",
-		"day": "today",
-		"week": "last7days",
-		"month": "last30days",
-		"year": "lastYear",
+		hour: "hour",
+		day: "today",
+		week: "last7days",
+		month: "last30days",
+		year: "lastYear",
 	};
 </script>
 

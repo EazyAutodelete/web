@@ -1,7 +1,7 @@
 import { error } from "@sveltejs/kit";
 
 const cache = {
-	guilds: { count: 29500 },
+	guilds: { count: 31800 },
 	messages: {
 		all: 111_893_985,
 		year: 31_876_256,
@@ -17,7 +17,6 @@ async function updateStats() {
 
 	try {
 		// updating = true;
-
 		// const guildCount = await fetch("https://api.eazyautodelete.xyz/public/stats/guilds", {
 		// 	headers: { "content-type": "application/json" },
 		// }).catch(e => {
@@ -25,11 +24,8 @@ async function updateStats() {
 		// });
 		// if (guildCount) {
 		// 	const guildCountJson = await guildCount.json();
-
 		// 	cache.guilds = guildCountJson?.count === 14200 ? { count: 27000 } : guildCountJson;
-
 		// }
-
 		// const messageCount = await fetch("https://api.eazyautodelete.xyz/public/stats/deleted-messages/all", {
 		// 	headers: { "content-type": "application/json" },
 		// }).catch(e => {
@@ -37,10 +33,8 @@ async function updateStats() {
 		// });
 		// if (messageCount) {
 		// 	const messageCountJson = await messageCount.json();
-
 		// 	cache.messages = messageCountJson;
 		// }
-
 	} catch (e) {
 		// ignore
 	}

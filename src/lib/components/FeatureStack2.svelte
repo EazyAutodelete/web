@@ -42,21 +42,25 @@
 	<section slot="card1" id="ignore-target" role="tabpanel" aria-describedby="tab-ignore-target">
 		{#each $_("ignoreTargetText").split("\n") as line}
 			<p>
-				{@html replaceWordWithLink(
-					line,
-					"Ignore or Target messages",
-					"https://docs.eazyautodelete.xyz/config/roles"
-				)}
+				{@html replaceWordWithLink(line, "Ignore or Target messages", "https://docs.eazyautodelete.xyz/config/roles")}
 			</p>
 		{/each}
 
 		<div class="w-full flex space-x-4">
 			<div class="w-1/2">
-				<img src="https://storage.eazyautodelete.xyz/public/images/target.webp" alt="Only target specific roles" title="Only target specific roles" />
+				<img
+					src="https://storage.eazyautodelete.xyz/public/images/target.webp"
+					alt="Only target specific roles"
+					title="Only target specific roles"
+				/>
 				<span class="desc">Only target specific roles</span>
 			</div>
 			<div class="w-1/2">
-				<img src="https://storage.eazyautodelete.xyz/public/images/ignore.webp" alt="Ignore specific roles" title="Ignore specific roles" />
+				<img
+					src="https://storage.eazyautodelete.xyz/public/images/ignore.webp"
+					alt="Ignore specific roles"
+					title="Ignore specific roles"
+				/>
 				<span class="desc">Ignore specific roles</span>
 			</div>
 		</div>

@@ -15,59 +15,59 @@ spec:
         app: ea-web
     spec:
       imagePullSecrets:
-      - name: ghcr-secret
+        - name: ghcr-secret
       containers:
-      - name: ea-web
-        image: ghcr.io/eazyautodelete/web:2.1.0
-        imagePullPolicy: IfNotPresent
-        ports:
-        - containerPort: 3000
-          name: http
-          protocol: TCP
-        env:
-        - name: NODE_ENV
-          value: "production"
-        - name: PORT
-          value: "3000"
-        - name: GATEWAY_URL
-          valueFrom:
-            configMapKeyRef:
-              name: ea-prod-config
-              key: SHARD_MONITORING_URL
-        - name: WEBLATE_TOKEN
-          valueFrom:
-            secretKeyRef:
-              name: ea-prod-secret
-              key: TRANSLATIONS_TOKEN
-        volumeMounts:
-        - name: i18n-cache
-          mountPath: /app/i18n
-        resources:
-          requests:
-            memory: "128Mi"
-            cpu: "100m"
-          limits:
-            memory: "512Mi"
-            cpu: "500m"
-        livenessProbe:
-          httpGet:
-            path: /healthz
-            port: 3000
-          initialDelaySeconds: 30
-          periodSeconds: 10
-          timeoutSeconds: 3
-          failureThreshold: 3
-        readinessProbe:
-          httpGet:
-            path: /healthz
-            port: 3000
-          initialDelaySeconds: 5
-          periodSeconds: 5
-          timeoutSeconds: 3
-          failureThreshold: 3
+        - name: ea-web
+          image: ghcr.io/eazyautodelete/web:2.1.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
+              name: http
+              protocol: TCP
+          env:
+            - name: NODE_ENV
+              value: "production"
+            - name: PORT
+              value: "3000"
+            - name: GATEWAY_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: ea-prod-config
+                  key: SHARD_MONITORING_URL
+            - name: WEBLATE_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: ea-prod-secret
+                  key: TRANSLATIONS_TOKEN
+          volumeMounts:
+            - name: i18n-cache
+              mountPath: /app/i18n
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 3000
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 3
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 3000
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 3
       volumes:
-      - name: i18n-cache
-        emptyDir: {}
+        - name: i18n-cache
+          emptyDir: {}
       securityContext:
         runAsNonRoot: true
         runAsUser: 1001
@@ -84,10 +84,10 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-  - port: 80
-    targetPort: 3000
-    protocol: TCP
-    name: http
+    - port: 80
+      targetPort: 3000
+      protocol: TCP
+      name: http
   selector:
     app: ea-web
 
@@ -104,20 +104,20 @@ metadata:
 spec:
   ingressClassName: nginx
   tls:
-  - hosts:
-    - eazyautodelete.xyz
-    secretName: cloudflare-cert
+    - hosts:
+        - eazyautodelete.xyz
+      secretName: cloudflare-cert
   rules:
-  - host: eazyautodelete.xyz
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: ea-web-service
-            port:
-              number: 80
+    - host: eazyautodelete.xyz
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: ea-web-service
+                port:
+                  number: 80
 
 ---
 apiVersion: autoscaling/v2
@@ -133,15 +133,15 @@ spec:
   minReplicas: 2
   maxReplicas: 5
   metrics:
-  - type: Resource
-    resource:
-      name: cpu
-      target:
-        type: Utilization
-        averageUtilization: 85
-  - type: Resource
-    resource:
-      name: memory
-      target:
-        type: Utilization
-        averageUtilization: 90
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 85
+    - type: Resource
+      resource:
+        name: memory
+        target:
+          type: Utilization
+          averageUtilization: 90

@@ -427,10 +427,10 @@
 		</p>
 
 		<p>
-			To exercise any of your rights (information, rectification, deletion, restriction, portability or objection) simply
-			reach out via the Imprint contact details. Please note: full deletion of your data may mean the Service can no longer
-			function as before (e.g. loss of custom settings, stored configurations or premium access). Re-registration or
-			re-configuration may be required to restore certain functionality.
+			To exercise any of your rights (information, rectification, deletion, restriction, portability or objection)
+			simply reach out via the Imprint contact details. Please note: full deletion of your data may mean the Service can
+			no longer function as before (e.g. loss of custom settings, stored configurations or premium access).
+			Re-registration or re-configuration may be required to restore certain functionality.
 		</p>
 		<h3>Right to demand processing restrictions</h3>
 		<p>
@@ -742,10 +742,9 @@
 		</p>
 		<h3>OpenAI</h3>
 		<p>
-			We use Artificial Intelligence by OpenAI for our customer communication. The provider is OpenAI, 3180 18th St, San Francisco, CA 94110, USA, <a
-				href="https://openai.com"
-				target="_blank"
-				rel="noopener noreferrer">https://openai.com</a
+			We use Artificial Intelligence by OpenAI for our customer communication. The provider is OpenAI, 3180 18th St, San
+			Francisco, CA 94110, USA, <a href="https://openai.com" target="_blank" rel="noopener noreferrer"
+				>https://openai.com</a
 			>. We use OpenAI's services for the following tools:
 		</p>
 		<ul>
@@ -754,19 +753,20 @@
 			<li>Generating placeholder content for our support server, user data only processed with explicit consent;</li>
 		</ul>
 		<p>
-			When you explicitly consent to use these features, data you provide (e.g., questions, messages and their metadata) will be
-			transferred to OpenAI's servers for processing. This enables us to provide you with AI assistance and content generation.
+			When you explicitly consent to use these features, data you provide (e.g., questions, messages and their metadata)
+			will be transferred to OpenAI's servers for processing. This enables us to provide you with AI assistance and
+			content generation.
 		</p>
 
 		<p>
-			OpenAI reserves the right to process all inputs for training its own algorithm. We cannot judge the
-			exact way in which the data is processed.
+			OpenAI reserves the right to process all inputs for training its own algorithm. We cannot judge the exact way in
+			which the data is processed.
 		</p>
 		<p>
-			The use of OpenAI's services is based on Art. 6 (1)(f) GDPR. The service operator has a legitimate interest in the most
-			efficient customer communication possible using modern technical solutions. If a corresponding consent has been
-			requested, the processing is carried out exclusively on the basis of Art. 6 (1)(a) GDPR and &sect; 25 (1) TDDDG.
-			The consent can be revoked at any time.
+			The use of OpenAI's services is based on Art. 6 (1)(f) GDPR. The service operator has a legitimate interest in the
+			most efficient customer communication possible using modern technical solutions. If a corresponding consent has
+			been requested, the processing is carried out exclusively on the basis of Art. 6 (1)(a) GDPR and &sect; 25 (1)
+			TDDDG. The consent can be revoked at any time.
 		</p>
 		<p>
 			You can obtain further information here: <a
@@ -785,7 +785,8 @@
 
 		<h3>Google AI</h3>
 		<p>
-			We use Artificial Intelligence by Google for our customer communication. The provider is Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA, <a
+			We use Artificial Intelligence by Google for our customer communication. The provider is Google LLC, 1600
+			Amphitheatre Parkway, Mountain View, CA 94043, USA, <a
 				href="https://www.google.com"
 				target="_blank"
 				rel="noopener noreferrer">https://www.google.com</a
@@ -798,20 +799,21 @@
 		</ul>
 
 		<p>
-			When you explicitly consent to use these features, data you provide (e.g., questions, messages and their metadata) will be
-			transferred to Google's servers for processing. This enables us to provide you with AI assistance and content generation.
+			When you explicitly consent to use these features, data you provide (e.g., questions, messages and their metadata)
+			will be transferred to Google's servers for processing. This enables us to provide you with AI assistance and
+			content generation.
 		</p>
 
 		<p>
-			Google reserves the right to process all inputs for training its own algorithm. We cannot judge the
-			exact way in which the data is processed.
+			Google reserves the right to process all inputs for training its own algorithm. We cannot judge the exact way in
+			which the data is processed.
 		</p>
 
 		<p>
-			The use of Google's services is based on Art. 6 (1)(f) GDPR. The service operator has a legitimate interest in the most
-			efficient customer communication possible using modern technical solutions. If a corresponding consent has been
-			requested, the processing is carried out exclusively on the basis of Art. 6 (1)(a) GDPR and &sect; 25 (1) TDDDG.
-			The consent can be revoked at any time.
+			The use of Google's services is based on Art. 6 (1)(f) GDPR. The service operator has a legitimate interest in the
+			most efficient customer communication possible using modern technical solutions. If a corresponding consent has
+			been requested, the processing is carried out exclusively on the basis of Art. 6 (1)(a) GDPR and &sect; 25 (1)
+			TDDDG. The consent can be revoked at any time.
 		</p>
 
 		<p>

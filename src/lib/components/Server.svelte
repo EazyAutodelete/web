@@ -33,10 +33,22 @@
 					</svg>
 				{/if}
 				{#if type === "verified"}
-					<img src="https://storage.eazyautodelete.xyz/public/icons/verified.webp" title="White check mark" alt="White check mark" height="16" width="16" />
+					<img
+						src="https://storage.eazyautodelete.xyz/public/icons/verified.webp"
+						title="White check mark"
+						alt="White check mark"
+						height="16"
+						width="16"
+					/>
 				{/if}
 				{#if type === "large"}
-					<img src="https://storage.eazyautodelete.xyz/public/icons/large.webp" title="Silhouette" alt="Silhouette" height="16" width="16" />
+					<img
+						src="https://storage.eazyautodelete.xyz/public/icons/large.webp"
+						title="Silhouette"
+						alt="Silhouette"
+						height="16"
+						width="16"
+					/>
 				{/if}
 
 				<span>{name}</span>

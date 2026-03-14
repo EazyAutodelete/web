@@ -21,18 +21,18 @@
 		last_data: Date;
 	};
 
-	$: shards = [] as Shard[]
+	$: shards = [] as Shard[];
 	function fetchShardData() {
 		fetch("https://shards.eazyautodelete.xyz/status")
-			.then((res) => res.json())
-			.then((json) => {
+			.then(res => res.json())
+			.then(json => {
 				shards = json.shards.map((s: Shard) => ({
 					...s,
 					node: s.node.split("-").length > 1 ? s.node.split("-")[1] : "0",
-					last_data: new Date(s.last_data)
+					last_data: new Date(s.last_data),
 				}));
-		})
-			.catch((err) => {
+			})
+			.catch(err => {
 				console.error("Error fetching shard data:", err);
 			});
 	}
@@ -84,7 +84,7 @@
 	<div class="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
 		{#if shards && shards.length > 0}
 			{#each shards.sort((a, b) => a.id - b.id) as shard}
-				<div class="shard" title={'Last data received: ' + shard.last_data.toLocaleString()}> 
+				<div class="shard" title={"Last data received: " + shard.last_data.toLocaleString()}>
 					<div class="shard-body p-3" class:highlight={shardId === BigInt(shard.id)}>
 						<h5 class="shard-title">
 							Shard {shard.id} | #{shard.node}
@@ -111,7 +111,7 @@
 						<div class="shard-info">
 							<p>Servers: {shard.data?.available || 0}</p>
 							<p>Unvailable: {shard.data?.unavailable || 0}</p>
-							<p>Ping: {shard.last_data < new Date(Date.now()- 2 * 60 * 1000) ? "???" : shard.latency}ms</p>
+							<p>Ping: {shard.last_data < new Date(Date.now() - 2 * 60 * 1000) ? "???" : shard.latency}ms</p>
 						</div>
 					</div>
 				</div>

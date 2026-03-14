@@ -31,7 +31,10 @@
 		playsinline
 		style="display: block; position: relative;"
 	>
-		<source src={width >= 1024 ? "https://storage.eazyautodelete.xyz/public/videos/webm/mode-1.webm" : ""} type="video/mp4" />
+		<source
+			src={width >= 1024 ? "https://storage.eazyautodelete.xyz/public/videos/webm/mode-1.webm" : ""}
+			type="video/mp4"
+		/>
 		Your Browser does not support the video tag.
 	</video>
 </div>

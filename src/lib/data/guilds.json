@@ -3,10 +3,7 @@
 		"id": "170289352604254217",
 		"name": "GermanSimRacing",
 		"members": 11500,
-		"type": [
-			"partnered",
-			"verified"
-		]
+		"type": ["partnered", "verified"]
 	},
 	{
 		"id": "198050786440249344",
@@ -90,10 +87,7 @@
 		"id": "754130819634692106",
 		"name": "ZooMafia",
 		"members": 33100,
-		"type": [
-			"partnered",
-			"verified"
-		]
+		"type": ["partnered", "verified"]
 	},
 	{
 		"id": "774176471097933854",
@@ -213,10 +207,7 @@
 		"id": "675113113934364683",
 		"name": "The Commander Staple",
 		"members": 16700,
-		"type": [
-			"partnered",
-			"verified"
-		]
+		"type": ["partnered", "verified"]
 	},
 	{
 		"id": "690236525337641043",
