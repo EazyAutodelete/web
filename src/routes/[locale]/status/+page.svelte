@@ -8,7 +8,7 @@
 	let shardId: bigint;
 
 	function calcId() {
-		if (enteredId && /^[0-9]+$/.test(enteredId)) shardId = (BigInt(enteredId) >> 22n) % 16n;
+		if (enteredId && /^[0-9]+$/.test(enteredId)) shardId = (BigInt(enteredId) >> 22n) % 32n;
 		else shardId = -1n;
 	}
 
