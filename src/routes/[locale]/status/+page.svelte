@@ -31,6 +31,20 @@
 					node: s.node.split("-").length > 1 ? s.node.split("-")[1] : "0",
 					last_data: new Date(s.last_data),
 				}));
+
+				// fill shards with missing ids up to 32
+				for (let i = 0; i < 32; i++) {
+					if (!shards.some((s: Shard) => s.id === i)) {
+						shards.push({
+							id: i,
+							node: Math.floor(i / 4).toString(),
+							status: "Disconnected",
+							data: { available: 0, unavailable: 0 },
+							latency: 0,
+							last_data: new Date(0),
+						});
+					}
+				}
 			})
 			.catch(err => {
 				console.error("Error fetching shard data:", err);
